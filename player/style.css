@@ -1,0 +1,153 @@
+<style type="text/css">
+a {text-decoration: none; color: inherit;}
+body {padding: 0px; margin: 0px; display: block;}
+.aboutContainer {float: left; margin-top: 20px; margin-left: 40px; padding-bottom: 10px; width: 300px; color: #666666; border-bottom: 1px solid #cccccc; font: 14px normal Georgia,serif;}
+.aboutLink {float: left; margin-top: 14px; margin-left: 30px; color: #699ad6; font: 11px bold arial,sans-serif;}
+.aboutMovieHeader {font: 16px bold arial,sans-serif; text-decoration: underline;}
+.aboutMovieTitle {font: 20px normal 'Knockout 50 A', 'Knockout 50 B', 'Arial Narrow', 'Trebuchet MS', Helvetica, sans-serif;}
+.aboutTitle {width: 100%; height: 30px; margin-bottom: 10px; font: 22px normal 'Knockout 50 A', 'Knockout 50 B', 'Arial Narrow', 'Trebuchet MS', Helvetica, sans-serif; color: #ff9933; border-bottom: 1px solid #cccccc;}
+.advancedFormLayout {clear: left; float: left; margin: 10px 20px 20px; width: 585px; max-height: 350px;} .advancedFormLayout tr {width: 100%;} .advancedFormLayout td {width: 50%;}
+.advancedSearchBox {position: absolute; display: none; z-index: 50; top: 146px; right: 40px; width: 625px; height: 470px; background-color: #333333; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#999999), to(#333333)); background: -webkit-linear-gradient(top, #333333, #999999); background: -moz-linear-gradient(top, #333333, #999999); background: -ms-linear-gradient(top, #333333, #999999); background: -o-linear-gradient(top, #333333, #999999); border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; -moz-box-shadow: 4px 2px 6px 3px #444444; -webkit-box-shadow: 4px 2px 6px 3px #444444; box-shadow: 4px 2px 6px 3px #444444; overflow:hidden;}
+.advancedSearchMessage {margin-top: 5px; margin-left: 20px; margin-right: 20px; color: #ffffff; font: 11px normal Georgia,serif;}
+.advancedSearchSubmitButton {float: right; padding-top: 2px; padding-right: 10px;}
+.advancedSearchTitle {margin-top: 20px; margin-left: 20px; color: #ffffff; font: 20px normal 'Knockout 50 A', 'Knockout 50 B', 'Arial Narrow', 'Trebuchet MS', Helvetica, sans-serif;}
+#advancedSearchUseIndicator {padding-left: 5px;}
+.annotationsFull {width: 270px; margin-left: 10px; margin-top: 10px; padding-bottom: 5px; background: #cccccc; color: #000000; font: 14px normal arial,sans-serif; text-align: left;}
+	.annotationsFull:empty {display:none; margin-top: 0px;}
+.aptLinks {clear:both; position: relative; bottom: 25px; width: 100%; text-align: center; color: #699ad6; font: 11px bold arial,sans-serif; text-transform:uppercase;}
+	.aptLinks a {margin: 0px 10px;}
+.bodyContentButton {width: 135px; padding: 4px 8px; border-radius: 5px; text-align: center; color: #ffffff; font: 16px bold 'Knockout 50 A', 'Knockout 50 B', 'Arial Narrow', 'Trebuchet MS', Helvetica, sans-serif; cursor: pointer; background: #4f6d91; vertical-align: middle; text-transform:uppercase;}
+.breadcrumbs {width: 100%; height: 25px; padding-top: 5px; border-bottom: 1px solid #cccccc;}
+.communications {clear: right; float: right; width: 240px; height: 100px; margin-top: 20px; margin-right: 40px;}
+.contactLink {float: left; margin-top: 14px; margin-left: 30px; color: #699ad6; font: 11px bold arial,sans-serif;}
+.contactUs {width: 100%; height: 24px; margin-top: 10px; color: #699ad6; border-bottom: 1px solid #cccccc; font: 16px normal 'Knockout 50 A', 'Knockout 50 B', 'Arial Narrow', 'Trebuchet MS', Helvetica, sans-serif;}
+.contentArrow {float: right; margin-top: 2px; margin-right: 10px;}
+.contentButton {clear: left; float: left; margin-top: 10px;}
+.contentContainer {clear: left; float: left; margin-top: 20px; margin-left: 40px; padding-bottom: 10px; width: 640px; color: #666666; font: 14px normal Georgia,serif;}
+	.contentContainer a {text-decoration: underline; color: #699ad6;}
+	.contentContainer img {max-width: 200px;}
+.contentForm {clear: left; float: left; margin-top: 40px;}
+.contentTitle {width: 100%; height: 30px; margin-bottom: 10px; font: 22px normal 'Knockout 50 A', 'Knockout 50 B', 'Arial Narrow', 'Trebuchet MS', Helvetica, sans-serif; color: #ff9933;}
+.crumbs {float: left; margin-top: 5px; margin-left: 40px; color: #000000; font: 11px bold arial,sans-serif;}
+	.crumbs a {text-decoration: none; color: #699ad6;}
+.demoPara {padding: 5px;}
+#demoRangeimputContainer {position: relative; margin-top:0; top:-1px; left: 6px; height: 80px; width: 577px;}
+#demoRangeimputContainerPP {position: absolute; width: 30px; height: 30px; left: 0px; top: 5px; background-image: url(/images/controls/play.svg);}
+#demoRangeimputContainerRISlider {position: absolute; height: 17px; right: 10px; left: 40px; top: 10px;}
+#demoRangeimputContainerSMPTE {position: absolute; text-align: center; width: 100px; height: 20px; left: 120px; top: 50px; color: #FFFFFF; font: 14px bold arial,sans-serif;}
+.demoText {margin: 5px 10px; color: #000000; font: 10px normal arial,sans-serif;}
+.demoText img {margin-top: -8px; margin-left: -5px;}
+.demoTitle {color: #000000; font: 12px bold arial,sans-serif; margin: 5px; margin-top: 10px; text-decoration: underline;}
+.eFATableA td {vertical-align: top; padding-bottom: 20px;}
+.eFATableMini th {padding-top: 4px; font: 14px normal arial,sans-serif;}
+.eFATableMini tr {border-bottom: 1px solid #B4B4B4;}
+.eFATableMini td {border-bottom: 1px solid #B4B4B4;}
+.efMoviePlaybuttons {float:left; width:18px; height:18px; margin-top:1px; margin-left:3px; padding: 0px 3px; padding-top: 4px; cursor: pointer; text-align: center; background: #cccccc; border-radius: 5px; box-shadow: inset 1px 1px 5px #333333; border: 1px solid #888888; color: #333333; font: 12px bold arial,sans-serif;}
+#efMoviePlaybuttonsSpeed {position: absolute; right: 10px; top: 43px; width: 340px; height: 25px; overflow: none;}
+.efMovieSpeedContainers {color: #333333; background-color: #cccccc; box-shadow: inset 1px 1px 5px #333333;}
+.efMovieSpeedContainersActive {color: #ffffff; background-color: #4f6d91; box-shadow: inset -1px -1px 5px #333333;}
+#eFPIANImgRel {position: absolute; right: 200px; top: 550px; width: 142px; height:142px; overflow: hidden;}
+	#eFPIANImgRel img {max-width: 140px; max-height: 140;}
+#eFPIImgRelInMovieShow {position: relative; top: -518px; left: 5px; overflow: hidden;}
+	#eFPIImgRelInMovieShow img {height: 432px; width: 575px; opacity: 0.6;}
+#eFPIANMaps {position: absolute; right: 35px; top: 550px; height: 142px; width: 142px;}
+.eFPIANSupertitle {text-align: center; margin: 0px 4px; padding: 5px 0px; color: #ffffff; font: 14px normal 'Knockout 50 A', 'Knockout 50 B', 'Arial Narrow', 'Trebuchet MS', Helvetica, sans-serif; background: #f7941d;}
+.eFPIminibutton {float: left; height: 21px; width: 150px; padding-top: 3px; margin-right: 5px; border-radius: 5px; text-align: center; color: #ffffff; font: 16px normal 'Knockout 50 A', 'Knockout 50 B', 'Arial Narrow', 'Trebuchet MS', Helvetica, sans-serif; cursor: pointer; background: #4f6d91; vertical-align: middle; text-transform:uppercase;}
+#eFPIMinibuttonMenuTop {position: absolute; top: 50px; right: 40px; height: 40px; z-index: 300px; text-align: justify;}
+#efPIMovieCurrentAnnotationsContainer {position: absolute; top: 105px; right: 40px; width: 300px; height: 434px; overflow-y: auto; overflow-x: hidden; background: #ffffff; box-shadow: inset 1px 1px 5px #333333; text-align: center;}
+#efPIMovieCurrentAnnotationsContainerD {position: absolute; left: 0px; top: 0px; width: 95%; bottom: 0px; padding: 5px; padding-bottom: 15px; overflow-y: auto; overflow-x: hidden;}
+#efPIMovieCurrentAnnotationsContainerI {position: absolute; left: 0px; top: 0px; width: 95%; bottom: 0px; padding: 5px 10px; overflow-y: auto; overflow-x: hidden; color: #000000; font: 14px normal arial,sans-serif; text-align: left; display:none;}
+#efPIMovieCurrentAnnotationsContainerQ {position: absolute; left: 0px; top: 0px; width: 95%; bottom: 0px; padding: 5px; overflow-y: auto; overflow-x: hidden; color: #000000; font: 14px normal arial,sans-serif; text-align: left; display:none;}
+#efPIMovieCurrentAnnotationsContainerS {position: absolute; left: 0px; top: 0px; width: 95%; bottom: 0px; padding: 5px; overflow-y: auto; overflow-x: hidden; display:none;}
+	#efPIMovieCurrentAnnotationsContainerS table th input {font-size: 9px; height: 18px;}
+#efPIMovieCurrentContainer {position: absolute; top: 100px; left: 40px; margin-top:0; margin-left:0; margin-bottom:0; width:577px; height:572px; overflow: hidden; background-image:url('/ContentFlow/img/loader.gif'); background-repeat:no-repeat; background-position:250px 150px;}
+	#efPIMovieCurrentContainer video {width:575px; height:432px; margin-left:5px; margin-top:5px; border: 1px inset #666666;}
+.eFTabCellContent {padding: 5px 3px; font: 10px normal arial,sans-serif; text-align: left; vertical-align: top; border-right: 1px solid #B4B4B4;}
+.eFTabCellL3Mini {padding: 5px 3px; font: 10px normal arial,sans-serif; text-align: left; vertical-align: top; border-right: 1px solid #B4B4B4;}
+.eFTabCellPlayMini {text-align: center;}
+.eFTabTHContentMini {width: 160px; font: 14px normal arial,sans-serif;}
+.eFTabTHL3Mini {width: 80px; font: 14px normal arial,sans-serif;}
+.eFTabTHUMini {width: 30px; font: 14px normal arial,sans-serif;}
+#eFTimerunnerActiveState {display: none;}
+.emailFormSubmitButton {float: left; padding-top: 2px; padding-left: 1px;}
+.exploreCoverflow {width: 100%; height: auto; margin-top: 20px; padding-top: 50px; padding-bottom: 50px; background-color: #333333; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#999999), to(#333333)); background: -webkit-linear-gradient(top, #333333, #999999); background: -moz-linear-gradient(top, #333333, #999999); background: -ms-linear-gradient(top, #333333, #999999); background: -o-linear-gradient(top, #333333, #999999);}
+.exploreFilmsButton {float: right; margin-top: -50px; margin-right: 130px;}
+.exploreLink {float: left; margin-top: 14px; margin-left: 120px; color: #699ad6; font: 11px bold arial,sans-serif;}
+.exploreMessage {clear: left; float: left; margin-top: 5px; margin-left: 40px; margin-right: 40px; color: #666666; font: 14px normal Georgia,serif;}
+.exploreTitle {float: left; margin-left: 40px; font: 22px normal 'Knockout 50 A', 'Knockout 50 B', 'Arial Narrow', 'Trebuchet MS', Helvetica, sans-serif; color: #ff9933;}
+.exploreTitleBar {width: 100%; height: 75px; padding-top: 40px;}
+.facebookButton {margin-top: 10px; margin-bottom: 10px; margin-left: 10px;}
+.feedback {width: 100%; height: 24px; margin-top: 10px; color: #699ad6; border-bottom: 1px solid #cccccc; font: 16px normal 'Knockout 50 A', 'Knockout 50 B', 'Arial Narrow', 'Trebuchet MS', Helvetica, sans-serif;}
+.filmographyContainer {clear: left; float: left; margin-top: 20px; margin-left: 40px; padding-bottom: 10px; width: 90%; height: auto; color: #666666; font: 14px normal Georgia,serif;}
+.filmographyContainer a {margin-left: 10px; color: #699ad6;}
+.filmPlayerFilmTitle {position: absolute; top: 20px; left: 40px; right: 35px; height: 68px; vertical-align: top; color: #ffffff; font: 20px normal Georgia,serif; border-bottom: 2px solid #666666;}
+.filmPlayerFilmNumber {position: absolute; top: 55px; left: 40px; color: #ffffff; font: 14px bold arial,sans-serif;}
+.formSelect {padding: 2px 40px 2px 15px; margin-left: 3px; margin-top: 4px; width: 135px; height: 26px; font: 11px normal Arial,sans-serif; color: #979797; line-height: 1; border: 1px solid #cccccc; -webkit-appearance: none; background: url('/images/insetFormSelectboxDropdownArrow.png') no-repeat right #fff;}
+.formTextarea {resize: none; height: 73px; width: 238px; padding: 10px 20px 20px 20px; background-color: transparent; border: none; font: 11px normal Arial,sans-serif; color: #979797; background-image: url('/images/insetFormTextAreaBackground.png');}
+.formTextareaLarge {resize: none; height: 170px; width: 238px; padding: 10px 20px 20px 20px; background-color: transparent; border: none; font: 11px normal Arial,sans-serif; color: #979797; background-image: url('/images/insetFormTextAreaLargeBackground.png');}
+.formTextInput {height: 33px; width: 243px; padding-left: 20px; padding-right: 20px; background-color: transparent; border: none; font: 11px normal Arial,sans-serif; color: #979797; background-image: url('/images/insetFormTextFieldBackground.png'); background-position: -2px;}
+.formSmallTextInput {height: 33px; width: 100px; padding-left: 20px; padding-right: 20px; background-color: transparent; border: none; font: 11px normal Arial,sans-serif; color: #979797; background-image: url('/images/insetFormSmallTextFieldBackground.png'); background-position: -2px;}
+.handle { background:#444444; height:25px; width:5px; top:0px; position:absolute;  display:block;  margin-top:-10px; cursor:move;}
+.headerLogo {float: left; margin-top: 20px; margin-left: 40px;}
+.howLink {float: left; margin-top: 14px; margin-left: 30px; color: #699ad6; font: 11px bold arial,sans-serif;}
+.howToContainer {float: left; margin-top: 20px; margin-left: 40px; padding-bottom: 10px; width: 300px; color: #666666; border-bottom: 1px solid #cccccc; font: 14px normal Georgia,serif;}
+.howToTitle {width: 100%; height: 30px; margin-bottom: 10px; font: 22px normal 'Knockout 50 A', 'Knockout 50 B', 'Arial Narrow', 'Trebuchet MS', Helvetica, sans-serif; color: #ff9933; border-bottom: 1px solid #cccccc;}
+#INeFPIANImgRel {position: absolute; left:0; top: 22px; bottom: 0; right: 0; margin:0; padding:2px; border:0; overflow: hidden;}
+#INeFPIANMaps {position: absolute; left:4px; top: 25px; width: 134px; height: 100px; padding: 0px; margin:0; border:0; overflow: auto;}
+.introFilmContainer {width: 100%; height: 400px; background: #333333; padding-top: 10px;}
+.introInfoContainer {position: relative; width: 100%; background: #ffffff; padding-top: 20px; padding-bottom: 20px; overflow: auto;}
+.introText {float: right; margin-top: -348px; margin-right: 40px; width: 240px; height: 290px;}
+.introTextMessage {color: #ffffff; font: 16px normal Georgia,serif;}
+.introTextTitle {color: #ffffff; font: 24px normal 'Knockout 50 A', 'Knockout 50 B', 'Arial Narrow', 'Trebuchet MS', Helvetica, sans-serif;}
+.language {float: left; margin-top: 14px; margin-left: 40px; color: #979797; font: 11px bold arial,sans-serif; cursor: pointer;}
+	.language a {text-decoration: none; color: inherit;}
+.largePreview {float: right; margin-top: -225px; margin-right: 315px; width: 460px; height: 345px;}
+	.largePreview img {border-bottom-left-radius: 7px; border-bottom-right-radius: 7px;}
+.largePreviewTitle {position: relative; top: -57px; height: 40px; padding: 7px 8px; width: 444px; color: #ffffff; background: #ff9933; font: 16px bold arial,sans-serif; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;}
+.lbiLogo {float: right; margin-top: 10px; margin-right: 30px;}
+.mainContentContainer {position: relative; width: 100%; background: #ffffff; padding-top: 20px; padding-bottom: 20px; overflow: auto;}
+.mapFullScreenLink {position: absolute; left: 10px; bottom: -4px; color: #666666; font: 11px Arial,sans-serif;}
+.masthead {position: relative; width: 100%; height: 145px; background: #111111; border-bottom: 1px solid #4d4d4d;}
+	.masthead a {text-decoration: none;}
+.modalCloseTarget {float: right; margin-top: 5px; margin-right: 5px; color: #ffffff; font: 10px bold arial,sans-serif;}
+.moviePlayer {position: relative; width: 100%; height: 620px; padding-top: 50px; padding-bottom: 50px; background-color: #333333; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#999999), to(#333333)); background: -webkit-linear-gradient(top, #333333, #999999); background: -moz-linear-gradient(top, #333333, #999999); background: -ms-linear-gradient(top, #333333, #999999); background: -o-linear-gradient(top, #333333, #999999);}
+.moviePlayerFrameRateLabel {float: left; margin-right: 10px; padding-top: 8px; color: #000000; font: 12px bold arial,sans-serif;}
+.navigation {width: 100%; height: 40px; background: #111111;}
+.oefmLogo {float: right; margin-top: 10px; margin-right: 30px;}
+.pageContent {position: inherit; width: 1020px; margin: 0px auto; border-bottom: 40px solid #111111; overflow:auto;}
+.partnerContactAddress {margin-top: 5px; color: #666666; font: 14px normal Georgia,serif;}
+.partnerContactContainer {float: left; padding-right: 10px; width: 200px; font: 14px ;}
+.partnerContactEmail a {clear: left; text-decoration: none; color: #699ad6;}
+.partnerContactTitle {height: 40px; color: #000000; font: bold 14px Arial,sans-serif; margin-top: 10px; margin-bottom: 10px;}
+.partnerImage {height: 160px; width: 200px;}
+.progress {height: 4px;  background-color: #FF9933;}
+.range {position: absolute; left: -30px; top: 38px; height: 18px; width:80px; text-align:center; background: #444444; color: #ffffff; font: 12px bold arial,sans-serif; border-radius: 5px; border: 1px solid #666666; box-shadow: inset 1px 1px 5px #333333;}
+	.range:focus {/*outline: none;*/}
+.searchAdvanced {clear: right; float: right; margin-top: -30px; margin-right: 40px; cursor: pointer;}
+.searchAdvancedText {color: #699ad6; font: 10px bold arial,sans-serif;}
+.searchBox {position: relative; clear: right; float: right; margin-top: 20px; margin-right: 180px; width: 335px; height: 39px; background-image: url('/images/searchBoxBackground.png');}
+.searchButton {position: absolute; top: 6px; right: 6px; cursor: pointer;}
+.searchInput {float:left; margin-top: 8px; margin-left: 12px; height: 22px; width: 240px; background-color: transparent; border: none; font: italic 15px Times,serif; color: #979797;}
+.searchResults {padding: 20px 0px; margin-top: 30px; border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc; min-height: 500px;}
+	.searchResults img {padding: 5px 15px;}
+.searchResultsBottomNavigation {position: absolute; bottom: 10px; right: 340px; color: #699ad6; font: 12px bold arial,sans-serif;}
+.searchResultsCount {margin-top: -40px; margin-bottom: 20px; margin-left: 20px; font: 12px bold arial,sans-serif;}
+.searchResultsDescription {padding: 2px 0px; font: 12px bold arial,sans-serif;}
+.searchResultsMeta {padding: 2px 0px; font: 12px bold arial,sans-serif;}
+.searchResultsTitle {padding-bottom: 5px; color: #699ad6; font: 18px normal Georgia,serif;}
+.searchResultsTopNavigation {float: right; margin-top: -33px; color: #699ad6; font: 12px bold arial,sans-serif;}
+.sidebarCurrent {color: #ff9933;}
+.sidebarItem {float: right; width: 240px; margin-top: 20px; margin-right: 40px; padding-bottom: 20px; color: #666666; font: 14px normal Georgia,serif; border-bottom: 1px solid #cccccc;}
+.sidebarItemTitle {width: 100%; height: 30px; margin-bottom: 10px; font: 22px normal 'Knockout 50 A', 'Knockout 50 B', 'Arial Narrow', 'Trebuchet MS', Helvetica, sans-serif; color: #ff9933;}
+.slider {position: relative;  background: #ffffff;  height: 3px; cursor: pointer; width: 100%; float: right; margin-top: 7px;}
+.smallPreview {clear: left; float: left; margin-top: 20px; margin-left: 40px; width: 133px; height: 100px;}
+.socialShare {width: 100%; margin-top: 10px; color: #699ad6; /*border-bottom: 1px solid #cccccc;*/ font: 16px normal 'Knockout 50 A', 'Knockout 50 B', 'Arial Narrow', 'Trebuchet MS', Helvetica, sans-serif;}
+.twitterButton {margin-top: 10px; margin-bottom: 10px;}
+.updateDate {text-transform:uppercase;}
+.updatesContainer {clear: left; float: left; margin-top: 40px; margin-left: 40px; padding-bottom: 10px; width: 640px; color: #666666; font: 14px normal Georgia,serif;}
+.updatesHeading {width: 100%; height: 30px; margin-bottom: 10px; font: 22px normal 'Knockout 50 A', 'Knockout 50 B', 'Arial Narrow', 'Trebuchet MS', Helvetica, sans-serif; color: #ff9933; border-bottom: 1px solid #cccccc;}
+.updateTitle {clear: both; color: #699ad6; font: 20px normal Georgia,serif;}
+.ushmmLogo {float: right; margin-top: 10px; margin-right: 30px;}
+.verticalDivider {float: left; margin-top: -222px; margin-left: 32px; height: 340px; width: 1px; border-right: 1px solid #4d4d4d;}
+.viewLink {float: left; margin-top: 14px; margin-left: 30px; color: #699ad6; font: 11px bold arial,sans-serif;}
+</style>

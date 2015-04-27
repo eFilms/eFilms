@@ -1,0 +1,332 @@
+#eFRelMovieBGTop {
+	position:absolute;
+	left:0;
+	right: 0;
+	top:0;
+	min-height:25px;
+	background-image: url(../_img/black-square-80-percent.png);
+
+}
+#eFRelMovieBGM1 {
+	position:absolute;
+	left:0;
+	right: 98%;
+	top:10%;
+	bottom: 18%;
+	background-image: url(../_img/black-square-80-percent.png);
+
+}
+#eFRelMovieBGMovieA {
+
+
+}
+#eFRelMovieBGM2 {
+	position:absolute;
+	left:49.7%;
+	right: 50%;
+	/*background-image: url(../_img/black-square-80-percent.png);*/
+
+}
+#eFRelMovieBGMovieB {
+	position: absolute;
+	/*background-image: url(../_img/orange-square-30-percent.png);
+	background-color: red;*/
+}
+
+#eFRelVideoB {
+	position: absolute;
+	top: 0;
+	right: -10px;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+}
+
+#eFMovieRelATitle {
+	position: absolute;
+	left:0;
+	right: 50%;
+	text-align: center;
+	color: white;
+	font-size: 14px;
+	font-weight: bolder;
+}
+
+#eFMovieRelBSelect {
+	position: absolute;
+	left:50%;
+	right: 0;
+	text-align: center;
+	color: white;
+	font-size: 14px;
+	font-weight: bolder;
+}
+
+
+#eFRelMovieBGM3 {
+	position:absolute;
+	width: 5px;
+	right: 0;
+	background-image: url(../_img/black-square-80-percent.png);
+
+
+}
+#eFRelMovieBGBottom {
+	position:absolute;
+	left:0;
+	right: 0;
+	bottom: 0;
+	background-image: url(../_img/black-square-80-percent.png);
+
+}
+
+/* ########## Timeline Container ######### */
+#eFTimelineContainerRel {
+	position: absolute;
+   	height:90px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	background-color: #666666;
+	overflow:hidden;
+}
+
+.eFTimelineContainerTableRel {
+	margin-top:1px;
+	margin-left:auto; 
+    margin-right:auto;
+	font-size:10px;
+	background-color: #666666;
+
+}
+
+.eFTimelineContainerTableRel th {
+	color: #FFFFFF;
+	height:8px;
+	width:78px;
+	font-weight: normal;
+}
+
+.eFTimelineContainerTableRel td {
+	height:58px;
+	width:78px;
+	background-color:#FFFFFF;
+
+}
+
+#eFTimelineContainerTableINRel {
+	width:18px;
+	height:14px;
+	font-size: 6px;
+	cursor: pointer;
+}
+
+#efTLCINRel {
+	border-radius: 5px;
+}
+#efTLCOUTRel {
+	border-radius: 5px;
+}
+#eFTimelineContainerTableOUTRel {
+	width:18px;
+	height:14px;
+	font-size: 6px;
+	cursor: pointer;
+}
+
+#eFTimelineContainerTableActualRel {
+	width:34px;
+	font-size: 9px;
+	background-color: #CC9933;
+}
+
+#eFTimelineContainerAFrameRel {
+	border-color: #FF0000;
+}
+
+/* ########## /Timeline Container ######### */
+
+/* ########## Movie Controls ######### */
+
+#eFMovieControlsContainerRel {
+	position: absolute;
+   	height:27px;
+    bottom:90px;
+    right: 0;
+    width:404px;
+	/*background-color: #CCCCCC;*/
+	background-image: url(../_img/lightblue-square-30-percent.png);
+	border-left: 2px solid #999999;
+	border-right: 2px solid #999999;
+	overflow:hidden;
+}
+
+#eFMovieControlsContainerSloMoRel {
+	position: absolute;
+   	height:27px;
+    bottom:90px;
+    left: 0;
+    width:98px;
+	/*background-color: #CCCCCC;*/
+	background-image: url(../_img/lightblue-square-30-percent.png);
+	border-right: 2px solid #999999;
+	overflow:hidden;
+}
+
+.efMoviePlaybuttons {
+	float:left;
+	clear:all;
+	width:18px;
+	height:18px;
+	margin-top:5px;
+	margin-left:3px;
+	cursor: pointer;
+	/*background-color: #CCCCFF;*/
+	text-align: center;
+}
+
+.efMoviePlaybuttonsC {
+	padding: 0;
+	float:left;
+	clear:all;
+	width:40px;
+	height:18px;
+	margin-top:5px;
+	margin-left:3px;
+	cursor: pointer;
+	/*background-color: #CCCCFF;*/
+	text-align: center;
+}
+
+#eFSloMoSpeedChooserRel {
+	margin:0;
+	padding: 0;
+	width:40px;
+	height:18px;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+#efMoviePlaybuttonsPlayPauseBRel {
+background: url('../_img/Player_Buttons_72.png') no-repeat -18px 0;	
+}
+
+
+#efMoviePlaybuttonsPlayPauseFRel {
+background: url('../_img/Player_Buttons_72.png') no-repeat -36px 0;	
+}
+
+#efMoviePlaybuttonsStartRel {
+background: url('../_img/Player_Buttons_72.png') no-repeat -90px 0;	
+}
+
+
+#efMoviePlaybuttonsEndRel {
+background: url('../_img/Player_Buttons_72.png') no-repeat -108px 0;	
+}
+
+#efMoviePlaybuttonsSloMoBRel {
+background: url('../_img/Player_Buttons_72.png') no-repeat -54px 0;	
+}
+
+
+#efMoviePlaybuttonsSloMoFRel {
+background: url('../_img/Player_Buttons_72.png') no-repeat -72px 0;	
+}
+
+.efMovieSpeedContainers {
+	background-color: #FFFFFF;
+	font-size: 12px;
+	line-height: 1.6;
+}
+
+.efMovieSpeedContainersActive {
+	background-color: #6699CC;
+	color: #FFFFFF;
+}
+
+
+/* ########## /Movie Controls ######### */
+
+#eFMovieRangeInputContainerRel {
+	position: absolute;
+   	height:27px;
+    bottom:90px;
+    right: 406px;
+    left: 100px;
+	/*background-color: #CCCCCC;*/
+	background-image: url(../_img/lightblue-square-30-percent.png);
+	overflow:hidden;
+	border-right: 2px solid #999999;
+}
+/*********************************************************/
+/* ########## Range Input ######### */
+/*********************************************************/
+/* slider root element */
+.slider { 
+	background:#999999 url('../_img/h30.png') repeat-x 0 0; 
+	height:4px; 
+	position:relative; 
+	cursor:pointer;
+	border:1px solid #333;
+	width:77%;
+	float:left; 
+	clear:right;
+	margin-top:10px;
+	margin-left:10px;
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	-moz-box-shadow:inset 0 0 8px #000;
+}
+
+/* progress bar (enabled with progress: true) */
+.progress {
+	height:4px; 
+	background-color:#3C72E6; 
+	/* display:none; */
+	opacity:0.6;
+}
+
+/* drag handle */
+.handle { 
+	background:#fff url('../_img/h30.png') repeat-x 0 0; 
+	height:12px;
+	width:12px;
+	top:-6px;
+	position:absolute; 
+	display:block; 
+	margin-top:1px;
+	border:1px solid #000;
+	cursor:move;
+	-moz-box-shadow:0 0 3px #000;
+	-webkit-box-shadow:0 0 3px #000;
+	-moz-border-radius:14px;
+	-webkit-border-radius:14px;
+	border-radius:14px;
+
+}
+
+/* the input field */
+.range {
+	border:1px inset #ddd;
+	float:left;
+	font-size:12px;
+	margin:4px 0 0 15px;
+	padding:1px 0;
+	text-align:center;
+	width:45px;
+	-moz-border-radius:9px; 
+	-webkit-border-radius:9px;
+	border-radius:9px; 		
+}
+
+
+
+
+
+
+/*********************************************************/
+/* ########## /Range Input ######### */
+/*********************************************************/
+

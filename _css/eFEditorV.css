@@ -1,0 +1,2079 @@
+/* ###################################### EditorV ###################################### */
+
+body {
+	margin:0;
+	padding:0;
+	border:0;			/* JIC um Rahmen in ältern IE Versionen zu beseitigen */
+	width:100%;
+	background:#fff;
+	min-width:1920px;		/* Minimum Weite: HD */
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	font-size: 12px;
+}
+
+/* ################# Login ################## */
+
+body.login {
+    height:0;
+    overflow: hidden;
+}
+.login-box {
+    color: #222;
+    height: 260px;
+    margin: 0 auto;
+    margin-top: -135px;
+    margin-left: -160px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width:320px;
+}
+.login-box-top {
+    padding:20px;
+}
+.login-box .logo {
+    background: transparent url(../_img/eFLogo.png) no-repeat center center;
+    display: block;
+    height: 30px;
+    margin: 0 auto;
+    text-indent: -9999em;
+    width: 90px;
+}
+.login-box form {
+    margin:10px 0 20px 0;
+}
+.login-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+.login-box .user-pass {
+    margin-bottom: 20px;
+}
+.login-box #username, .login-box #password {
+    background: #FAFAFA;
+    border-color: #000000;
+    padding: 10px 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 47px;
+    outline: none;
+}
+.login-box #username {
+    border-radius: 0 10px 0 0;
+}
+.login-box #password {
+    border-radius: 0 0 0 10px;
+    border-top-width: 0;
+}
+.login-box .clearfix {
+	text-align: center;
+}
+/* ################# /Login ################## */
+
+/*********************************************************/
+/* ########## Previews  ######### */
+/*********************************************************/
+
+#eFPreviewsContainer {
+	position: absolute;
+    top: 38px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	margin:0;
+	padding:0;
+	background-image: url(../_img/black-square-80-percent.png);
+	z-index: 100000000;
+	display:none;
+
+}
+
+#eFPreviewsContainerClose {
+	position: absolute;
+	right:10px;
+	bottom:10px;
+	margin:4px;
+	width: 24px;
+	height: 24px;
+	border: 2px solid #6C6C6C;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 1.4;
+	cursor: pointer;
+	background-image: url(../_img/white-square-10-percent.png);
+	color: #FFFFFF;
+
+}
+
+.eFPreviewsContainerSelect {
+	
+	margin:4px;
+	width: 24px;
+	height: 24px;
+	border: 2px solid #6C6C6C;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 1.4;
+	cursor: pointer;
+	background-image: url(../_img/white-square-10-percent.png);
+	color: #FFFFFF;
+}
+
+#eFPreviewsContainerP1 {
+	position: absolute;
+	right:10px;
+	top:10px;
+}
+
+#eFPreviewsContainerP2 {
+	position: absolute;
+	right:10px;
+	top:44px;
+}
+
+#eFPreviewsContainerContent {
+	position: absolute;
+	height:700px;
+	width:900px;
+	margin:0;
+	padding:0;
+	background-image: url(../_img/white-square-10-percent.png);
+	display:none;
+}
+
+/*********************************************************/
+
+/*********************************************************/
+/* ########## Resources  ######### */
+/*********************************************************/
+
+#eFResourcesContainer {
+	position: absolute;
+    top: 38px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	margin:0;
+	padding:0;
+	background-image: url(../_img/black-square-80-percent.png);
+	z-index: 100000000;
+	display:none;
+
+}
+
+#eFResourcesContainerClose {
+	position: absolute;
+	right:10px;
+	bottom:10px;
+	margin:4px;
+	width: 24px;
+	height: 24px;
+	border: 2px solid #6C6C6C;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 1.4;
+	cursor: pointer;
+	background-image: url(../_img/white-square-10-percent.png);
+	color: #FFFFFF;
+
+}
+
+#eFResourcesContainerContent {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	bottom: 45px;
+	right: 14px;
+	/*background-image: url(../_img/white-square-30-percent.png);*/
+}
+
+#eFResourcesPreviewWindowContainer {
+	position: absolute;
+    top: 58px;
+    right: 40%;
+    bottom: 137px;
+    left: 30px;
+	margin:0;
+	padding:0;
+	background-image: url(../_img/black-square-80-percent.png);
+	border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+	z-index: 500000000;
+	display:none;
+
+}
+
+#eFResourcesPreviewWindowContainerClose {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	margin: 2px;
+	width: 14px;
+	height: 14px;
+	border: 2px solid #6C6C6C;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 1.4;
+	cursor: pointer;
+	background-image: url(../_img/white-square-10-percent.png);
+	color: #FFFFFF;
+}
+
+#eFResourcesPreviewWindowContainerContent {
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	margin:0;
+	padding:0;
+	border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+}
+
+#eFResourcesPreviewWindowContainerContent iframe {
+	position: absolute;
+	top: 30px;
+    right: 15px;
+    left: 15px;
+    bottom: 15px;
+    height: 92%;
+    width:97%;
+	margin:0;
+	border: 0;
+}
+
+#eFResourcesPreviewWindowContainerTitle {
+	position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+	margin:0;
+	height:25px;
+	padding:4px;
+	border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+	color: white;
+	font-size: 14px;
+	font-weight: bolder;
+	text-align: center;
+}
+#eFResearchLog {
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    -moz-box-shadow: 4px 2px 6px 3px #666666;
+    -webkit-box-shadow: 4px 2px 6px 3px #666666;
+    box-shadow: 4px 2px 6px 3px #666666;
+}
+
+#logClose {
+	position: absolute;
+	right:2px;
+	top:2px;
+	margin:4px;
+	width: 24px;
+	height: 24px;
+	border: 2px solid #6C6C6C;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 1.4;
+	cursor: pointer;
+	color: #6C6C6C;
+}
+
+
+
+/*********************************************************/
+
+/*********************************************************/
+/* ########## eFReSources & Relations From Movie  ######### */
+/*********************************************************/
+
+#eFReSourcesFromMovieContainer {
+	position: absolute;
+    top: 38px;
+    right: 0;
+    bottom: 117px;
+    left: 0;
+	margin:0;
+	padding:0;
+	z-index: 10000000;
+	display:none;
+}
+
+#eFReSourcesFromMovieContainerContent {
+	position: absolute;
+    top: 0;
+    right: 600px;
+    bottom: 0;
+    left: 0;
+	margin:0;
+	padding:0;
+	background-image: url(../_img/black-square-80-percent.png);
+}
+#eFReSourcesFromMovieContainerTR {
+	position: absolute;
+    top: 0;
+    right:0;
+    width: 600px;
+    height: 60px;
+	margin:0;
+	padding:0;
+	background-image: url(../_img/black-square-80-percent.png);
+}
+#eFReSourcesFromMovieContainerSeeThrough {
+	position: absolute;
+    top: 204px;
+    right:0;
+    width: 600px;
+    height: 296px;
+	margin:0;
+	padding:0;
+}
+#eFReSourcesFromMovieContainerBR {
+	position: absolute;
+    top: 320px;
+    right:0;
+    width: 600px;
+    bottom: 0;
+	margin:0;
+	padding:0;
+	background-image: url(../_img/black-square-80-percent.png);
+}
+#eFReSourcesFromMovieContainerClose {
+	position: absolute;
+	right:10px;
+	bottom:10px;
+	margin:4px;
+	width: 24px;
+	height: 24px;
+	border: 2px solid #6C6C6C;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 1.4;
+	cursor: pointer;
+	background-image: url(../_img/white-square-10-percent.png);
+	color: #FFFFFF;
+
+}
+
+/**Relations**/
+
+#eFReSourcesFromMovieContainerBR table {
+	width: 100%;
+}
+
+#eFReSourcesFromMovieContainerBR table tr {
+	color: white;
+	font-weight: bold;
+}
+
+#eFRelationsInterfaceTitle {
+	position: absolute;
+	top: 10px;
+	left:0;
+	right:0;
+	font-size: 28px;
+	color:white;
+	text-align: center;
+	
+
+}
+
+#eFRelationsInterfaceChoice {
+	position: absolute;
+	top: 18px;
+	left:0;
+	right:0;
+	font-size: 20px;
+	color:white;
+	text-align: center;
+}
+
+#eFRelationsInterfaceChoice span {
+	padding:5px;
+	margin:0px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 1.4;
+	cursor: pointer;
+	background-image: url(../_img/white-square-30-percent.png);
+	border:1px solid white;
+}
+
+#eFRelationsInterfaceChoice span.Movie-Relation {
+	border-bottom-left-radius: 17px;
+}
+
+#eFRelationsInterfaceChoice span.Image-Relation {
+	border-top-right-radius: 17px;
+}
+
+#eFRelationsInterfaceChoice span:hover {
+	background-image: url(../_img/white-square-60-percent.png);
+}
+
+#eFRelationsInterfaceChoice span.selected {
+	background-image: url(../_img/white-square-60-percent.png);
+}
+
+#eFRelationsInterfaceRelationType {
+	position: absolute;
+	top: 5px;
+	left:5px;
+	right:0;
+	font-size: 14px;
+	color:white;
+	text-align: left;
+
+}
+
+#eFRelationsInterfaceRelationType select {
+	width: 240px;
+
+}
+
+#eFRelationsInterfaceRelationIdentifier {
+	position: absolute;
+	top: 120px;
+	left:0;
+	right:0;
+	font-size: 14px;
+	color:white;
+	text-align: center;
+}
+#eFRelationsInterfaceRelationIdentifier input {
+	width:206px;
+}
+
+#eFRelationsInterfaceRelationFromTo {
+	position: absolute;
+	top: 150px;
+	left:0;
+	right:0;
+	font-size: 14px;
+	color:white;
+	text-align: center;
+}
+
+#eFRelationsInterfaceRelationOK {
+	position: absolute;
+	top: 180px;
+	left:0;
+	right:0;
+	font-size: 12px;
+	font-weight: bolder;
+	text-align: center;
+}
+#eFRelationsInterfaceRelationOKButton {
+	font-size: 12px;
+	font-weight: bolder;
+	text-align: center;
+	padding: 2px 10px 2px 10px;
+	color:white;
+	background-image: url(../_img/white-square-30-percent.png);
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border:1px solid white;
+	cursor: pointer;
+}
+
+#eFRelationsInterfaceRelationOKButton:hover {
+	background-image: url(../_img/white-square-50-percent.png);
+}
+
+#eFRelMovieTimelineB {
+	position: absolute;
+	z-index: 40001000;
+	left: 0;
+	bottom: 117px;
+	right: 194px;
+	height: 117px;
+	background-color: silver;
+	display: none;
+
+}
+
+/**Sources in Movie**/
+
+#eFResRelIMFormContainer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	color: white;
+}
+
+#eFResRelIMFormContainerTitle {
+	font-size: 18px;
+	font-weight: bolder;
+	margin: 4px 0px 3px 0px;
+	padding: 0;
+	text-align: center;
+}
+.eFResRelIMFormContainerLine {
+	font-size: 12px;
+	font-weight: bolder;
+	margin: 3px 0px 3px 0px;
+
+}
+
+.eFResRelIMFormContainerLineKey {
+	display: inline-block;
+	width:25%;
+	text-align: right;
+	margin-right: 4px;
+}
+
+.eFResRelIMFormContainerLineValue {
+	display: inline-block;
+	width:74%;
+	text-align: left;
+}
+
+.eFResRelIMFormContainerLineValue input {
+	height: 12px;
+	width:70%;
+}
+
+#eFResRelIMFormContainerSet {
+	margin-top: 6px;
+	text-align: center;
+}
+
+.eFResRelIMOKButton {
+	margin: 0 39% 4px 39%;
+	padding: 2px 10px 2px 10px;
+	color:white;
+	background-image: url(../_img/white-square-30-percent.png);
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+	cursor: pointer;
+	font-weight: bolder;
+}
+
+.eFResRelIMOKButton:active {
+	margin: 4px 38.9% 0 39.2%;
+}
+
+/*********************************************************/
+
+/*********************************************************/
+/* ########## Config  ######### */
+/*********************************************************/
+
+#eFConfigContainer {
+	position: absolute;
+    top: 38px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	margin:0;
+	padding:0;
+	background-image: url(../_img/black-square-80-percent.png);
+	z-index: 100000000;
+	display:none;
+
+}
+
+#eFConfigContainerClose {
+	position: absolute;
+	right:10px;
+	bottom:10px;
+	margin:4px;
+	width: 24px;
+	height: 24px;
+	border: 2px solid #6C6C6C;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 1.4;
+	cursor: pointer;
+	background-image: url(../_img/white-square-10-percent.png);
+	color: #FFFFFF;
+
+}
+
+#eFConfigContainerContent {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	bottom: 20px;
+	right: 20px;
+	/* background-image: url(../_img/white-square-30-percent.png); */
+}
+
+/*********************************************************/
+
+#eFDelQuestion {
+	position:absolute;
+	z-index:10000;
+	background-color: #FF0000;
+	display: none;
+}
+
+.eFDelButtonText {
+	font-size:13px;
+	font-weight: bold;
+	text-align: center;
+	color: #FFFFFF;
+	top:auto;
+	bottom:auto;
+	height:15px;
+}
+
+.eFDelButton {
+	border-bottom-left-radius: 6px;
+	border-top-right-radius: 6px;
+	padding:1px 5px 1px 5px;
+	background-color: #FFFFFF;
+	color: #000000;
+	border: 1px solid #999999;
+	cursor:pointer;
+	margin-left:5px;
+	font-size: 10px;
+}
+
+#eFHeader {
+	position:absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 38px;
+	background-color: #CCCCCC;
+	/*border-bottom: 1px solid #9A9A9A;*/
+}
+
+#eFLogoOpen {
+	position: absolute;
+	top:3px;
+	right:3px;
+	border-radius: 17px;
+	width:28px;
+	height:28px;
+	background:#FFFFFF url('../_img/eFLogo_L.png') repeat-x -3px -4px;
+	border: 2px solid #6C6C6C;
+	cursor:s-resize;
+	z-index: 1000;
+}
+
+
+.eFOpen {
+	position: relative;
+	float: right;
+	top:5px;
+	margin-left: 10px;
+	border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+	width:90px;
+	height:28px;
+	text-align: center;
+	font-size:14px;
+	font-weight: bold;
+	line-height: 1.9;
+	text-decoration: none;
+	color: #CCCCCC;
+	cursor:s-resize;
+	z-index: 300;
+	background-color: #999999;
+}
+
+#eFOpenArea {
+	position: absolute;
+	right:50px;
+}
+
+
+#eFLogout {
+	position: absolute;
+	top:5px;
+	left:3px;
+	border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+	width:75px;
+	height:28px;
+	text-align: center;
+	
+	cursor:s-resize;
+	z-index: 1000;
+	background-color: #999999;
+}
+
+#eFLogout a {
+	font-size:14px;
+	font-weight: bold;
+	line-height: 1.9;
+	text-decoration: none;
+	color: #CCCCCC;
+}
+
+#eFCurrUser {
+	position: absolute;
+	top:5px;
+	left:85px;
+	border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+	width:380px;
+	height:28px;
+	font-size:14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.9;
+	background-color: #CCCCCC;
+	color: #666666;
+
+	cursor:s-resize;
+	z-index: 1000;
+}
+
+#contentConatiner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: none;
+
+}
+#eFMovieSelectContainer {
+	position:absolute;
+    top:3px;
+    bottom: 120px;
+    right:3px;
+    width:200px;
+	background-color: #E3E3E3;
+	border: 2px solid #6C6C6C;
+	border-bottom-left-radius: 17px;
+   	border-top-right-radius: 17px;
+	z-index: 999;
+	display:none;
+}
+
+#eFMoviesSelectListContainer {
+	position:absolute;
+    top:30px;
+    bottom: 5px;
+    right:3px;
+    left:5px;
+    overflow:auto;
+}
+
+.eFMovieSelectC {
+	background-color: #FFFFFF;
+	cursor: pointer;
+
+}
+
+.eFMovieSelectCSelected {
+	background-color: #6699CC;
+	color: #FFFFFF;
+
+}
+
+#eFMovieSelectContainer table {
+	position: relative;
+	margin-top:10px;
+	margin-right:5px;
+	width:99%;
+
+
+}
+
+#eFMovieSelectContainer table td {
+	height:20px;
+	padding-left:3px;
+	padding-right: 3px;
+	font-size: 10px;
+	font-weight: bold;
+
+}
+
+.eFMoviesHeadline {
+	font-size:14px;
+	font-weight: bold;
+	color:#000000;
+	border-bottom: 1px solid #999999;
+	padding:3px;
+	margin-left:4px;
+	margin-right:4px;
+}
+
+
+
+#efMovieControllVars {
+display: none;
+}
+
+/*********************************************************/
+/* ########## Movie Container  ######### */
+/*********************************************************/
+
+#eFMovieContainer {
+	position: absolute;
+    top: 39px;
+    right: 600px;
+    bottom: 117px;
+    left: 0;
+	margin:0;
+	padding:0;
+	/*background-color: #99CCFF;*/
+}
+
+/*********************************************************/
+
+/*********************************************************/
+/* ########## Annotations Container  ######### */
+/*********************************************************/
+
+#eFMovieAnnotationsContainer {
+	position:absolute;
+    top:39px;
+    bottom:117px;
+    right:0;
+    width:600px;
+
+	/*background-color: #CC99FF;
+	border-left: 2px solid #999999;*/
+}
+#eFMovieAnnotationsContainerMovieID {
+	position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:35px;
+
+	/*background-color: #00CC00;
+	border-left: 2px solid #999999;*/
+}
+
+#eFMovieMovieID {
+	position:absolute;
+	left: 3px;
+	top: 3px;
+	right: 3px;
+	bottom: 3px;
+	padding: 6px 4px 4px 4px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	color: #FFFFFF;
+   	border-top-right-radius: 20px;
+	background-color: #6699CC;
+}
+#eFMovieMovieIDopenAnotSelect {
+	position: absolute;
+	left: 523px;
+	top: 3px;
+	right: 3px;
+	bottom: 3px;
+	padding: 6px 4px 4px 4px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	color: #FFFFFF;
+   	border-top-right-radius: 20px;
+	background-color: #A7CAFF;
+	cursor: pointer;
+}
+
+#eFMovieAnnotationsContainerScenarioSelect {
+	position:absolute;
+    top:30px;
+    left:3px;
+    right:3px;
+    height:169px;
+
+	/*background-color: #FFCCFF;
+	/*border-left: 2px solid #999999;*/
+
+
+	display:none;
+	z-index: 1000000000;
+	background-image: url(../_img/lightblue-square-80-percent.png);
+}
+
+#eFMovieAnnotationsContainerScenarioSelectM {
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 36px;
+	/*background-color: #CCCC00;*/
+	
+
+}
+
+.eFSCMButton {
+	margin:4px;
+	width: 25px;
+	height: 25px;
+	border: 2px solid #6C6C6C;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 1.4;
+	cursor: w-resize;
+}
+
+.eFSCDButton {
+	margin:4px;
+	width: 25px;
+	height: 25px;
+	border: 2px dotted #6C6C6C;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 1.4;
+	cursor: w-resize;
+}
+
+.eFSCDButtonBG {
+	background-color: #6699CC;
+	color: #FFFFFF;
+}
+
+.eFMovieAnnotationsContainerScenarioSelectS {
+	position: absolute;
+	right: 36px;
+	top: 0;
+	bottom: 0;
+	width: 36px;
+	/*background-color: #CC00CC;*/
+	display: none;
+
+}
+
+.eFMovieAnnotationsContainerScenarioSelectD {
+	position: absolute;
+	right: 72px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	/*background-color: #99FFFF;*/
+	display: none;
+}
+
+.eFSCDetail {
+	float:right;
+	width: 85px;
+	height: 40px;
+	margin: 3px;
+	padding: 6px 3px 3px 3px;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+   	border-bottom-left-radius: 10px;
+   	border-top-right-radius: 10px;
+	background-color: #69C;
+	cursor: s-resize;
+}
+
+#eFMovieAnnotationsContainerINOUTContainer {
+	position:absolute;
+    top:27px;
+    left:0;
+    right:0;
+    height:30px;
+
+	/*background-color: #CCCCFF;
+	border-left: 2px solid #999999;*/
+}
+
+#eFMovieAnnotationsContainerINOUT {
+
+    left:auto;
+    right:auto;
+	margin: 3px;
+	padding: 1px 1px 1px 1px;
+	border-bottom-left-radius: 17px;
+
+	background-color: #CACACA;
+	text-align: center;
+	
+}
+#eFMovieAnnotationsContainerINOUTPlay {
+	position: absolute;
+	right:17px;
+	top:7px;
+	width:18px;
+	height: 18px;
+	background: url('../_img/Player_Buttons_72.png') no-repeat -36px 0;
+	
+}
+#eFAFormIN {
+	margin: 3px 3px 3px 3px;
+	height:14px;
+	border: 1px solid #CCCCCC;
+}
+
+#eFAFormOUT {
+	margin: 3px 3px 3px 3px;
+	height:14px;
+	border: 1px solid #CCCCCC;
+}
+
+#eFAFormIN:focus {
+    outline:0;
+}
+#eFAFormOUT:focus {
+    outline:0;
+}
+#eFAFormINGET {
+	cursor: pointer;
+	font-weight: bold;
+}
+
+#eFAFormOUTGET {
+	cursor:pointer;
+	font-weight: bold;
+}
+
+#eFMovieAnnotationsContainerForms {
+	position:absolute;
+    top:59px;
+    left:0;
+    right:0;
+    height:266px;
+    overflow: auto;
+
+	/*background-color: #66CCCC;
+	border-left: 2px solid #999999;*/
+}
+
+#eFMovieAnnotationsContainerFormsPop {
+	position: absolute;
+	height:200px;
+	background-color: #FFCC99;
+	border: 1px solid #CCCCCC;
+	display: none;
+	z-index: 1000;
+}
+
+#eFMovieAnnotationsContainerFormsPopContent {
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #FFFFFF;
+	overflow: auto;
+}
+
+
+#eFMovieAnnotationsContainerFormsPopClose {
+	position: absolute;
+	top:0;
+	right: 0;
+	width: 30px;
+	height:10px;
+	background-color: #CCCCCC;
+	border-bottom-left-radius: 8px;
+	font-size: 8px;
+	cursor: pointer;
+	text-align: center;
+	z-index: 2000;
+}
+
+#eFMovieAnnotationsContainerFormsPopContent table.eFMovieAnnotationsContainerFormsPopContentTable {
+	width:100%
+}
+
+.eFTipTabCell {
+	width:50%;
+	height:15px;
+	background-color: #99CCFF;
+	padding:3px;
+	text-align: left;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.eFTipTabCellBG1 {
+	background-color: #CCCCFF;
+}
+.eFTipTabCellBG2 {
+	background-color: #9999CC;
+}
+.eFTipTabCellBG3 {
+	background-color: #99CCFF;
+}
+.eFTipTabCellBG4 {
+	background-color: #6699CC;
+}
+.eFTipTabCellBG5 {
+	background-color: #99CCCC;
+}
+.eFTipTabCellBG6 {
+	background-color: #99CC99;
+}
+
+#eFTipHelper {
+	position:absolute;
+	top: 20px;
+	left: 20px;
+	right: 20px;
+	bottom:20px;
+	font-size: 12px;
+	font-weight: bold;
+	color:red;
+}
+
+#eFTipOpen {
+	position:absolute;
+	top: 45%;
+	margin-left: 35%;
+	margin-right: 35%;
+	font-size: 12px;
+	font-weight: bold;
+	padding:5px;
+	color:white;
+	border-bottom-left-radius: 17px;
+   	border-top-right-radius: 17px;
+   	border: 1px solid grey;
+   	background-image: url(../_img/black-square-80-percent.png);
+   	cursor: pointer;
+}
+
+#locationPickerMap {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width:100%;
+	height:100%;
+}
+
+.eFTipHelperTimeSelectTable {
+	width:70%;
+	margin:3px 200px 0px 3px;
+	
+}
+
+.eFTipHelperTimeSelectTable td {
+	padding:3px;
+}
+
+.eFTipHelperTimeSelectTable td.eFTipTimeTableLegend {
+	width:80px;
+	padding:3px;
+	height:28px;
+	text-align: right;
+	font-weight: bold;
+	background-color: #CCCCCC;
+}
+
+.eFTipHelperTimeSelectTable td.eFTipTimeTableJJJJ {
+	width:70px;
+	text-align: center;
+	background-color: #99CCFF;
+}
+.eFTipHelperTimeSelectTable td.eFTipTimeTableRS3 {
+	width:227px;
+	text-align: center;
+	background-color: #99CCFF;
+	padding:1px;
+}
+
+.eFTipHelperTimeSelectTable td.eFTipTimeTableOK {
+	text-align: center;
+	background-color: #CCCCCC;
+}
+
+
+#eFMovieAnnotationsContainerForms form {
+	position: relative;
+	margin:3px;
+	padding:5px;
+	/*background-color: #A6C9FF;*/
+	border-bottom-left-radius: 10px;
+   	border-top-right-radius: 10px;
+	
+
+}
+
+.eFNewForm {
+	background-color: #A6C9FF;
+}
+
+.eFEditForm {
+	background-color: #FF9900;
+}
+
+#eFMovieAnnotationsContainerForms form legend {
+	position:relative;
+	font-size: 10px;
+	font-weight: bold;
+	margin-left: 3px;
+	margin-right: 3px;
+	padding:3px 5px 3px 5px;
+	background-color: #FFFFFF;
+	border-bottom-left-radius: 10px;
+   	border-top-right-radius: 10px;
+}
+
+.eFFormResetButton {
+	position:absolute;
+	right:27px;
+	top:7px;
+	width:15px;
+	height:15px;
+	background-color: #999999;
+	cursor: pointer;
+	text-align: center;
+	color: #FFFFFF;
+	font-weight: bold;
+	border-radius: 7px;
+	font-size: 13px;
+	line-height: 1.0;
+	display: none;
+}
+
+.eFFormCloseButton {
+	position:absolute;
+	right:7px;
+	top:7px;
+	width:15px;
+	height:15px;
+	background-color: #999999;
+	cursor: pointer;
+	text-align: center;
+	color: #FFFFFF;
+	font-weight: bold;
+	border-radius: 7px;
+	font-size: 13px;
+	line-height: 1.0;
+}
+
+.eFFormSaveButton {
+	position:absolute;
+	right:7px;
+	bottom:7px;
+	width:15px;
+	height:15px;
+	background-color: #999999;
+	cursor: pointer;
+	text-align: center;
+	color: #FFFFFF;
+	font-weight: bold;
+	border-radius: 7px;
+	font-size: 13px;
+	line-height: 1.0;
+}
+
+.eFFormResetButton:hover {
+	background-color: #FFCC33;
+}
+.eFFormCloseButton:hover {
+	background-color: #CC0033;
+}
+
+.eFFormSaveButton:hover {
+	background-color: #009900;
+}
+
+.eFFormInput {
+	position: relative;
+	margin-top: 3px;
+	min-height: 27px;
+	left:0;
+	width:95%;
+	/*background-color: #FFFF00;*/
+
+}
+
+.eFFormInput label {
+	position: relative;
+	left: 0;
+	top: 0;
+	height:11px;
+	font-size: 9px;
+	padding: 2px;
+	background-color: #CCCCCC;
+	border-top-right-radius: 5px;
+}
+
+.eFFormInput input {
+	position: relative;
+	left: 0;
+	top: 0;
+	height:14px;
+	width: 100%;
+	border: 1px solid #CCCCCC;
+
+}
+
+.eFFormInput textarea {
+	position: relative;
+	left: 0;
+	top: 0;
+	height:28px;
+	width: 100%;
+	border: 1px solid #CCCCCC;
+
+}
+.eFFormInput input:focus {
+    outline:0;
+}
+
+.eFFormInput textarea:focus {
+    outline:0;
+}
+
+.eFhiddenFormVars {
+	display: none;
+}
+
+.AddContent {
+	position:relative;
+	left:8px;
+	width:544px;
+	min-height:100px;
+	display: none;
+	padding:3px;
+	background-color: #FFFFFF;
+	border-bottom-left-radius: 10px;
+   	border-top-right-radius: 10px;
+
+}
+
+
+
+
+#eFMovieAnnotationsContainerANList {
+	position:absolute;
+    top:325px;
+    left:1px;
+    right:0;
+    bottom:0;
+    margin:0;
+    padding:0;
+	overflow: auto;
+	/*background-color: #FFCC00;
+	border-left: 2px solid #999999;*/
+}
+
+#eFMovieAnnotationsContainerANListTitle {
+	position: absolute;
+    left:3px;
+    right:3px;
+	margin-bottom: 3px;
+	padding: 1px 1px 1px 1px;
+	border-bottom-left-radius: 8px;
+	border-top-right-radius: 8px;
+	background-color: #CACACA;
+	text-align: center;
+
+}
+#eFMovieAnnotationsContainerANListFilter {
+	position: absolute;
+	top:18px;
+    left:3px;
+    right:3px;
+    z-index: 100000000000;
+    display: none;
+}
+
+#eFMovieAnnotationsContainerANList table thead {
+	position: fixed;
+	margin-left:-2px;
+	margin-top:-2px;
+	background-color: #FFFFFF;
+	z-index: 500;
+	font-size: 10px;
+}
+#eFMovieAnnotationsContainerANList table thead th {
+	background-color: #CCCCCC;
+	height: 15px;
+}
+
+#eFMovieAnnotationsContainerANList table thead td {
+	background-color: #CCCCCC;
+	height: 15px;
+	font-size: 10px;
+	text-align: center;
+	padding: 1px 5px 1px 3px;
+	
+}
+
+#eFMovieAnnotationsContainerANList table thead input.filter {
+	border: 1px solid #CCCCCC;
+	height: 15px;
+}
+#eFMovieAnnotationsContainerANList table thead input.filter:focus {
+    outline:0;
+}
+
+.eFTabTHIN {
+	width: 35px;
+	padding:3px;
+}
+.eFTabTHOUT {
+	width: 35px;
+	padding:3px;
+}
+.eFTabTHStill {
+	width: 48px;
+	padding:3px;
+}
+.eFTabTHL1 {
+	width: 60px;
+	padding:3px;
+}
+.eFTabTHL2 {
+	width: 60px;
+	padding:3px;
+}
+.eFTabTHL3 {
+	width: 60px;
+	padding:3px;
+}
+.eFTabTHContent {
+	width: 183px;
+	padding:3px;
+}
+.eFTabTHU {
+	width: 20px;
+	padding:3px;
+}
+.eFTabTHE {
+	width: 15px;
+	padding:3px;
+}
+.eFTabTHD {
+	width: 15px;
+	padding:3px;
+}
+
+#eFMovieAnnotationsContainerANList table tbody {
+	position: absolute;
+	top:50px;
+	margin-left:-2px;
+}
+
+/*#eFMovieAnnotationsContainerANList table tbody td {
+	vertical-align: top;
+}*/
+
+/*Klassen für Farbige unterscheidung der Shots in der Tabelle*/
+
+.eFSCSShotNumberClass {
+	background-color: #4B89D0 !important;
+}
+/*/Klassen für Farbige unterscheidung der Shots in der Tabelle*/
+
+.eFTabCellIN {
+	width: 35px;
+	height:15px;
+	background-color: #99CCFF;
+	padding:3px;
+	text-align: right;
+	font-weight: bold;
+	cursor: pointer;
+}
+.eFTabCellOUT {
+	width: 35px;
+	height:15px;
+	background-color: #99CCFF;
+	padding:3px;
+	text-align: right;
+	font-weight: bold;
+	cursor: pointer;
+}
+.eFTabCellStill {
+	width: 48px;
+	height:36px;
+	background-color: #99CCFF;
+	padding:3px;
+	text-align: right;
+	vertical-align: middle;
+	font-weight: bold;
+}
+
+.eFTabCellStill img {
+	display:block;
+	vertical-align: middle;
+	padding:0;
+	margin:0;
+}
+
+.eFTabCellL1 {
+	width: 60px;
+	height:15px;
+	background-color: #99CCFF;
+	padding:3px;
+	text-align: left;
+	font-weight: normal;
+	font-size: 10px;
+}
+.eFTabCellL2 {
+	width: 60px;
+	height:15px;
+	background-color: #99CCFF;
+	padding:3px;
+	text-align: left;
+	font-weight: normal;
+	font-size: 10px;
+}
+.eFTabCellL3 {
+	width: 60px;
+	height:15px;
+	background-color: #99CCFF;
+	padding:3px;
+	text-align: left;
+	font-weight: normal;
+	font-size: 10px;
+}
+.eFTabCellContent {
+	width: 187px;
+	height:15px;
+	background-color: #99CCFF;
+	padding:3px;
+	text-align: left;
+	font-weight: normal;
+	font-size: 10px;
+}
+
+.eFTabCellUser {
+	width: 20px;
+	height:15px;
+	background-color: #99CCFF;
+	padding:3px;
+	text-align: center;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.eFTabCellEdit {
+	width: 15px;
+	height:15px;
+	background-color: #99CCFF;
+	padding:3px;
+	text-align: center;
+	font-weight: normal;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.eFTabCellDelete {
+	width: 15px;
+	height:15px;
+	background-color: #99CCFF;
+	padding:3px;
+	text-align: center;
+	font-weight: normal;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#eFMovieAnnotationsEditBOOL {
+	display: none;
+}
+
+
+
+
+/*********************************************************/
+
+/* ########## Timecodes ######### */
+
+#eFMovieTimecodesContainer {
+	position:absolute;
+    bottom:0;
+    right:0;
+    width:194px;
+    Height:117px;
+	background-color: #666666;
+	/*border-left: 2px solid #999999;*/
+}
+
+.eFTimecodesHeadline {
+	height:22px;
+	padding-top:5px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	color: #666666;
+	background-color: #CCCCCC;
+}
+
+#eFMovieTimecodesContainer table {
+	/*border-collapse:collapse;*/
+	border:2px solid #FFFFFF;
+	border-spacing:0;
+	border-style:none;
+	position:relative;
+	margin:0;
+	padding:0;
+	left:5px;
+	top:3px;
+	width:96%;
+	height: 85px;
+	/*background-color:#FFFF00;*/
+	/*border: 1px solid grey;*/
+	font-size:10px
+	
+
+
+}
+
+#eFMovieTimecodesContainer table td {
+	/*background-color:#FFFFFF;
+	border: 2px solid #FFFFFF;*/
+	text-align: center;
+	width:50%;
+	color: #FFFFFF;
+	font-weight: bold;
+	padding: 0 0 3px 0;
+}
+
+/*#eFMovieTimecodesContainer table th {
+	background-color:#6699CC;
+	color: #FFFFFF;
+	border: 2px solid #FFFFFF;
+	text-align: center;
+	width:50%;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+}*/
+
+.eFMovieTimecodesContainerHeads {
+	padding-top:0px;
+	padding-bottom:0px;
+	margin-left: 2px;
+	margin-right: 2px;
+	background-color:#CCCCCC;
+	color: #666666;
+	border-top-right-radius: 9px;
+	border-bottom-left-radius: 9px;
+}
+
+/* ########## /Timecodes ######### */
+
+/* ########## Timeline Container ######### */
+#eFTimelineContainer {
+	position: absolute;
+   	height:90px;
+    right: 194px;
+    bottom: 0;
+    left: 0;
+	background-color: #666666;
+	overflow:hidden;
+}
+
+.eFTimelineContainerTable {
+	margin-top:1px;
+	margin-left:auto; 
+    margin-right:auto;
+	font-size:10px;
+	background-color: #666666;
+
+}
+
+.eFTimelineContainerTable th {
+	color: #FFFFFF;
+	height:8px;
+	width:78px;
+	font-weight: normal;
+}
+
+.eFTimelineContainerTable td {
+	height:58px;
+	width:78px;
+	background-color:#FFFFFF;
+
+}
+
+/*
+#eFTimelineContainerTableFrameNumbers th {
+	cursor: ne-resize;
+}
+*/
+
+#eFTimelineContainerTableIN {
+	width:18px;
+	height:14px;
+	font-size: 6px;
+	cursor: pointer;
+}
+
+#efTLCIN {
+	border-radius: 5px;
+}
+#efTLCOUT {
+	border-radius: 5px;
+}
+#eFTimelineContainerTableOUT {
+	width:18px;
+	height:14px;
+	font-size: 6px;
+	cursor: pointer;
+}
+
+#eFTimelineContainerTableActual {
+	width:34px;
+	font-size: 9px;
+	background-color: #CC9933;
+}
+
+#eFTimelineContainerAFrame {
+	border-color: #FF0000;
+}
+
+/* ########## /Timeline Container ######### */
+
+/* ########## Movie Controls ######### */
+
+#eFMovieControlsContainer {
+	position: absolute;
+   	height:27px;
+    bottom:90px;
+    right: 194px;
+    width:404px;
+	background-color: #CCCCCC;
+	border-left: 2px solid #999999;
+	border-right: 2px solid #999999;
+	overflow:hidden;
+}
+
+#eFMovieControlsContainerSloMo {
+	position: absolute;
+   	height:27px;
+    bottom:90px;
+    left: 0;
+    width:98px;
+	background-color: #CCCCCC;
+	border-right: 2px solid #999999;
+	overflow:hidden;
+}
+
+.efMoviePlaybuttons {
+	float:left;
+	clear:all;
+	width:18px;
+	height:18px;
+	margin-top:5px;
+	margin-left:3px;
+	cursor: pointer;
+	/*background-color: #CCCCFF;*/
+	text-align: center;
+}
+
+.efMoviePlaybuttonsC {
+	padding: 0;
+	float:left;
+	clear:all;
+	width:40px;
+	height:18px;
+	margin-top:5px;
+	margin-left:3px;
+	cursor: pointer;
+	/*background-color: #CCCCFF;*/
+	text-align: center;
+}
+
+#eFSloMoSpeedChooser {
+	margin:0;
+	padding: 0;
+	width:40px;
+	height:18px;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+#efMoviePlaybuttonsPlayPauseB {
+background: url('../_img/Player_Buttons_72.png') no-repeat -18px 0;	
+}
+
+
+#efMoviePlaybuttonsPlayPauseF {
+background: url('../_img/Player_Buttons_72.png') no-repeat -36px 0;	
+}
+
+#efMoviePlaybuttonsStart {
+background: url('../_img/Player_Buttons_72.png') no-repeat -90px 0;	
+}
+
+
+#efMoviePlaybuttonsEnd {
+background: url('../_img/Player_Buttons_72.png') no-repeat -108px 0;	
+}
+
+#efMoviePlaybuttonsSloMoB {
+background: url('../_img/Player_Buttons_72.png') no-repeat -54px 0;	
+}
+
+
+#efMoviePlaybuttonsSloMoF {
+background: url('../_img/Player_Buttons_72.png') no-repeat -72px 0;	
+}
+
+.efMovieSpeedContainers {
+	background-color: #FFFFFF;
+	font-size: 12px;
+	line-height: 1.6;
+}
+
+.efMovieSpeedContainersActive {
+	background-color: #6699CC;
+	color: #FFFFFF;
+}
+
+
+/* ########## /Movie Controls ######### */
+
+#eFMovieRangeInputContainer {
+	position: absolute;
+   	height:27px;
+    bottom:90px;
+    right: 600px;
+    left: 100px;
+	background-color: #CCCCCC;
+	overflow:hidden;
+	border-right: 2px solid #999999;
+}
+/*********************************************************/
+/* ########## Range Input ######### */
+/*********************************************************/
+/* slider root element */
+.slider { 
+	background:#999999 url('../_img/h30.png') repeat-x 0 0; 
+	height:4px; 
+	position:relative; 
+	cursor:pointer;
+	border:1px solid #333;
+	width:77%;
+	float:left; 
+	clear:right;
+	margin-top:10px;
+	margin-left:10px;
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	-moz-box-shadow:inset 0 0 8px #000;
+}
+
+/* progress bar (enabled with progress: true) */
+.progress {
+	height:4px; 
+	background-color:#3C72E6; 
+	/* display:none; */
+	opacity:0.6;
+}
+
+/* drag handle */
+.handle { 
+	background:#fff url('../_img/h30.png') repeat-x 0 0; 
+	height:12px;
+	width:12px;
+	top:-6px;
+	position:absolute; 
+	display:block; 
+	margin-top:1px;
+	border:1px solid #000;
+	cursor:move;
+	-moz-box-shadow:0 0 3px #000;
+	-webkit-box-shadow:0 0 3px #000;
+	-moz-border-radius:14px;
+	-webkit-border-radius:14px;
+	border-radius:14px;
+
+}
+
+/* the input field */
+.range {
+	border:1px inset #ddd;
+	float:left;
+	font-size:12px;
+	margin:4px 0 0 5px;
+	padding:1px 0;
+	text-align:center;
+	width:45px;
+	-moz-border-radius:9px; 
+	-webkit-border-radius:9px;
+	border-radius:9px; 		
+}
+
+
+
+
+
+
+/*********************************************************/
+/* ########## /Range Input ######### */
+/*********************************************************/
+
+
+/* ###################################### /EditorV ###################################### */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************************************************/
+/* ########## Annotations ######### */
+/*********************************************************/
+
+
+#eFMovieAnnotationsNewContainer {
+	position:absolute;
+    right:194px;
+    width:300px;
+    bottom:100px;
+    height:280px;
+	/*border-left: 2px solid #999999;*/
+}
+
+
+
+#eFMovieAnnotationsContainerList {
+	position:absolute;
+    right:0;
+	top:20px;
+    bottom:15px;
+    left:0;
+    overflow:auto;
+}
+
+#eFMovieAnnotationsContainerList .eFATable {
+	margin-top:3px;
+	margin-left:3px; 
+    width:294px;
+	font-size:11px;
+	background-color: #FFFFFF;
+}
+
+#eFMovieAnnotationsContainerList .eFATableDelRow {
+	background-color: red;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+
+.eFATableDelRowSPAN {
+	font-size:9px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+#eFMovieAnnotationsContainerList .eFATable thead {
+	background-color: #CCCCFF;
+}
+
+#eFMovieAnnotationsContainerList .eFATable .eFAShotNumber {
+	background-color: #99CCFF;
+}
+
+#eFMovieAnnotationsContainerList .eFATable .eFAShotType {
+	background-color: #99CC99;
+}
+
+#eFMovieAnnotationsContainerList .eFATable .eFAShotAN {
+	background-color: #FF9933;
+}
+
+#eFMovieAnnotationsContainerList .eFATable .ATANNOTSPAN {
+	font-size: 9px;
+	max-width: 139px;
+}
+
+#eFMovieAnnotationsNewFormContainer {
+	font-size: 12px;
+	padding:5px;
+	background-color: #CCCCCC;
+	margin:3px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+#eFMovieAnnotationsNewFormContainerWarning {
+	position: absolute;
+	top: 99px;
+	width: 584px;
+	right:3px;
+	height:254px;
+	font-size: 12px;
+	padding:5px;
+	background-color: #FF0033;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	z-index: 1101;
+	display: none;
+}
+
+#eFMovieAnnotationsNewFormContainerWarningContent {
+	color:#FFFFFF;
+	font-weight: bold;
+	margin-left:10px;
+	margin-top: 15px;
+	margin-right:5px;
+	font-size: 18px;
+}
+
+
+#eFMovieAnnotationsNewFormContainer input {
+	border: 1px solid grey;
+	margin-left: 3px;
+	margin-right: 3px;
+	width: 105px;
+}
+
+.eFAFormSTYPE {
+	border: 1px solid grey;
+	margin-left: 3px;
+	margin-right: 3px;
+	width: 245px;
+}
+
+#eFAFormAN {
+	border: 1px solid grey;
+	margin-left: 3px;
+	margin-right: 3px;
+	width:273px;
+	height:35px;
+	
+}
+
+#eFAFormSaveButton {
+	margin-left: 110px;
+	width: 55px;
+}
+
+
+
+
+/*********************************************************/
+/* ########## /Annotations ######### */
+/*********************************************************/
+
+
+
+
+
+
+
+

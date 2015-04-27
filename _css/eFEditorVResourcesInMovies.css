@@ -1,0 +1,731 @@
+/*********************************************************/
+/* ########## Resources  ######### */
+/*********************************************************/
+#eFResourcesSelect {
+	position: absolute;
+	right:0;
+	top:0;
+	width: 140px;
+	min-height:300px;
+	/*background-color: black;*/
+}
+
+#eFResourcesSelect ul {
+	margin: 0;
+	padding: 0;
+}
+
+#eFResourcesSelect li.content {
+	list-style: none;
+    margin: 0 0 10px 15px;
+    padding: 4px 8px 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    color: white;
+    border: 2px solid white;
+    background-image: url(../_img/white-square-20-percent.png);
+    border-top-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+}
+
+#eFResourcesSelect li.content:hover {
+	background-image: url(../_img/white-square-30-percent.png);
+	cursor: pointer;
+}
+
+#eFResourcesSelect li.separator:first-child {
+    margin: 0 0 10px 0;
+ }
+
+#eFResourcesSelect li.separator {
+	list-style: none;
+    margin: 20px 0 10px 0;
+    padding: 6px 6px 6px 16px;
+    font-size: 14px;
+    font-weight: bolder;
+    text-align: left;
+    color: #333333;
+    border: 2px solid #5B5B5B;
+    background-image: url(../_img/white-square-40-percent.png);
+    /*background-color: white;*/
+    border-top-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+}
+
+#eFResourcesContent {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+	background-image: url(../_img/white-square-60-percent.png);
+	border-top-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+}
+
+.eFResourcesContentNULL {
+	position: absolute;
+	top:0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+.eFResourcesContentZWEHUNDERTACHTZIG {
+	position: absolute;
+	top:280px;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+#eFResourcesContentTopContent {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	left: 10px;
+	height: 260px;
+	background-image: url(../_img/white-square-40-percent.png);
+	border-top-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+}
+
+
+#eFResourcesNewObject {
+	position: absolute;
+	right:5px;
+	top:5px;
+	margin:4px;
+	width: 24px;
+	height: 24px;
+	border: 2px solid #6C6C6C;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 19px;
+	line-height: 1.2;
+	cursor: pointer;
+	background-image: url(../_img/green-square-20-percent.png);
+	color: #FFFFFF;
+
+}
+
+#eFResourcesNewObject:hover {
+	background-image: url(../_img/green-square-40-percent.png);
+}
+
+#eFResourcesFilterContainer {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	right: 45px;
+	height: 25px;
+	background-image: url(../_img/white-square-70-percent.png);
+	border-top-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 17px;
+    line-height: 1.6;
+}
+
+#eFResourcesFilterInput {
+	background-image: url(../_img/white-square-10-percent.png);
+	border:1px solid white;
+	width:55%;
+	outline: none;
+}
+
+.eFResourcesFilterHighlight {
+	background-color: yellow;
+	color: red;
+}
+
+#eFResourcesSubContent {
+	position: absolute;
+	top: 35px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	/*background-color: yellow;*/
+	overflow: auto;
+}
+
+/* ########## Anzeige  ######### */
+.efResourceUnit1 {
+	position: relative;
+	margin: 10px 10px 10px 10px;
+	font-size: 14px;
+	font-weight: bold;
+	color: grey;
+	background-image: url(../_img/white-square-40-percent.png);
+	border-top-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+    padding:10px;
+
+}
+
+.efResourceUnit1Type {
+	position: relative;
+	color:white;
+	left: -10px;
+	top: -10px;
+	width: 135px;
+	margin: 0 0 0 0;
+	padding: 3px 3px 3px 10px;
+	background-image: url(../_img/yellow-square-20-percent.png);
+}
+.efResourceUnit1Key {
+	position: absolute;
+	left: 416px;
+	top: 0;
+	width: 255px;
+	border-bottom-right-radius: 17px;
+	overflow:hidden;
+	margin: 0 0 5px 0;
+	padding: 3px 3px 3px 10px;
+	background-image: url(../_img/white-square-30-percent.png);
+}
+
+.efResourceUnit1Group {
+	position: absolute;
+	left: 148px;
+	top: 0;
+	width: 255px;
+	overflow:hidden;
+	margin: 0 0 5px 0;
+	padding: 3px 3px 3px 10px;
+	background-image: url(../_img/white-square-40-percent.png);
+}
+
+.efResourceUnit2container {
+	margin-right: 30%;
+	margin-left:20px;
+	/*background-color: blue;*/
+	
+
+}
+
+.efResourceUnit2 {
+    
+    margin: 0 0 3px 0;
+}
+
+.efResourceUnit2fieldname {
+	padding:3px;
+	color: grey;
+	width:15%;
+	text-align: right;
+	background-image: url(../_img/white-square-30-percent.png);
+	display: inline-block;
+	border-bottom-left-radius: 17px;
+	vertical-align: top;
+}
+
+.efResourceUnit2fieldcontent {
+	padding:3px;
+	display: inline-block;
+	min-height: 16px;
+	color: black;
+	background-image: url(../_img/white-square-60-percent.png);
+	width: 73%;
+}
+
+.efResourceUnit2fieldcontent img {
+	width: 120px;
+	height: 90px;
+	border: 3px solid white;
+	margin:3px;
+}
+
+.efResourceUnit2linkscontainer {
+	position: absolute;
+	top: 30px;
+	left: 70%;
+	right: 10px;
+	bottom: 10px;
+	background-image: url(../_img/white-square-40-percent.png);
+	border-top-right-radius: 17px;
+	border-bottom-left-radius: 17px;
+}
+
+.efResourceUnit2linkscontainerTitle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 75px;
+	background-image: url(../_img/white-square-40-percent.png);
+	border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+	padding:3px 3px 3px 15px;
+}
+
+.efResourceUnit2linkscontainerNewRelation {
+	position: absolute;
+	left:0;
+	top:0;
+	margin:4px;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #6C6C6C;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 13px;
+	line-height: 1.1;
+	cursor: pointer;
+	background-image: url(../_img/green-square-20-percent.png);
+	color: #FFFFFF;
+
+}
+
+.efResourceUnit2linkscontainerNewRelation:hover {
+	background-image: url(../_img/green-square-40-percent.png);
+}
+
+.efResourceUnit1DeleteObject {
+	position: absolute;
+	right:0;
+	top:0;
+	margin:8px;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #6C6C6C;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 13px;
+	line-height: 1.1;
+	cursor: pointer;
+	background-image: url(../_img/red-square-20-percent.png);
+	color: #FFFFFF;
+
+}
+
+.efResourceUnit1DeleteObject:hover {
+	background-image: url(../_img/red-square-40-percent.png);
+}
+
+.efResourceUnit1DeleteObjectWarning {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+	background-image: url(../_img/red-square-40-percent.png);
+	z-index: 200000000;
+	display:none;
+}
+
+.efResourceUnit1DeleteObjectWarningMessage {
+	position: absolute;
+	width: 28%;
+	left: 36%;
+	right: 36%;
+	margin-top:40%;
+	padding:5px;
+	color:white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	font-size: 16px;
+	font-weight: bolder;
+	text-align: center;
+	background-image: url(../_img/white-square-70-percent.png);
+	border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+	border:2px solid white;
+	line-height: 1.6;
+}
+
+.efResourceUnit1DeleteObjectWarningMessageButton {
+	border:1px solid white;
+	border-top-right-radius: 12px;
+	border-bottom-left-radius: 12px;
+	width: 65px;
+	height:20px;
+	font-weight:bolder;
+	text-shadow: white 0.1em 0.1em 0.2em;
+	text-align:center;
+	margin-right: 5px;
+	padding:2px;
+	font-size:10px;
+	background-color:transparent;
+	background-image: url(../_img/white-square-70-percent.png);
+}
+
+.efResourceUnit2NewSubObject {
+	position: absolute;
+	left:0;
+	bottom:0;
+	margin:8px;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #6C6C6C;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 13px;
+	line-height: 1.1;
+	cursor: pointer;
+	background-image: url(../_img/green-square-20-percent.png);
+	color: #FFFFFF;
+
+}
+
+.efResourceUnit2NewSubObject:hover {
+	background-image: url(../_img/green-square-40-percent.png);
+}
+
+/********* jEditable ***********/
+
+.efResourceUnit2fieldcontentTextarea {
+	width: 97.8%;
+	outline: none;
+	margin: 5px 5px 5px 5px;
+}
+
+.efResourceUnit2fieldcontentTextarea textarea {
+	
+	color: black;
+	background-image: url(../_img/red-square-10-percent.png);
+	border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+	border:1px solid white;
+	margin:1px;
+	padding: 3px 10px 3px 10px;
+	outline: none;
+	font-size:12px;
+}
+
+.efResourceUnit2fieldcontentTextarea button {
+	border:1px solid white;
+	background-image: url(../_img/white-square-40-percent.png);
+	border-top-right-radius: 12px;
+	border-bottom-left-radius: 12px;
+	width: 65px;
+	height:20px;
+	font-weight:bolder;
+	text-align:center;
+	margin-right: 5px;
+	padding:2px;
+	font-size:10px;
+}
+
+/******** NEW ********/
+
+#efResourceUnitNewContainer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+	background-image: url(../_img/lightblue-square-80-percent.png);
+	z-index: 300000000;
+	display:none;
+
+}
+
+
+
+#efResourceUnitNewContainerPopDown {
+	position: absolute;
+	height:200px;
+	background-color: #FFCC99;
+	border: 1px solid #CCCCCC;
+	display: none;
+	z-index: 300000010;
+	display:none;
+}
+
+#efResourceUnitNewContainerPopDownContent {
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #FFFFFF;
+	overflow: auto;
+}
+
+
+#efResourceUnitNewContainerPopDownClose {
+	position: absolute;
+	top:0;
+	right: 0;
+	width: 30px;
+	height:10px;
+	background-color: #CCCCCC;
+	border-bottom-left-radius: 8px;
+	font-size: 8px;
+	cursor: pointer;
+	text-align: center;
+	z-index: 300000020;
+}
+
+
+
+
+
+
+
+
+
+
+#efResourceUnitNewContainerNewObject {
+	position: absolute;
+	left: 1px;
+	right: 1px;
+	top: 1px;
+	bottom: 1px;
+	border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+	background-image: url(../_img/lightblue-square-50-percent.png);
+
+}
+
+#efResourceUnitNewContainerClose {
+	position: absolute;
+	right:5px;
+	bottom:5px;
+	margin:3px;
+	width: 24px;
+	height: 24px;
+	border: 2px solid #6C6C6C;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 1.4;
+	cursor: pointer;
+	background-image: url(../_img/white-square-30-percent.png);
+	color: #FFFFFF;
+}
+
+#efResourceUnitNewContainerSave {
+	position: absolute;
+	top: 10px;
+	right:10px;
+	width: 85px;
+	height: 25px;
+	text-align: center;
+	font-size: 16px;
+    font-weight: bold;
+    line-height: 1.7;
+	cursor: pointer;
+	border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+	background-image: url(../_img/green-square-30-percent.png);
+	color: #FFFFFF;
+}
+
+#efResourceUnitNewContainerSave:hover {
+	background-image: url(../_img/green-square-40-percent.png);
+}
+
+#eFResourcesNewObjectFormContainer {
+	position: absolute;
+	left: 1px;
+	right: 1px;
+	top: 1px;
+	bottom: 1px;
+	border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+	background-image: url(../_img/lightblue-square-40-percent.png);	
+
+}
+
+#eFResourcesNewObjectFormContainerTitle {
+	position: absolute;
+	top: 9px;
+	left: 10px;
+	right: 100px;
+	height: 24px;
+	background-image: url(../_img/white-square-60-percent.png);
+	border-top-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 17px;
+    line-height: 1.7;
+
+}
+
+.eFResourcesNewObjectFormNewL2 {
+	margin: 0 0 3px 0;
+}
+
+/*#eFResourcesNewObjectFormContainer .eFResourcesNewObjectFormNewL2:last-child {
+		margin: 0 0 0 0;
+}*/
+
+.eFResourcesNewObjectFormNewL2Fieldname {
+	padding:3px;
+	color: #333333;
+	width:15%;
+	text-align: right;
+	background-image: url(../_img/white-square-30-percent.png);
+	display: inline-block;
+	border-bottom-left-radius: 17px;
+	vertical-align: top;
+}
+
+.eFResourcesNewObjectFormNewL2Fieldcontent {
+	padding:3px;
+	display: inline-block;
+	color: black;
+	background-image: url(../_img/white-square-60-percent.png);
+	border-top-right-radius: 17px;
+	width: 84%;
+	
+}
+
+.eFResourcesNewObjectFormNewL2Fieldcontent .eFinput {
+	width: 25%;
+	
+}
+
+.eFinput:focus {
+    outline: none;
+}
+
+
+.eFResourcesNewObjectFormContainerTemplate {
+	position: absolute;
+	top: 45px;
+	left: 10px;
+	right: 10px;
+	bottom: 45px;
+	overflow: auto;
+	background-image: url(../_img/lightblue-square-80-percent.png);
+	border-top-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.8;
+    padding:5px;
+}
+
+.eFResourcesNewObjectFormContainerTemplateTitle {
+	position: relative;
+	color:white;
+	left: 0;
+	top: 0;
+	width: 135px;
+	margin: 0 0 5px; 0;
+	padding: 3px 3px 3px 10px;
+	background-image: url(../_img/white-square-50-percent.png);
+	border-top-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+}
+
+#eFResourcesNewObjectFormNewSubObjectContainer {
+	margin: 0 0 3px 0;
+	padding:3px;
+	color: #333333;
+	background-image: url(../_img/white-square-30-percent.png);
+	display: inline-block;
+	border-top-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+	vertical-align: top;
+	width: 99.3%;
+}
+
+#eFResourcesNewObjectFormNewSubObjectConfig {
+	position: relative;
+	display: inline-block;
+	left:25px;
+	top: 0;
+	/*background-color: yellow;*/
+	color:black;
+}
+
+#eFResourcesNewObjectFormNewSubObject {
+	position: relative;
+	display: inline-block;
+	left:0;
+	top:0;
+	margin:6px;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #6C6C6C;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 13px;
+	line-height: 1.1;
+	cursor: pointer;
+	background-image: url(../_img/green-square-20-percent.png);
+	color: #FFFFFF;
+}
+
+#eFResourcesNewObjectFormNewSubObject:hover {
+	background-image: url(../_img/green-square-40-percent.png);
+}
+
+.efResourceUnitNewContainerAddRel {
+	position: absolute;
+	top: 0;
+	right:0;
+	width: 85px;
+	height: 25px;
+	text-align: center;
+	font-size: 16px;
+    font-weight: bold;
+    line-height: 1.7;
+	cursor: pointer;
+	border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+	background-image: url(../_img/green-square-20-percent.png);
+	color: #FFFFFF;
+}
+
+.efResourceUnitNewContainerAddRes {
+	position: absolute;
+	top: 0;
+	right:0;
+	width: 85px;
+	height: 25px;
+	text-align: center;
+	font-size: 16px;
+    font-weight: bold;
+    line-height: 1.7;
+	cursor: pointer;
+	border-bottom-left-radius: 17px;
+	border-top-right-radius: 17px;
+	background-image: url(../_img/green-square-20-percent.png);
+	color: #FFFFFF;
+}
+
+.efResourceUnitNewContainerAddResSub {
+	position: relative;
+	display:inline-block;
+	top: 0;
+	right:0;
+	width: 85px;
+	height: 22px;
+	text-align: center;
+	font-size: 14px;
+    font-weight: bold;
+    line-height: 1.7;
+	cursor: pointer;
+	border-top-right-radius: 17px;
+	background-image: url(../_img/green-square-20-percent.png);
+	color: #FFFFFF;
+	vertical-align: top;
+}
+
+.efResourceUnitNewContainerAddRes:hover {
+	background-image: url(../_img/green-square-40-percent.png);
+}
+.efResourceUnitNewContainerAddResSub:hover {
+	background-image: url(../_img/green-square-40-percent.png);
+}
+.efResourceUnitNewContainerAddRel:hover {
+	background-image: url(../_img/green-square-40-percent.png);
+}
+
+
