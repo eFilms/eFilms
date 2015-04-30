@@ -55,23 +55,23 @@ if (!empty($id) && ctype_digit($id)) {
         $sendTo = $row['email'];
         $randomFileName = get_random_string($valid_characters, 18).".php";
         $formProcessName = get_random_string($valid_characters, 18).".php";
-        $headers = 'From: webmaster@efilms.ushmm.com' . "\r\n" .
-        'Reply-To: webmaster@efilms.ushmm.com' . "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
+        $headers = "From: webmaster@".$_SERVER['HTTP_HOST']."\r\n".
+        "Reply-To: webmaster@".$_SERVER['HTTP_HOST']."\r\n" .
+        "X-Mailer: PHP/".phpversion();
         $content = "\nHi ".$row['USER_Name'];
         $content .= "\n\nA password reset link has been created for you.  Please use this link to set a new password for the editor interface.\n\nThis link will expire 20 minutes from the time it was sent, if you did not request this from a system administrator please ignore this email and your password will remain unchanged.";
-        $content .= "\n\nhttp://efilms.ushmm.org/reset/$randomFileName";
+        $content .= "\n\nhttp://".$_SERVER['HTTP_HOST']."/reset/$randomFileName";
         if (mail($sendTo, "eFilms Editor Reset Link - ".date("m/d/Y"), $content, $headers)) {
-            if (!file_exists("/data/sites/ee-efilms/public/reset")) {
-                mkdir("/data/sites/ee-efilms/public/reset");
+            if (!file_exists($_SERVER['DOCUMENT_ROOT']."/reset")) {
+                mkdir($_SERVER['DOCUMENT_ROOT']."/reset");
             }
             // Write the Password Update form file
             $content = "<?php\n";
             $content .= "\$expire=".(time() + (20 * 60)).";\n";
             $content .= "\$id = $id;\n";
             $content .= "if (time() > \$expire) {\n";
-            $content .= "   unlink(\"/data/sites/ee-efilms/public/reset/$randomFileName\");\n";
-            $content .= "   unlink(\"/data/sites/ee-efilms/public/reset/$formProcessName\");\n";
+            $content .= "   unlink(\"".$_SERVER['DOCUMENT_ROOT']."/reset/$randomFileName\");\n";
+            $content .= "   unlink(\"".$_SERVER['DOCUMENT_ROOT']."/reset/$formProcessName\");\n";
             $content .= "   exit();\n";
             $content .= "}\n";
             $content .= "echo '<html>';\n";
@@ -104,21 +104,21 @@ if (!empty($id) && ctype_digit($id)) {
             $content .= "echo '</center>';\n";
             $content .= "echo '</body>';\n";
             $content .= "echo '</html>';\n";
-            $content .= "unlink(\"/data/sites/ee-efilms/public/reset/$randomFileName\");\n";
-            $fp = fopen("/data/sites/ee-efilms/public/reset/".$randomFileName, 'w');
+            $content .= "unlink(\"".$_SERVER['DOCUMENT_ROOT']."/reset/$randomFileName\");\n";
+            $fp = fopen($_SERVER['DOCUMENT_ROOT']."/reset/".$randomFileName, 'w');
             fwrite($fp, $content);
             fclose($fp);
-            // Write th ePassword Update Form processing script
+            // Write the Password Update Form processing script
             $content = "<?php\n";
             $content .= "\$expire=".(time() + (20 * 60)).";\n";
             $content .= "\$idCheck = ".$id.";\n";
             $content .= "if (time() > \$expire || \$idCheck != \$_POST['id'] || \$_POST['password'] != \$_POST['password1']) {\n";
             $content .= "   echo \"could not update password, please contact your system administrator\";\n";
-            $content .= "   unlink(\"/data/sites/ee-efilms/public/reset/$randomFileName\");\n";
-            $content .= "   unlink(\"/data/sites/ee-efilms/public/reset/$formProcessName\");\n";
+            $content .= "   unlink(\"".$_SERVER['DOCUMENT_ROOT']."/reset/$randomFileName\");\n";
+            $content .= "   unlink(\"".$_SERVER['DOCUMENT_ROOT']."/reset/$formProcessName\");\n";
             $content .= "   exit();\n";
             $content .= "}\n";
-            $content .= "\$fp = fopen(\"/data/sites/ee-efilms/.htpasswd\", \"r\");\n";
+            $content .= "\$fp = fopen(\"".directoryAboveWebRoot()."/.htpasswd\", \"r\");\n";
             $content .= "if (\$fp) {\n";
             $content .= "    while ((\$line = fgets(\$fp)) !== false) {\n";
             $content .= "        list(\$key, \$value) = explode(\":\", trim(\$line));\n";
@@ -126,28 +126,28 @@ if (!empty($id) && ctype_digit($id)) {
             $content .= "    }\n";
             $content .= "} else {\n";
             $content .= "   echo \"could not update password, please contact your system administrator\";\n";
-            $content .= "   unlink(\"/data/sites/ee-efilms/public/reset/$randomFileName\");\n";
-            $content .= "   unlink(\"/data/sites/ee-efilms/public/reset/$formProcessName\");\n";
+            $content .= "   unlink(\"".$_SERVER['DOCUMENT_ROOT']."/reset/$randomFileName\");\n";
+            $content .= "   unlink(\"".$_SERVER['DOCUMENT_ROOT']."/reset/$formProcessName\");\n";
             $content .= "   exit();\n";
             $content .= "}\n";
             $content .= "fclose(\$fp);\n";
-            $content .= "require_once('../_ajax/db_con.php');\n";
+            $content .= "require_once(\"".directoryAboveWebRoot()."/db_con.php\");\n";
             $content .= "\$select = \"SELECT `email`,`USER_Name` from `eFilm_Config_Users` WHERE `ID_C_Users` = '\".\$idCheck.\"'\";\n";
             $content .= "\$userEmail = mysqli_query(\$localDatabase, \$select);\n";
             $content .= "while(\$row = mysqli_fetch_array(\$userEmail)) {\n";
             $content .= "   \$loginArray[\$row['USER_Name']] = crypt(\$_POST['password'], base64_encode(\$_POST['password']));\n";
             $content .= "}\n";
-            $content .= "\$fp = fopen(\"/data/sites/ee-efilms/.htpasswd\", \"w\");\n";
+            $content .= "\$fp = fopen(\"".directoryAboveWebRoot()."/.htpasswd\", \"w\");\n";
             $content .= "foreach (\$loginArray as \$key => \$value) {\n";
             $content .= "   fwrite(\$fp, \$key.\":\".\$value.\"\\n\");\n";
             $content .= "}\n";
             $content .= "fclose(\$fp);\n";
             $content .= "echo '<center>';\n";
             $content .= "echo '<h2>Your password has been updated</h2>';\n";
-            $content .= "echo '<a href=\"http://efilms.ushmm.org/editorV/\">Click Here to Login</a>';\n";
+            $content .= "echo '<a href=\"/\">Click Here to Login</a>';\n";
             $content .= "echo '</center>';\n";
-            $content .= "unlink(\"/data/sites/ee-efilms/public/reset/$formProcessName\");\n";
-            $fp = fopen("/data/sites/ee-efilms/public/reset/".$formProcessName, 'w');
+            $content .= "unlink(\"".$_SERVER['DOCUMENT_ROOT']."/reset/$formProcessName\");\n";
+            $fp = fopen($_SERVER['DOCUMENT_ROOT']."/reset/".$formProcessName, 'w');
             fwrite($fp, $content);
             fclose($fp);
         }

@@ -282,7 +282,6 @@ function uniqid() {
 }
 
 /**
- * 10/18/2013 - ckb USHMM
  * getCookie()
  * @param {string} name
  * @returns value of cookie with matching name
@@ -293,7 +292,6 @@ function getCookie(name) {
 }
 
 /**
- * 10/18/2013 - ckb USHMM
  * added to control buttons above movie player
  * @param {int} movieid
  * @param {int} speed
@@ -337,7 +335,6 @@ function moviePlayerDetailsButton1(movieid,speed) {
 }
 
 /**
- * 10/18/2013 - ckb USHMM
  * added to control buttons above movie player
  * @param {int} movieid
  * @param {int} speed
@@ -381,7 +378,6 @@ function moviePlayerDetailsButton2(movieid,speed) {
 }
 
 /**
- * 10/18/2013 - ckb USHMM
  * added to control buttons above movie player
  * @param {int} movieid
  * @param {int} speed
@@ -432,14 +428,13 @@ function isBrowserMobile(a) {
 }
 
 /**
- * 12/05/2013 - ckb USHMM
  * Here we are going to load a SINGLE Google Map
  * it will not have any controls because of it's
  * small size. We are going to style it so that it
  * looks old and hide it. Popcornjs tells it when
  * to display.
  */
-var ushmm = new google.maps.LatLng(38.886690, -77.032131);
+var defaultLocation = new google.maps.LatLng(38.886690, -77.032131);
 function initialize() {
 
     var mapOptions;
@@ -447,7 +442,7 @@ function initialize() {
     if (isBrowserMobile(navigator.userAgent||navigator.vendor||window.opera)) { // Can't show zoomControl on mobile because Google makes the controls too big
         mapOptions = {
             zoom: 14,
-            center: ushmm,
+            center: defaultLocation,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             panControl: false,
             zoomControl: false,
@@ -459,7 +454,7 @@ function initialize() {
     } else {
         mapOptions = {
             zoom: 16,
-            center: ushmm,
+            center: defaultLocation,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             panControl: false,
             zoomControl: true,
@@ -902,7 +897,6 @@ $.each(DomoAnJson.annotation, function(key, value) {
             break;
         case "eFSCSShotNumber":     // Shot Number
             /*
-             * 12/06/2013 - ckb USHMM
              * NOTE!! This is not a real datapoint. It is a counter.
              * Be careful repurposing this value for other areas of the site,
              * the data may not relate appropriately.
