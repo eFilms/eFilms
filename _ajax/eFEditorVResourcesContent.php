@@ -334,7 +334,7 @@ if ($eFContentKat != 'Movies') {
                     <div class='efResourceUnit1Type'>" . $v['Type'] . "&emsp;</div>
                     <div class='efResourceUnit1Group'>";
 
-        $anfrageGroup = "SELECT DISTINCT `Group` FROM eFilm_ReSources_L1 WHERE NOT `Group`='' ORDER BY `Group` ASC;";
+        $anfrageGroup = "SELECT DISTINCT `Group` FROM `eFilm_ReSources_L1` WHERE NOT `Group`='' ORDER BY `Group` ASC;";
         $ergebnisGroup = mysqli_query($localDatabase, $anfrageGroup);
         echo "<select style='padding: 2px; margin: 0px;' onchange='uploadGroup(" . $k . ",this.options[this.selectedIndex].text);'>"; // id='eFResourcesFilterGroup' name='eFResourcesFilterGroup'
         while ($row = mysqli_fetch_array($ergebnisGroup)) {
