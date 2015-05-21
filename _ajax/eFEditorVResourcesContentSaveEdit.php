@@ -13,6 +13,7 @@ require_once('/settings.php');
 require_once('/includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
-$anfrage = "UPDATE eFilm_ReSources_L2 SET Fieldcontent = '".utf8_decode($_POST['value'])."' WHERE ID_R_L2='".mysqli_real_escape_string($localDatabase, $_POST['id'])."';";
+$anfrage = "UPDATE eFilm_ReSources_L2 SET Fieldcontent = '".mysqli_real_escape_string($localDatabase, $_POST['value'])."' WHERE ID_R_L2='".mysqli_real_escape_string($localDatabase, $_POST['id'])."';";
 $ergebnis = mysqli_query($localDatabase, $anfrage);
+echo $_POST['value'];
 ?>
