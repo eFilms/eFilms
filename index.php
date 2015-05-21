@@ -39,6 +39,7 @@ include 'includes/functions.php';
 	}
 
 	function updateComplete(evt) {
+		console.log(evt.target.responseText);
 		var response = JSON.parse(evt.target.responseText);
 		if (response['complete'] == 'yes') {
 			document.getElementById(response['setting']+'Done').display = 'block';

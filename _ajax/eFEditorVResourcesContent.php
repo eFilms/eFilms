@@ -348,8 +348,9 @@ if ($eFContentKat != 'Movies') {
 
         echo "</div>
                     <div class='efResourceUnit1Key'>" . $v['Object_Key'] . "&emsp;</div>
-                    <div class='efResourceUnit1DeleteObject' data-idl1='" . $v['ID_R_L1'] . "'>-</div>
-                    <div class='efResourceUnit2NewSubObject' data-idl1='" . $v['ID_R_L1'] . "'>+</div>";
+                    <div class='efResourceUnit1DeleteObject' data-idl1='" . $v['ID_R_L1'] . "'>-</div>";
+// Not really sure what a SubObject is so disable this button for now
+//                    <div class='efResourceUnit2NewSubObject' data-idl1='" . $v['ID_R_L1'] . "'>+</div>";
         echo "<div class='efResourceUnit2container'>";
         foreach ($listing as $k2 => $v2) {
             if ($v2['ID'] == $v['ID_R_L1']) {
