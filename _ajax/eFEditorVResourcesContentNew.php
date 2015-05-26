@@ -54,6 +54,7 @@ while ($row = mysqli_fetch_array($ergebnis)) {
             $imagename_unique= $uniqueobjectkey.'_IMG_'.$formidunique; 
             echo '<div class="eFResourcesNewObjectFormNewL2Fieldcontent">';
             echo '  <input class="eFinput" type="text" value="'.$imagename_unique.'" name="'.$row['Resource_Field'].'" readonly="readonly" />';
+            echo '  <input class="eForiginal" style="hidden" type="text" value="" readonly="readonly" />';
             echo '  <form id="'.$formidunique.'" action="_ajax/eFUploader.php" method="post" enctype="multipart/form-data">
                             <input type="hidden" id="uploadResponseType" name="mimetype" value="html">
                             <input type="hidden" name="effiletype" value="img">
@@ -96,6 +97,7 @@ while ($row = mysqli_fetch_array($ergebnis)) {
                                 var oldfilename = $(document).find('form[id=' + formularidentifikation + ']').parent().find('input[class=eFinput]').val();
                                 var newfilename = oldfilename + uploadstatus.fileextension;
                                 $(document).find('form[id=' + formularidentifikation + ']').parent().find('input[class=eFinput]').val(newfilename);
+                                $(document).find('form[id=' + formularidentifikation + ']').parent().find('input[class=eForiginal]').val(oldfilename);
                                 $(document).find('form[id=' + formularidentifikation + ']').parent().find('.progress').remove();
                                 var smallheight = Math.round(250*(uploadstatus.height/uploadstatus.width));
                                 $(document).find('form[id=' + formularidentifikation + ']').css('text-align','center').html('<img src=\"".$storeURL."/Location-Shots_sm/' + newfilename + '\" />');
@@ -110,6 +112,7 @@ while ($row = mysqli_fetch_array($ergebnis)) {
             $imagename_unique= $uniqueobjectkey.'_PDF_'.$formidunique; 
             echo '<div class="eFResourcesNewObjectFormNewL2Fieldcontent">';
             echo '<input class="eFinput" type="text" value="'.$imagename_unique.'" name="'.$row['Resource_Field'].'" readonly="readonly" />'; //Eingabefeld Bildname
+            echo '<input class="eForiginal" style="hidden" type="text" value="" readonly="readonly" />';
             echo '<form id="'.$formidunique.'" action="_ajax/eFUploader.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" id="uploadResponseType" name="mimetype" value="html"><input type="hidden" name="effiletype" value="pdf">
                 <input type="hidden" name="efilmname" value="'.$imagename_unique.'"><input type="file" name="hugotest">
@@ -150,6 +153,7 @@ while ($row = mysqli_fetch_array($ergebnis)) {
                             var oldfilename = $(document).find('form[id=' + formularidentifikation + ']').parent().find('input[class=eFinput]').val();
                             var newfilename = oldfilename + uploadstatus.fileextension;
                             $(document).find('form[id=' + formularidentifikation + ']').parent().find('input[class=eFinput]').val(newfilename);
+														$(document).find('form[id=' + formularidentifikation + ']').parent().find('input[class=eForiginal]').val(oldfilename);
                             $(document).find('form[id=' + formularidentifikation + ']').parent().find('.progress').remove();
                             var smallheight = Math.round(250*(uploadstatus.height/uploadstatus.width));
                             $(document).find('form[id=' + formularidentifikation + ']').css('text-align','center').html('<img src=\"/_img/pdf-icon.png\" />');

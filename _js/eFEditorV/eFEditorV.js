@@ -1910,8 +1910,9 @@ $(document).ready(function () {
             var eFFieldnameL1L2 = $(this).find('.eFResourcesNewObjectFormNewL2Fieldname').html();
             var eFFieldtypeL1L2 = $(this).find('.eFResourcesNewObjectFormNewL2Fieldname').attr('data-fieldtype');
             var eFFieldcontentL1L2 = $(this).find('input.eFinput').val();
+            var originalName = $(this).find('input.eForiginal').val();
             //console.log( eFFieldnameL1L2 + '|' + eFFieldtypeL1L2 + '|' + eFFieldcontentL1L2 );
-            eFNewObjektL1L2_Array += '|Fieldname:' + eFFieldnameL1L2 + ',Fieldtype:' + eFFieldtypeL1L2 + ',Fieldcontent:' + eFFieldcontentL1L2;
+            eFNewObjektL1L2_Array += '|Fieldname:' + eFFieldnameL1L2 + ',Fieldtype:' + eFFieldtypeL1L2 + ',Fieldcontent:' + eFFieldcontentL1L2 + ',originalName:' + originalName;
 
         });
         //console.log(eFNewObjektL1L2_Array);
