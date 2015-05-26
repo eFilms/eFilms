@@ -98,7 +98,7 @@ while ($row = mysqli_fetch_array($ergebnis)) {
                                 $(document).find('form[id=' + formularidentifikation + ']').parent().find('input[class=eFinput]').val(newfilename);
                                 $(document).find('form[id=' + formularidentifikation + ']').parent().find('.progress').remove();
                                 var smallheight = Math.round(250*(uploadstatus.height/uploadstatus.width));
-                                $(document).find('form[id=' + formularidentifikation + ']').css('text-align','center').html('<img src=\"/uploads/imagesSmall/' + newfilename + '\" />');
+                                $(document).find('form[id=' + formularidentifikation + ']').css('text-align','center').html('<img src=\"".$storeURL."/Location-Shots_sm/' + newfilename + '\" />');
                             }
                     });
                 } 
@@ -152,7 +152,7 @@ while ($row = mysqli_fetch_array($ergebnis)) {
                             $(document).find('form[id=' + formularidentifikation + ']').parent().find('input[class=eFinput]').val(newfilename);
                             $(document).find('form[id=' + formularidentifikation + ']').parent().find('.progress').remove();
                             var smallheight = Math.round(250*(uploadstatus.height/uploadstatus.width));
-                            $(document).find('form[id=' + formularidentifikation + ']').css('text-align','center').html('<img src=\"_img/pdf-icon.png\" />');
+                            $(document).find('form[id=' + formularidentifikation + ']').css('text-align','center').html('<img src=\"/_img/pdf-icon.png\" />');
                         }
                     });
                 }
