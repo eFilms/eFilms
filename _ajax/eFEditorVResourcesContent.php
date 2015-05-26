@@ -360,16 +360,13 @@ if ($eFContentKat != 'Movies') {
                         echo "<div class='efResourceUnit2' data-idl2='" . $v2['content']['ID_R_L2'] . "'><div class='efResourceUnit2fieldname'>" . $v2['content']['Fieldname'] . "</div><div class='efResourceUnit2fieldcontent' data-idl2='" . $v2['content']['ID_R_L2'] . "' id='" . $v2['content']['ID_R_L2'] . "'>" . $v2['content']['Fieldcontent'] . "</div></div>";
                         break;
                     case 'image':
-                        $textfilepatharr = explode('.', $v2['content']['Fieldcontent']);
-                        $textfilepathabsolute = '/uploads/imgesLarge/' . $textfilepatharr[0] . '.txt';
-                        $previousfilename = file_get_contents($textfilepathabsolute);
 
-                            echo "<div class='efResourceUnit2' data-idl2='" . $v2['content']['ID_R_L2'] . "'>";
-                            echo "<div class='efResourceUnit2fieldname' data-filename='" . $v2['content']['Fieldcontent'] . "' data-filenameorig='" . $previousfilename . "'>" . $v2['content']['Fieldname'] . "</div>";
-                            echo "<div class='efResourceUnit2fieldcontent' data-idl2='" . $v2['content']['ID_R_L2'] . "' id='" . $v2['content']['ID_R_L2'] . "'>";
+												echo "<div class='efResourceUnit2' data-idl2='" . $v2['content']['ID_R_L2'] . "'>";
+												echo "<div class='efResourceUnit2fieldname' data-filename='" . $v2['content']['Fieldcontent'] . "' data-filenameorig='" . $v2['content']['originalName'] . "'>" . $v2['content']['Fieldname'] . "</div>";
+												echo "<div class='efResourceUnit2fieldcontent' data-idl2='" . $v2['content']['ID_R_L2'] . "' id='" . $v2['content']['ID_R_L2'] . "'>";
                         
-                        if (file_exists($storeURL.'/_media/movies_wm/_img/Location-Shots_l/' . $v2['content']['Fieldcontent'])) {
-                            echo "<img src=".$storeURL."'/_media/movies_wm/_img/Location-Shots_l/" . $v2['content']['Fieldcontent'] . "' alt='" . $v2['content']['Fieldcontent'] . "' title='" . $previousfilename . "'/>";
+                        if (file_exists($storeURL.'/_media/movies_wm/_img/Location-Shots_l/' . $v2['content']['originalName'])) {
+                            echo "<img src=".$storeURL."'/_media/movies_wm/_img/Location-Shots_l/" . $v2['content']['originalName'] . "' alt='" . $v2['content']['Fieldcontent'] . "' title='" . $v2['content']['originalName'] . "'/>";
                         } else {
                             $uniqueUTS = time();
                             $formidunique = $uniqueUTS + $timer;
@@ -431,14 +428,11 @@ if ($eFContentKat != 'Movies') {
                         echo "</div>"; //efResourceUnit2
                         break;
                     case 'pdf':
-                        $textfilepatharr = explode('.', $v2['content']['Fieldcontent']);
-                        $textfilepathabsolute = '/uploads/pdf/' . $textfilepatharr[0] . '.txt';
-                        if (file_exists($textfilepathabsolute)) {
-                            $previousfilename = file_get_contents($textfilepathabsolute);
+                        if (file_exists($storeURL.'/_media/movies_wm/_img/Originals/'.$v2['content']['originalName'])) {
                             echo "<div class='efResourceUnit2' data-idl2='" . $v2['content']['ID_R_L2'] . "'>";
-                            echo "<div class='efResourceUnit2fieldname' data-filename='" . $v2['content']['Fieldcontent'] . "' data-filenameorig='" . $previousfilename . "'>" . $v2['content']['Fieldname'] . "</div>";
+                            echo "<div class='efResourceUnit2fieldname' data-filename='" . $v2['content']['Fieldcontent'] . "' data-filenameorig='" . $v2['content']['originalName'] . "'>" . $v2['content']['Fieldname'] . "</div>";
                             echo "<div class='efResourceUnit2fieldcontent' data-idl2='" . $v2['content']['ID_R_L2'] . "' id='" . $v2['content']['ID_R_L2'] . "'>";
-                            echo "<img src='_img/pdf-icon.png' alt='" . $v2['content']['Fieldcontent'] . "' title='" . $previousfilename . "'/>";
+                            echo "<img src='".$storeURL."/_media/movies_wm/_img/pdf-icon.png' alt='" . $v2['content']['Fieldcontent'] . "' title='" . $v2['content']['originalName'] . "'/>";
                             echo "</div>"; //
                             echo "</div>"; //efResourceUnit2
                         } else {
