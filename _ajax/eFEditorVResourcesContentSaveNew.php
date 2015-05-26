@@ -77,8 +77,11 @@ if ($trefferzahl_IDL1 == 1 ) {
 		
 	}
 	foreach ($L2_content as $kL2 => $vL2) {
-	
-		$anfrage_IDL2 = "INSERT INTO eFilm_ReSources_L2 (`ID_R_L1`, `Fieldname`, `Fieldtype`, `Fieldcontent`)  VALUES ('".mysqli_real_escape_string($localDatabase, utf8_decode($ID_L1_for_L2))."', '".mysqli_real_escape_string($localDatabase, utf8_decode($vL2['Fieldname']))."', '".mysqli_real_escape_string($localDatabase, utf8_decode($vL2['Fieldtype']))."', '".mysqli_real_escape_string($localDatabase, utf8_decode($vL2['Fieldcontent']))."');";
+		if (isset($vL2['originalName'])) {
+			$anfrage_IDL2 = "INSERT INTO eFilm_ReSources_L2 (`ID_R_L1`, `Fieldname`, `Fieldtype`, `Fieldcontent`, `originalName`)  VALUES ('".mysqli_real_escape_string($localDatabase, utf8_decode($ID_L1_for_L2))."', '".mysqli_real_escape_string($localDatabase, utf8_decode($vL2['Fieldname']))."', '".mysqli_real_escape_string($localDatabase, utf8_decode($vL2['Fieldtype']))."', '".mysqli_real_escape_string($localDatabase, utf8_decode($vL2['Fieldcontent']))."', '".mysqli_real_escape_string($localDatabase, utf8_decode($vL2['originalName']))."');";
+		} else {
+			$anfrage_IDL2 = "INSERT INTO eFilm_ReSources_L2 (`ID_R_L1`, `Fieldname`, `Fieldtype`, `Fieldcontent`)  VALUES ('".mysqli_real_escape_string($localDatabase, utf8_decode($ID_L1_for_L2))."', '".mysqli_real_escape_string($localDatabase, utf8_decode($vL2['Fieldname']))."', '".mysqli_real_escape_string($localDatabase, utf8_decode($vL2['Fieldtype']))."', '".mysqli_real_escape_string($localDatabase, utf8_decode($vL2['Fieldcontent']))."');";
+		}
 		$ergebnis_IDL2 = mysqli_query($localDatabase, $anfrage_IDL2);
 	
 	}
