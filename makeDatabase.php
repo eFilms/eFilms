@@ -276,6 +276,7 @@ $structure .= "`ID_R_L1` int(11) DEFAULT NULL COMMENT 'table index from eFilm_Re
 $structure .= "`Fieldname` varchar(255) DEFAULT NULL COMMENT 'Title, Publisher, Date(s), etc.',\n";
 $structure .= "`Fieldtype` varchar(255) DEFAULT NULL COMMENT 'text, pdf, image',\n";
 $structure .= "`Fieldcontent` text COMMENT 'text content or file name if this is an image or PDF',\n";
+$structure .= "`originalName` text COMMENT 'For PDF and Images only, original file name',\n";
 $structure .= "PRIMARY KEY (`ID_R_L2`)\n";
 $structure .= ") ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;\n";
 $structure .= "-- -------------------------------------------------------- --\n";
