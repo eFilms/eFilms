@@ -375,7 +375,7 @@ if ($eFContentKat != 'Movies') {
                             echo "  <div name=\"files_div\" id=\"files_div\">\n";
                             echo "  Upload Image File: &nbsp; <input type=\"file\" name=\"fileToUpload\" id=\"fileToUpload\" size=\"30\" style=\"width: 200px;\" onChange=\"fileSelected();\"><br>\n";
                             echo "  <div style=\"display:block;\" id=\"fileName\"></div> <div style=\"display:block;\" id=\"fileSize\"></div> <div style=\"display:block;\" id=\"fileType\"></div><br>\n";
-                            echo "  <input id=\"uploadProgress\" type=\"button\" value=\"Upload\" onclick=\"uploadFile();\">\n";
+                            echo "  <input id=\"uploadProgress\" type=\"button\" value=\"Upload\" onclick=\"uploadFile(\"".$imagename_unique."\");\">\n";
                             echo "  </div>\n";
                             echo "  <script type=\"text/javascript\">\n";
                             echo "      function fileSelected() {\n";
@@ -389,8 +389,9 @@ if ($eFContentKat != 'Movies') {
                             echo "              document.getElementById('fileType').innerHTML = file.type;\n";
                             echo "          }\n";
                             echo "      }\n";
-                            echo "      function uploadFile() {\n";
+                            echo "      function uploadFile(newFileName) {\n";
                             echo "          var fd = new FormData();\n";
+                            echo "          fd.append(\"referenceName\", newFileName);\n";
                             echo "          fd.append(\"fileToUpload\", document.getElementById('fileToUpload').files[0]);\n";
                             echo "          var xhr = new XMLHttpRequest();\n";
                             echo "          xhr.upload.addEventListener(\"progress\", uploadProgress, false);\n";
