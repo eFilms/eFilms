@@ -13,7 +13,11 @@ require_once('/settings.php');
 require_once('/includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
-$anfrage = "UPDATE eFilm_ReSources_L2 SET Fieldcontent = '".mysqli_real_escape_string($localDatabase, $_POST['value'])."' WHERE ID_R_L2='".mysqli_real_escape_string($localDatabase, $_POST['id'])."';";
+if (isset($_POST['original'])) {
+	$anfrage = "UPDATE eFilm_ReSources_L2 SET originalName = '".mysqli_real_escape_string($localDatabase, $_POST['original'])."' WHERE ID_R_L2='".mysqli_real_escape_string($localDatabase, $_POST['id'])."';";
+} else {
+	$anfrage = "UPDATE eFilm_ReSources_L2 SET Fieldcontent = '".mysqli_real_escape_string($localDatabase, $_POST['value'])."' WHERE ID_R_L2='".mysqli_real_escape_string($localDatabase, $_POST['id'])."';";
+}
 $ergebnis = mysqli_query($localDatabase, $anfrage);
 echo $_POST['value'];
 ?>

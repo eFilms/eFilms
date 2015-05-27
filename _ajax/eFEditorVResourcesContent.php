@@ -366,7 +366,7 @@ if ($eFContentKat != 'Movies') {
 												echo "<div class='efResourceUnit2fieldcontent' data-idl2='" . $v2['content']['ID_R_L2'] . "' id='" . $v2['content']['ID_R_L2'] . "'>";
                         
                         if (file_exists($storeURL.'/_media/movies_wm/_img/Location-Shots_l/' . $v2['content']['originalName'])) {
-                            echo "<img src=".$storeURL."'/_media/movies_wm/_img/Location-Shots_l/" . $v2['content']['originalName'] . "' alt='" . $v2['content']['Fieldcontent'] . "' title='" . $v2['content']['originalName'] . "'/>";
+                            echo "<img src='".$storeURL."/_media/movies_wm/_img/Location-Shots_l/" . $v2['content']['originalName'] . "' alt='" . $v2['content']['Fieldcontent'] . "' title='" . $v2['content']['originalName'] . "'/>";
                         } else {
                             $uniqueUTS = time();
                             $formidunique = $uniqueUTS + $timer;
@@ -414,6 +414,21 @@ if ($eFContentKat != 'Movies') {
                             echo "          document.getElementById('fileName').innerHTML = \"\";\n";
                             echo "          document.getElementById('fileSize').innerHTML = \"\";\n";
                             echo "          document.getElementById('fileType').innerHTML = \"\";\n";
+                            echo "					var oldfilename = $(document).find('form[id='+formularidentifikation+']').parent().find('input[class=eFinput]').val();\n";
+                            echo "					var newfilename = oldfilename+uploadstatus.fileextension;\n";
+                            echo "					$(document).find('form[id='+formularidentifikation+']').parent().html('<img src=\"".$storeURL."/_media/movies_wm/_img/Location-Shots_l/'+oldfilename+'\" />');\n";
+                            echo "					$.ajax({\n";
+                            echo "						type: 'post',\n";
+                            echo "						url: '_ajax/eFEditorVResourcesContentSaveEdit.php',\n";
+                            echo "						data: 'id='+idedit+'&value='+encodeURI(newfilename),\n";
+                            echo "						cache: false\n";
+                            echo "					});\n";
+                            echo "					$.ajax({\n";
+                            echo "						type: 'post',\n";
+                            echo "						url: '_ajax/eFEditorVResourcesContentSaveEdit.php',\n";
+                            echo "						data: 'id='+idedit+'&original='+encodeURI(oldfilename),\n";
+                            echo "						cache: false\n";
+                            echo "					});\n";
                             echo "          alert(evt.target.responseText);\n";
                             echo "      }\n";
                             echo "      function uploadFailed(evt) {\n";
