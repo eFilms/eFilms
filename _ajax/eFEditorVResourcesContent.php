@@ -512,14 +512,15 @@ if ($eFContentKat != 'Movies') {
                                                                     url: '_ajax/eFEditorVResourcesContentSaveEdit.php',
                                                                     data: 'id=' + idedit + '&value=' + encodeURI(newfilename),
                                                                     cache: false
-                                                            });
-
-
-
-
-
-                                                            }
-                                    });
+        				                                                    });
+                                                            $.ajax({
+                                                                    type: 'post',
+                                                                    url: '_ajax/eFEditorVResourcesContentSaveEdit.php',
+                                                                    data: 'id=' + idedit + '&original=' + encodeURI(oldfilename),
+                                                                    cache: false
+				                                                            });
+                				                                    }
+								                                    });
                                             } 
                                             </script>";
                         break;
