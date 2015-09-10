@@ -80,5 +80,6 @@ The actions for the player are created in the eFPIBasic.js file which uses the P
 - In the editor it would be nice if category names could be changed. The change would need to update all affected rows in the database
 - It would be nice to be able to create relationships between resources as resources are added to the editor
 - When relationships are added to the resources it would be nice if the new relationships were reflected in existing annotations
-- Film to film relations so that films could relate to frames in other films - Export of annotation data in XML format
+- Film to film relations so that films could relate to frames in other films
+- Export of annotation data in XML format
 - Group relations should allow multiple groups to be selected
