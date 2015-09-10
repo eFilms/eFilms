@@ -27,7 +27,9 @@ The majority of this project is coded using jQuery which makes debugging very di
 
 The overall file structure for the project is as follows:
 - .htaccess Defines the entire folder as password protected
-- .htpasswd Holds the hashed password values. Should be writable by Apache index.php (Initially installs required files) Creates the basic layout for the editor settings.php Defines the settings that are specific to your server
+- .htpasswd Holds the hashed password values. Should be writable by Apache
+- index.php (Initially installs required files) Creates the basic layout for the editor
+- settings.php Defines the settings that are specific to your server
 - /_ajax Contains all of the php files that the jQuery calls upon
 - /_css Contains all styles associated with the editor
 - /_img Contains the image assets for the editor interface
