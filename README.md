@@ -12,44 +12,44 @@ The .htpasswd file should be stored outside of the public web folder. This prote
 
 ##Server Requirements
 
--Linux *we used Amazon Linux 2014.09*
--Apache 2.2.29
--PHP 5.3.29
--MySQL 5.5.40
--OpenSSL *latest version*
--ffmpeg *http://johnvansickle.com/ffmpeg*
--imagemagick 6.7.9-10 *http://www.imagemagick.org*
--Amazon PHP SDK *if using S3 for storage*
+- Linux *we used Amazon Linux 2014.09*
+- Apache 2.2.29
+- PHP 5.3.29
+- MySQL 5.5.40
+- OpenSSL *latest version*
+- ffmpeg *http://johnvansickle.com/ffmpeg*
+- imagemagick 6.7.9-10 *http://www.imagemagick.org*
+- Amazon PHP SDK *if using S3 for storage*
 
 ##Code Organization
 
 The majority of this project is coded using jQuery which makes debugging very difficult because the actions associated with visual elements are not obvious when looking at the code that creates the visual element. Hopefully this section will help to limit the number of places where it is necessary to search for sources of content display and errors.
 
 The overall file structure for the project is as follows:
--.htaccess Defines the entire folder as password protected
--.htpasswd Holds the hashed password values. Should be writable by Apache index.php (Initially installs required files) Creates the basic layout for the editor settings.php Defines the settings that are specific to your server
--/_ajax Contains all of the php files that the jQuery calls upon
--/_css Contains all styles associated with the editor
--/_img Contains the image assets for the editor interface
--/_js Contains all jQuery and JavaScript files
--/_uploads Will contain all uploaded Annotation assets. Should be writable by Apache /player A sample video player that uses the annotation data that is generated 
+- .htaccess Defines the entire folder as password protected
+- .htpasswd Holds the hashed password values. Should be writable by Apache index.php (Initially installs required files) Creates the basic layout for the editor settings.php Defines the settings that are specific to your server
+- /_ajax Contains all of the php files that the jQuery calls upon
+- /_css Contains all styles associated with the editor
+- /_img Contains the image assets for the editor interface
+- /_js Contains all jQuery and JavaScript files
+- /_uploads Will contain all uploaded Annotation assets. Should be writable by Apache /player A sample video player that uses the annotation data that is generated 
 
 The copy of this project that is being used for eFilms uses an Amazon S3 service for hosting assets. If you plan to do the same, the initial installer will configure the system for you. You will also need to add your Amazon Credentials to the settings file which you should place outside of the publicly accessible web folder.
 
 ##Database
 
 The structure of the database is roughly defined as follows:
--eFilm_ActiveFilms *Contains details about the original film*
--eFilm_Config_Naming *Used to populate the dropdown suggestions in the editor*
--eFilm_Config_Users *Contains the user details*
--eFilm_Config_Users_MovieRights *Defines the user's access to various films*
--eFilm_Content_Movies *Contains display information for the films*
--eFilm_Content_Movies_Annotations *Contains all of the annotation data*
--eFilm_ReSources_HistoricEvents *Intended to contain a list of selectable events*
--eFilm_ReSources_L1 *Contains the L1 Annotation Names*
--eFilm_ReSources_L2 *Contains the L2 Annotation Names*
--eFilm_ReSources_RelationIndex *Contains relationships between L1 and L2 items*
--eFilm_ReSources_Templates *Used to create forms for entering data in the editor*
+- eFilm_ActiveFilms *Contains details about the original film*
+- eFilm_Config_Naming *Used to populate the dropdown suggestions in the editor*
+- eFilm_Config_Users *Contains the user details*
+- eFilm_Config_Users_MovieRights *Defines the user's access to various films*
+- eFilm_Content_Movies *Contains display information for the films*
+- eFilm_Content_Movies_Annotations *Contains all of the annotation data*
+- eFilm_ReSources_HistoricEvents *Intended to contain a list of selectable events*
+- eFilm_ReSources_L1 *Contains the L1 Annotation Names*
+- eFilm_ReSources_L2 *Contains the L2 Annotation Names*
+- eFilm_ReSources_RelationIndex *Contains relationships between L1 and L2 items*
+- eFilm_ReSources_Templates *Used to create forms for entering data in the editor*
 Comments explaining each field are included in the SQL Dump.
 
 ##Installation
