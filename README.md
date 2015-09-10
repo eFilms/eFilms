@@ -25,22 +25,24 @@ The .htpasswd file should be stored outside of the public web folder. This prote
 
 The majority of this project is coded using jQuery which makes debugging very difficult because the actions associated with visual elements are not obvious when looking at the code that creates the visual element. Hopefully this section will help to limit the number of places where it is necessary to search for sources of content display and errors.
 
-The overall file structure for the project is as follows:
-- .htaccess Defines the entire folder as password protected
-- .htpasswd Holds the hashed password values. Should be writable by Apache
-- index.php (Initially installs required files) Creates the basic layout for the editor
-- settings.php Defines the settings that are specific to your server
-- /_ajax Contains all of the php files that the jQuery calls upon
-- /_css Contains all styles associated with the editor
-- /_img Contains the image assets for the editor interface
-- /_js Contains all jQuery and JavaScript files
-- /_uploads Will contain all uploaded Annotation assets. Should be writable by Apache /player A sample video player that uses the annotation data that is generated 
+The overall file structure for the project once it has been installed is as follows:
+- .htaccess *Defines the entire folder as password protected*
+- .htpasswd *Holds the hashed password values. This file is created above the web root by the installer*
+- index.php *(Initially installs required files) Creates the basic layout for the editor*
+- settings.php *Defines the settings that are specific to your server*
+- /_ajax *Contains all of the php files that the jQuery calls upon*
+- /_css *Contains all styles associated with the editor*
+- /_img *Contains the image assets for the editor interface*
+- /_js *Contains all jQuery and JavaScript files*
+- /_uploads *Will contain all uploaded Annotation assets. Should be writable by Apache*
+- /player *A sample video player that uses the annotation data that is generated* 
 
-The copy of this project that is being used for eFilms uses an Amazon S3 service for hosting assets. If you plan to do the same, the initial installer will configure the system for you. You will also need to add your Amazon Credentials to the settings file which you should place outside of the publicly accessible web folder.
+The copy of this project that is being used for eFilms.ushmm.org uses an Amazon S3 service for hosting assets. If you plan to do the same, the initial installer will configure the system for you. You will also need to add your Amazon Credentials to the settings file which you should place outside of the publicly accessible web folder.
 
 ##Database
 
 The structure of the database is roughly defined as follows:
+
 - eFilm_ActiveFilms *Contains details about the original film*
 - eFilm_Config_Naming *Used to populate the dropdown suggestions in the editor*
 - eFilm_Config_Users *Contains the user details*
@@ -52,6 +54,7 @@ The structure of the database is roughly defined as follows:
 - eFilm_ReSources_L2 *Contains the L2 Annotation Names*
 - eFilm_ReSources_RelationIndex *Contains relationships between L1 and L2 items*
 - eFilm_ReSources_Templates *Used to create forms for entering data in the editor*
+
 Comments explaining each field are included in the SQL Dump.
 
 ##Installation
@@ -73,6 +76,7 @@ A sample player using the PopcornJS Framework and the data created by the Editor
 The actions for the player are created in the eFPIBasic.js file which uses the PopcornJS framework to trigger javascript functions based on the frame currently displaying in the browser window. The index.php file creates an array of annotations for the selected film which is used by eFPIBasic.js to populate the list of events to be triggered.
 
 ##Upgrades The Project Could Use Help With
+
 - In the editor it would be nice if category names could be changed. The change would need to update all affected rows in the database
 - It would be nice to be able to create relationships between resources as resources are added to the editor
 - When relationships are added to the resources it would be nice if the new relationships were reflected in existing annotations
