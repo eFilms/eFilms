@@ -13,7 +13,7 @@ require_once('/settings.php');
 require_once('/includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
-$idm = (isset($_GET['idm']) ? $_GET['idm'] : "");
+$idm = preg_replace("/[^\d]/","",$_GET['idm']);
 $anfrage = "SELECT eFilm_Content_Movies.*, eFilm_Config_Users_MovieRights.RIGHTS_Movies FROM eFilm_Content_Movies LEFT JOIN eFilm_Config_Users_MovieRights ON eFilm_Content_Movies.ID_Movies = eFilm_Config_Users_MovieRights.ID_Movies AND eFilm_Config_Users_MovieRights.ID_C_Users = ".$_SESSION["efuid"]." WHERE eFilm_Content_Movies.ID_Movies='".$idm."' ORDER BY eFilm_Content_Movies.FILM_ID ASC;";
 $ergebnis = mysqli_query($localDatabase, $anfrage); 
 $trefferzahl=mysqli_num_rows($ergebnis);
