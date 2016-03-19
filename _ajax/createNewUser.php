@@ -41,8 +41,8 @@ function get_random_string($valid_chars, $length)
     return $random_string;
 }
 
-require_once('/settings.php');
-require_once('/includes/functions.php');
+require_once('settings.php');
+require_once('includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
 $name = preg_replace("/[^\w\s\.\-\,_]/","",$_POST["name"]);
@@ -75,6 +75,6 @@ $insert = "INSERT INTO `eFilm_Config_Users` (`_FM_CREATE`,`_FM_CHANGE`,`_FM_DATE
 mysqli_query($localDatabase, $insert);
 echo mysqli_insert_id($localDatabase);
 $newPassword = get_random_string($valid_characters, 16);
-$fp = fopen("/data/sites/ee-efilms/.htpasswd", "a");
+$fp = fopen(directoryAboveWebRoot()."/.htpasswd", "a");
 fwrite($fp, $name.":".crypt($newPassword, base64_encode($newPassword))."\n");
 fclose($fp);
