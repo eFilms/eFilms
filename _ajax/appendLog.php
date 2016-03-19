@@ -29,8 +29,8 @@ if ($currentFilmID != $_POST['film']) {
     exit();
 }
 
-require_once('/settings.php');
-require_once('/includes/functions.php');
+require_once('settings.php');
+require_once('includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
 // Get and unencode the current log for this film
