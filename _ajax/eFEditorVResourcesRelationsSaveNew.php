@@ -9,8 +9,8 @@ if ($_SESSION["login"] != "true"){
   exit;
 }
 
-require_once('/settings.php');
-require_once('/includes/functions.php');
+require_once('settings.php');
+require_once('includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
 $ID_R_L1_A = (isset($_POST['ID_R_L1_A']) ? $_POST['ID_R_L1_A'] : "");
