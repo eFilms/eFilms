@@ -13,8 +13,8 @@ if ($_SESSION["login"] != "true") {
 
 date_default_timezone_set('GMT');
 
-require_once('/settings.php');
-require_once('/includes/functions.php');
+require_once('settings.php');
+require_once('includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
 $id = preg_replace("/[^\d]/","",$_POST["id"]);
