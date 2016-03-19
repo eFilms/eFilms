@@ -61,6 +61,8 @@ Comments explaining each field are included in the SQL Dump.
 
 Download and copy the project into a folder on your web server. Then in your web browser open the index.php file and follow the instructions.
 
+You will need to make sure that PHP has write premissions to the server for install.  You can unset this afterward.
+
 ##Known Issues
 
 The Logout button does not cause a log out. The process of creating a logout feature is described here: http://httpd.apache.org/docs/2.4/mod/mod_auth_form.html#loggingout This was not completed prior to releasing this project as open source.
