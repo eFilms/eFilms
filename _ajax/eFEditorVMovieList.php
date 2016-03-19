@@ -9,8 +9,8 @@ if ($_SESSION["login"] != "true"){
   exit;
 }
 
-require_once('/settings.php');
-require_once('/includes/functions.php');
+require_once('settings.php');
+require_once('includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
 $anfrage = "SELECT eFilm_Content_Movies.*, eFilm_Config_Users_MovieRights.RIGHTS_Movies FROM eFilm_Content_Movies LEFT JOIN eFilm_Config_Users_MovieRights ON eFilm_Content_Movies.ID_Movies = eFilm_Config_Users_MovieRights.ID_Movies AND eFilm_Config_Users_MovieRights.ID_C_Users = ".$_SESSION["efuid"]." WHERE eFilm_Content_Movies._eFWEB_EditorV='1' ORDER BY eFilm_Content_Movies.FILM_ID ASC;";
