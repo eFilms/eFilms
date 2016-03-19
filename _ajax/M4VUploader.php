@@ -11,9 +11,9 @@ if ($_SESSION["login"] != "true") {
     exit;
 }
 
-require '/settings.php';
-require '/includes/functions.php';
-require '/usr/local/aws-php-sdk/aws-autoloader.php';
+require 'settings.php';
+require 'includes/functions.php';
+include '/usr/local/aws-php-sdk/aws-autoloader.php';
 
 use App\Http\Controllers\Controller;
 use Aws\Common\Aws;
