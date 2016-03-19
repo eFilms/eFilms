@@ -39,8 +39,8 @@ function get_random_string($valid_chars, $length)
     return $random_string;
 }
 
-require_once('/settings.php');
-require_once('/includes/functions.php');
+require_once('settings.php');
+require_once('includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
 date_default_timezone_set('GMT');
