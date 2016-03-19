@@ -132,6 +132,7 @@ if (file_exists(directoryAboveWebRoot().'/amazonCredentials.php') && !file_exist
 <?php	
 }
 
+include('settings.php');
 include('buildIndex.php');
 
 echo "<center><h3>You are done! Reload the page to begin!</h3></center>";
