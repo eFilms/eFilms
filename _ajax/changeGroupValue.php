@@ -17,8 +17,8 @@ $id = $_POST['id'];
 $newGroup = $_POST['group'];
 
 if (!empty($id) && !empty($newGroup) && ctype_digit($id)) {
-	require_once('/settings.php');
-	require_once('/includes/functions.php');
+	require_once('settings.php');
+	require_once('includes/functions.php');
 	require_once(directoryAboveWebRoot().'/db_con.php');
 	$update = "UPDATE `eFilm_ReSources_L1` SET `Group`='".$newGroup."' WHERE `ID_R_L1` = '".$id."';";
 	$ergebnisGroup = mysqli_query($localDatabase, $update);
