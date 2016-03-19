@@ -9,8 +9,8 @@ if ($_SESSION["login"] != "true"){
   exit;
 }
 
-require_once('/settings.php');
-require_once('/includes/functions.php');
+require_once('settings.php');
+require_once('includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
 $eFRelDelId = (isset($_POST['eFRelDelId']) ? $_POST['eFRelDelId'] : "");
