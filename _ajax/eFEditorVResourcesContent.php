@@ -581,83 +581,295 @@ if ($eFContentKat != 'Movies') {
      * You will edit by picking an existing movie in the dropdown menu
      * at the top of the page.
      */
-    
-    echo "<span style='margin: 20px 0px 0px 20px; width: 200px; float: left;'>English</span><br clear='both'>";
-    echo "<input id='newMovieTitleEn' placeholder='New Movie Title' style='margin: 10px 0px 0px 20px; width: 200px; float: left;'>";
-    echo "<input id='newMovieGenerationEn' placeholder='Generation' style='margin: 10px 0px 0px 20px; width: 100px; float: left;'>";
-    echo "<input id='newMoviePosNegEn' placeholder='Pos/Neg' style='margin: 10px 0px 0px 20px; width: 100px; float: left;'>";
-    echo "<input id='newMovieFilmBaseEn' placeholder='Film Base' style='margin: 10px 0px 0px 20px; width: 100px; float: left;'>";
-    echo "<input id='newMoviePrevGenEn' placeholder='Previous Gen' style='margin: 10px 0px 0px 20px; width: 100px; float: left;'>";
-    echo "<input id='newMovieColorEn' placeholder='Color' style='margin: 10px 0px 0px 20px; width: 45px; float: left;'>";
-    echo "<input id='newMovieSoundEn' placeholder='Sound' style='margin: 10px 0px 0px 20px; width: 45px; float: left;'>";
-    echo "<input id='newMovieSoundProcessEn' placeholder='Sound Process' style='margin: 10px 0px 0px 20px; width: 100px; float: left;'>";
-    echo "<input id='newMovieLanguageEn' placeholder='Language' style='margin: 10px 0px 0px 20px; width: 55px; float: left;'>";
-    echo "<input id='newMovieLabEn' placeholder='Digital Lab' style='margin: 10px 0px 0px 20px; width: 100px; float: left;'>";
-    echo "<input id='newMovieGenreEn' placeholder='Genre' style='margin: 10px 0px 0px 20px; width: 55px; float: left;'>";
-
-    echo "<br clear='both'>";
-
-    echo "<span style='margin: 20px 0px 0px 20px; width: 200px; float: left;'>Deutsch</span><br clear='both'>";
-    echo "<input id='newMovieTitleDe' placeholder='New Movie Title' style='margin: 10px 0px 0px 20px; width: 200px; float: left;'>";
-    echo "<input id='newMovieGenerationDe' placeholder='Generation' style='margin: 10px 0px 0px 20px; width: 100px; float: left;'>";
-    echo "<input id='newMoviePosNegDe' placeholder='Pos/Neg' style='margin: 10px 0px 0px 20px; width: 100px; float: left;'>";
-    echo "<input id='newMovieFilmBaseDe' placeholder='Film Base' style='margin: 10px 0px 0px 20px; width: 100px; float: left;'>";
-    echo "<input id='newMoviePrevGenDe' placeholder='Previous Gen' style='margin: 10px 0px 0px 20px; width: 100px; float: left;'>";
-    echo "<input id='newMovieColorDe' placeholder='Farbe' style='margin: 10px 0px 0px 20px; width: 45px; float: left;'>";
-    echo "<input id='newMovieSoundDe' placeholder='Ton' style='margin: 10px 0px 0px 20px; width: 45px; float: left;'>";
-    echo "<input id='newMovieSoundProcessDe' placeholder='Tonverfahren' style='margin: 10px 0px 0px 20px; width: 100px; float: left;'>";
-    echo "<input id='newMovieLanguageDe' placeholder='Sprache' style='margin: 10px 0px 0px 20px; width: 55px; float: left;'>";
-    echo "<input id='newMovieLabDe' placeholder='Digital Lab' style='margin: 10px 0px 0px 20px; width: 100px; float: left;'>";
-    echo "<input id='newMovieGenreDe' placeholder='Genre' style='margin: 10px 0px 0px 20px; width: 55px; float: left;'>";
-
-    echo "<br clear='both'>";
-
-    echo "<span style='margin: 20px 0px 0px 20px; width: 200px; float: left;'>Film Details</span><br clear='both'>";
-    echo "<input id='newMovieDisplayTitle' placeholder='Display Title' style='margin: 10px 0px 0px 20px; width: 150px; float: left;'>";
-    echo "<input id='newMovieArchivalNumber' placeholder='Archival Number' style='margin: 10px 0px 0px 20px; width: 150px; float: left;'>";
-    echo "<input id='newMovieFilmNumber' placeholder='Film Number' style='margin: 10px 0px 0px 20px; width: 75px; float: left;'>";
-    echo "<input id='newMovieFilmGauge' placeholder='Film Gauge' style='margin: 10px 0px 0px 20px; width: 150px; float: left;'>";
-    echo "<input id='newMovieFPS' placeholder='FPS' style='margin: 10px 0px 0px 20px; width: 20px; float: left;'>";
-    echo "<input id='newMovieMinutes' placeholder='Minutes' style='margin: 10px 0px 0px 20px; width: 45px; float: left;'>";
-    echo "<span style='margin: 12px 0px 0px 5px; float: left;'>:</span>";
-    echo "<input id='newMovieSeconds' placeholder='Seconds' style='margin: 10px 0px 0px 5px; width: 45px; float: left;'>";
-    echo "<input id='newMovieFrames' placeholder='Frames' style='margin: 10px 0px 0px 20px; width: 45px; float: left;'>";
-    echo "<input id='newMovieYear' placeholder='Year' style='margin: 10px 0px 0px 20px; width: 45px; float: left;'>";
-
-    echo "<br clear='both'>";
-
-    echo "<input id='newMovieEFNS' placeholder='EF-NS #' style='margin: 10px 0px 0px 20px; width: 45px; float: left;'>";
-    echo "<span style='margin: 12px 0px 0px 5px; float: left;'>-</span>";
-    echo "<input id='newMovieReel' placeholder='Reel' style='margin: 10px 0px 0px 5px; width: 45px; float: left;'>";
-    echo "<span style='margin: 12px 0px 0px 5px; float: left;'>-</span>";
-    echo "<input id='newMovieSource' placeholder='Source' style='margin: 10px 0px 0px 5px; width: 45px; float: left;'>";
-    echo "<input id='newMovieSeries' placeholder='Series' style='margin: 10px 0px 0px 20px; width: 45px; float: left;'>";
-    echo "<input id='newMovieFormat' placeholder='Digital Format' style='margin: 10px 0px 0px 20px; width: 80px; float: left;'>";
-    echo "<input id='newMovieCopyDate' placeholder='Copy Date' style='margin: 10px 0px 0px 20px; width: 80px; float: left;'>";
-    echo "<input id='newMovieProducer' placeholder='Producer' style='margin: 10px 0px 0px 20px; width: 150px; float: left;'>";
-    echo "<input id='newMovieDirector' placeholder='Director' style='margin: 10px 0px 0px 20px; width: 150px; float: left;'>";
-    echo "<input id='newMovieCinematography' placeholder='Cinematographer' style='margin: 10px 0px 0px 20px; width: 150px; float: left;'>";
-    echo "<input id='newMovieCollection' placeholder='Collection' style='margin: 10px 0px 0px 20px; width: 150px; float: left;'>";
-    echo "<input id='newMovieProvenance' placeholder='Provenance' style='margin: 10px 0px 0px 20px; width: 150px; float: left;'>";
-    echo "<input id='newMovieDescription' placeholder='Description' style='margin: 10px 0px 0px 20px; width: 150px; float: left;'>";
-    echo "<input id='newMoviePraktikantin' placeholder='Praktikantin' style='margin: 10px 0px 0px 20px; width: 65px; float: left;'>";
-    echo "<input id='newMovieEditorV' placeholder='EditorV' style='margin: 10px 0px 0px 20px; width: 65px; float: left;'>";
-    echo "<input id='newMovieStatus' placeholder='Status' style='margin: 10px 0px 0px 20px; width: 65px; float: left;'>";
-    echo "<input id='newMoviePOnline' placeholder='POnline' style='margin: 10px 0px 0px 20px; width: 65px; float: left;'>";
-
-    echo "<br clear='both'>";
-
-    echo "<script type = \"text/javascript\">\n";
-    echo "  function enableSaveButton() {\n";
-    echo "      if (document.getElementById('fileName').value == \"\" || document.getElementById('M4VfileName').value == \"\" || document.getElementById('OGGfileName').value == \"\" || document.getElementById('ThumbnailBuilder').value != 'Done! :)') {\n";
-    echo "          return;\n";
+    $anfrageFilms = "SELECT DISTINCT `FILM_ID` FROM `eFilm_Content_Movies` ORDER BY `FILM_ID` ASC;";
+    $ergebnisFilms = mysqli_query($localDatabase, $anfrageFilms);
+    echo "<div id='eFResourcesFilterContainer'>Redigieren (Edit): ";
+    echo "<select  id='eFResourcesFilterFilm' name='eFResourcesFilterFilm' onchange='fetchFilmInfo(this.options[this.selectedIndex].value);'><option selected></option>";
+    while ($row = mysqli_fetch_array($ergebnisFilms)) {
+//        echo "\n<!-- ".var_dump($row)." -->\n";
+        echo "<option value='".$row['FILM_ID']."'>".$row['FILM_ID']."</option>";
+        $overallFilmList[] = $row['FILM_ID'];
+    }
+    echo "</select>\n";
+    echo "<script>\n";
+    echo "  function fetchFilmInfo(value) {\n";
+    echo "      var xhr = new XMLHttpRequest();\n";
+    echo "      xhr.onreadystatechange = function() {\n";
+    echo "        if (xhr.readyState == 4 && xhr.status == 200) {\n";
+    echo "        var filmNumberParts = value.split('_');\n";
+    echo "          var dataArr = JSON.parse(xhr.responseText);\n";
+    echo "          document.getElementById('newMovieTitleEn').value = ( typeof dataArr['newMovieTitleEn'] !== 'undefined' ) ? dataArr['newMovieTitleEn'] : '';\n"
+                    . "document.getElementById('newMovieGenerationEn').value = ( typeof dataArr['newMovieGenerationEn'] !== 'undefined' ) ? dataArr['newMovieGenerationEn'] : '';\n"
+                    . "document.getElementById('newMoviePosNegEn').value = ( typeof dataArr['newMoviePosNegEn'] !== 'undefined' ) ? dataArr['newMoviePosNegEn'] : '';\n"
+                    . "document.getElementById('newMovieFilmBaseEn').value = ( typeof dataArr['newMovieFilmBaseEn'] !== 'undefined' ) ? dataArr['newMovieFilmBaseEn'] : '';\n"
+                    . "document.getElementById('newMoviePrevGenEn').value = ( typeof dataArr['newMoviePrevGenEn'] !== 'undefined' ) ? dataArr['newMoviePrevGenEn'] : '';\n"
+                    . "document.getElementById('newMovieColorEn').value = ( typeof dataArr['newMovieColorEn'] !== 'undefined' ) ? dataArr['newMovieColorEn'] : '';\n"
+                    . "document.getElementById('newMovieSoundEn').value = ( typeof dataArr['newMovieSoundEn'] !== 'undefined' ) ? dataArr['newMovieSoundEn'] : '';\n"
+                    . "document.getElementById('newMovieSoundProcessEn').value = ( typeof dataArr['newMovieSoundProcessEn'] !== 'undefined' ) ? dataArr['newMovieSoundProcessEn'] : '';\n"
+                    . "document.getElementById('newMovieLanguageEn').value = ( typeof dataArr['newMovieLanguageEn'] !== 'undefined' ) ? dataArr['newMovieLanguageEn'] : '';\n"
+                    . "document.getElementById('newMovieLabEn').value = ( typeof dataArr['newMovieLabEn'] !== 'undefined' ) ? dataArr['newMovieLabEn'] : '';\n"
+                    . "document.getElementById('newMovieGenreEn').value = ( typeof dataArr['newMovieGenreEn'] !== 'undefined' ) ? dataArr['newMovieGenreEn'] : '';\n"
+                    . "document.getElementById('newMovieTitleDe').value = ( typeof dataArr['newMovieTitleDe'] !== 'undefined' ) ? dataArr['newMovieTitleDe'] : '';\n"
+                    . "document.getElementById('newMovieGenerationDe').value = ( typeof dataArr['newMovieGenerationDe'] !== 'undefined' ) ? dataArr['newMovieGenerationDe'] : '';\n"
+                    . "document.getElementById('newMoviePosNegDe').value = ( typeof dataArr['newMoviePosNegDe'] !== 'undefined' ) ? dataArr['newMoviePosNegDe'] : '';\n"
+                    . "document.getElementById('newMovieFilmBaseDe').value = ( typeof dataArr['newMovieFilmBaseDe'] !== 'undefined' ) ? dataArr['newMovieFilmBaseDe'] : '';\n"
+                    . "document.getElementById('newMoviePrevGenDe').value = ( typeof dataArr['newMoviePrevGenDe'] !== 'undefined' ) ? dataArr['newMoviePrevGenDe'] : '';\n"
+                    . "document.getElementById('newMovieColorDe').value = ( typeof dataArr['newMovieColorDe'] !== 'undefined' ) ? dataArr['newMovieColorDe'] : '';\n"
+                    . "document.getElementById('newMovieSoundDe').value = ( typeof dataArr['newMovieSoundDe'] !== 'undefined' ) ? dataArr['newMovieSoundDe'] : '';\n"
+                    . "document.getElementById('newMovieSoundProcessDe').value = ( typeof dataArr['newMovieSoundProcessDe'] !== 'undefined' ) ? dataArr['newMovieSoundProcessDe'] : '';\n"
+                    . "document.getElementById('newMovieLanguageDe').value = ( typeof dataArr['newMovieLanguageDe'] !== 'undefined' ) ? dataArr['newMovieLanguageDe'] : '';\n"
+                    . "document.getElementById('newMovieLabDe').value = ( typeof dataArr['newMovieLabDe'] !== 'undefined' ) ? dataArr['newMovieLabDe'] : '';\n"
+                    . "document.getElementById('newMovieGenreDe').value = ( typeof dataArr['newMovieGenreDe'] !== 'undefined' ) ? dataArr['newMovieGenreDe'] : '';\n"
+                    . "document.getElementById('newMovieDisplayTitle').value = ( typeof dataArr['newMovieDisplayTitle'] !== 'undefined' ) ? dataArr['newMovieDisplayTitle'] : '';\n"
+                    . "document.getElementById('newMovieArchivalNumber').value = ( typeof dataArr['newMovieArchivalNumber'] !== 'undefined' ) ? dataArr['newMovieArchivalNumber'] : '';\n"
+                    . "document.getElementById('newMovieFilmGauge').value = ( typeof dataArr['newMovieFilmGauge'] !== 'undefined' ) ? dataArr['newMovieFilmGauge'] : '';\n"
+                    . "document.getElementById('newMovieFPS').value = ( typeof dataArr['newMovieFPS'] !== 'undefined' ) ? dataArr['newMovieFPS'] : '';\n"
+                    . "document.getElementById('newMovieMinutes').value = ( typeof dataArr['newMovieMinutes'] !== 'undefined' ) ? dataArr['newMovieMinutes'] : '';\n"
+                    . "document.getElementById('newMovieSeconds').value = ( typeof dataArr['newMovieSeconds'] !== 'undefined' ) ? dataArr['newMovieSeconds'] : '';\n"
+                    . "document.getElementById('newMovieFrames').value = ( typeof dataArr['newMovieFrames'] !== 'undefined' ) ? dataArr['newMovieFrames'] : '';\n"
+                    . "document.getElementById('newMovieYear').value = ( typeof dataArr['newMovieYear'] !== 'undefined' ) ? dataArr['newMovieYear'] : '';\n"
+                    . "document.getElementById('newMovieEFNS').value = ( typeof dataArr['newMovieEFNS'] !== 'undefined' ) ? dataArr['newMovieEFNS'] : filmNumberParts[0]+'_'+filmNumberParts[1];\n"
+                    . "document.getElementById('newMovieReel').value = ( typeof dataArr['newMovieReel'] !== 'undefined' ) ? dataArr['newMovieReel'] : '';\n"
+                    . "document.getElementById('newMovieSource').value = ( typeof dataArr['newMovieSource'] !== 'undefined' ) ? dataArr['newMovieSource'] : filmNumberParts[2];\n"
+                    . "document.getElementById('newMovieSeries').value = ( typeof dataArr['newMovieSeries'] !== 'undefined' ) ? dataArr['newMovieSeries'] : '';\n"
+                    . "document.getElementById('newMovieFormat').value = ( typeof dataArr['newMovieFormat'] !== 'undefined' ) ? dataArr['newMovieFormat'] : '';\n"
+                    . "document.getElementById('newMovieCopyDate').value = ( typeof dataArr['newMovieCopyDate'] !== 'undefined' ) ? dataArr['newMovieCopyDate'] : '';\n"
+                    . "document.getElementById('newMovieProducer').value = ( typeof dataArr['newMovieProducer'] !== 'undefined' ) ? dataArr['newMovieProducer'] : '';\n"
+                    . "document.getElementById('newMovieDirector').value = ( typeof dataArr['newMovieDirector'] !== 'undefined' ) ? dataArr['newMovieDirector'] : '';\n"
+                    . "document.getElementById('newMovieCinematography').value = ( typeof dataArr['newMovieCinematography'] !== 'undefined' ) ? dataArr['newMovieCinematography'] : '';\n"
+                    . "document.getElementById('newMovieCollection').value = ( typeof dataArr['newMovieCollection'] !== 'undefined' ) ? dataArr['newMovieCollection'] : '';\n"
+                    . "document.getElementById('newMovieProvenance').value = ( typeof dataArr['newMovieProvenance'] !== 'undefined' ) ? dataArr['newMovieProvenance'] : '';\n"
+                    . "document.getElementById('newMovieDescription').value = ( typeof dataArr['newMovieDescription'] !== 'undefined' ) ? dataArr['newMovieDescription'] : '';\n"
+                    . "document.getElementById('newMoviePraktikantin').value = ( typeof dataArr['newMoviePraktikantin'] !== 'undefined' ) ? dataArr['newMoviePraktikantin'] : '';\n"
+                    . "document.getElementById('newMovieEditorV').value = ( typeof dataArr['newMovieEditorV'] !== 'undefined' ) ? dataArr['newMovieEditorV'] : '';\n"
+                    . "document.getElementById('newMovieStatus').value = ( typeof dataArr['newMovieStatus'] !== 'undefined' ) ? dataArr['newMovieStatus'] : '';\n"
+                    . "document.getElementById('newMoviePOnline').value = ( typeof dataArr['newMoviePOnline'] !== 'undefined' ) ? dataArr['newMoviePOnline'] : '';\n";
+    echo "        }\n";
     echo "      }\n";
-    echo "      document.getElementById('saveNewFilmDetailsButton').disabled = false;\n";
+    echo "      var params = 'film='+value;\n";
+    echo "      xhr.open(\"POST\", \"_ajax/getFilmDetails.php\", true);\n";
+    echo "      xhr.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");\n";
+    echo "      xhr.send(params);\n";
     echo "  }\n";
+    echo "</script>\n";
+    echo "</div>";
+    echo "<div id='eFResourcesSubContent'>";
+    echo "<table style='width: 90%; margin: 0px auto;'>";
+    echo "<tr>";
+    echo "  <th style='width: 49%; font-size: 1.5em;' colspan=2>Deutsch</th>";
+    echo "  <th style='font-size: 1.5em;' colspan=2>English</th>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Filmtitel : </td><td><input id='newMovieTitleDe' style='width: 90%;'></td>";
+    echo "  <td style='text-align: right;'>Film Title : </td><td><input id='newMovieTitleEn' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Generation : </td><td><input id='newMovieGenerationDe' style='width: 90%;'></td>";
+    echo "  <td style='text-align: right;'>Generation : </td><td><input id='newMovieGenerationEn' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Pos/Neg : </td><td><input id='newMoviePosNegDe' style='width: 90%;'></td>";
+    echo "  <td style='text-align: right;'>Pos/Neg : </td><td><input id='newMoviePosNegEn' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Film Base : </td><td><input id='newMovieFilmBaseDe' style='width: 90%;'></td>";
+    echo "  <td style='text-align: right;'>Film Base : </td><td><input id='newMovieFilmBaseEn' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Previous Generation : </td><td><input id='newMoviePrevGenDe' style='width: 90%;'></td>";
+    echo "  <td style='text-align: right;'>Previous Generation : </td><td><input id='newMoviePrevGenEn' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Farbe : </td><td><input id='newMovieColorDe' style='width: 90%;'></td>";
+    echo "  <td style='text-align: right;'>Color : </td><td><input id='newMovieColorEn' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Ton : </td><td><input id='newMovieSoundDe' style='width: 90%;'></td>";
+    echo "  <td style='text-align: right;'>Sound : </td><td><input id='newMovieSoundEn' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Tonverfahren : </td><td><input id='newMovieSoundProcessDe' style='width: 90%;'></td>";
+    echo "  <td style='text-align: right;'>Sound Process : </td><td><input id='newMovieSoundProcessEn' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Sprache : </td><td><input id='newMovieLanguageDe' style='width: 90%;'></td>";
+    echo "  <td style='text-align: right;'>Language : </td><td><input id='newMovieLanguageEn' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Digital Lab : </td><td><input id='newMovieLabDe' style='width: 90%;'></td>";
+    echo "  <td style='text-align: right;'>Digital Lab : </td><td><input id='newMovieLabEn' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Genre : </td><td><input id='newMovieGenreDe' style='width: 90%;'></td>";
+    echo "  <td style='text-align: right;'>Genre : </td><td><input id='newMovieGenreEn' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <th colspan=4>&nbsp;</th>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <th style='font-size: 1.5em;' colspan=2>Film Details</th>";
+    echo "  <th style='font-size: 1.5em;' colspan=2>Upload m4v File</th>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Display Title : </td><td><input id='newMovieDisplayTitle' style='width: 90%;'></td>";
+    echo "  <td style='text-align: left; vertical-align: top;' colspan=2 rowspan=25>";
+        echo "<div style='margin: 10px 0px 0px 20px; width: 300px; float: left;'>";
+        echo "  <div name=\"files_div\" id=\"files_div\"><br clear='both'>";
+        echo "  <p><input type='checkbox' id='watermark'> Watermarked Copy</p>";
+        echo "  <input type=\"file\" name=\"fileToUpload\" id=\"fileToUpload\" onclick=\"document.getElementById('saveNewFilmDetailsButton').disabled = true;\" onChange=\"fileSelected();\"><br clear='both'>\n";
+        echo "  <table style=\"width: 100%;\"><tr><td><div style=\"display:block; font-size: 1.2em;\" id=\"fileName\"></div> <div style=\"display:block; font-size: 1.2em;\" id=\"fileSize\"></div> <div style=\"display:block; font-size: 1.2em;\" id=\"fileType\"></div></td><td width='80px;'><div id=\"spinner\" style=\"clear: both; margin: 20px auto;\"></div></td></tr></table><br>\n";
+        echo "  <input id=\"uploadProgress\" type=\"button\" value=\"Upload\" onclick=\"uploadFile();\">";
+        echo "  </div>\n";
+        echo "</div>";
+        echo "<div id='tempContainerForVideoUpload' style='display:none;'><video id=\"uploadedVideo\" height=\"240\" controls></video><br><button onclick=\"createPosterFrame();\">Capture Poster Frame</button></div>";
+        echo "  <script type=\"text/javascript\">\n";
+        echo "      function fileSelected() {\n";
+        echo "          var file = document.getElementById('fileToUpload').files[0];\n";
+        echo "          if (file) {\n";
+        echo "              var fileSize = 0;\n";
+        echo "              if (file.size > 1024 * 1024) fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString()+'MB';\n";
+        echo "              else fileSize = (Math.round(file.size * 100 / 1024) / 100).toString()+'KB';\n";
+        echo "              document.getElementById('fileName').innerHTML = file.name;\n";
+        echo "              document.getElementById('fileSize').innerHTML = fileSize;\n";
+        echo "              document.getElementById('fileType').innerHTML = file.type;\n";
+        echo "          }\n";
+        echo "      }\n";
+        echo "      function uploadFile() {\n";
+        echo "          var fd = new FormData();\n";
+        echo "          fd.append(\"fileToUpload\", document.getElementById('fileToUpload').files[0]);\n";
+        echo "          fd.append(\"watermarked\", document.getElementById('watermark').checked );\n";
+        echo "          var xhr = new XMLHttpRequest();\n";
+        echo "          xhr.upload.addEventListener(\"progress\", uploadProgress, false);\n";
+        echo "          xhr.addEventListener(\"load\", uploadComplete, false);\n";
+        echo "          xhr.addEventListener(\"error\", uploadFailed, false);\n";
+        echo "          xhr.addEventListener(\"abort\", uploadCanceled, false);\n";
+        echo "          xhr.open(\"POST\", \"_ajax/M4VUploader.php\");\n";
+        echo "          xhr.send(fd);\n";
+        echo "      }\n";
+        echo "      function uploadProgress(evt) {\n";
+        echo "          document.getElementById('fileToUpload').style.display = 'none';\n";
+        echo "          document.getElementById('uploadProgress').disabled = true;\n";
+        echo "          document.getElementById('uploadProgress').value = 'Processing';\n";
+        echo "          if (document.getElementById('spinner').innerHTML == '') {\n";
+        echo "            document.getElementById('spinner').innerHTML = \"<img src='_img/spinner.gif' width=75 height=58>\";\n";
+        echo "          }\n";
+        echo "      }\n";
+        echo "      function createPosterFrame() {\n";
+        echo "          var fd = new FormData();\n";
+        echo "          var vid = document.getElementById('uploadedVideo');\n";
+        echo "          fd.append(\"videoFileName\", document.getElementById('fileName').innerHTML);\n";
+        echo "          fd.append(\"time\", vid.currentTime);\n";
+        echo "          var xhr = new XMLHttpRequest();\n";
+        echo "          xhr.addEventListener(\"load\", posterFrameComplete, false);\n";
+        echo "          xhr.open(\"POST\", \"_ajax/createPosterFrame.php\");\n";
+        echo "          xhr.send(fd);\n";
+        echo "      }\n";
+        echo "      function posterFrameComplete(evt) {\n";
+        echo "          alert('Poster Frame Created');\n";
+        echo "          document.getElementById('tempContainerForVideoUpload').innerHTML = '<img src=\"http://efilms.assets.ushmm.org/_media/movies_wm/_img/PosterFrames/'+evt.target.responseText+'\" style=\"max-width: 50%;\">';\n";
+        echo "      }\n";
+        echo "      function uploadComplete(evt) {\n";
+        echo "          // This event is raised when the server sends back a response\n";
+        echo "          document.getElementById('spinner').innerHTML = '';\n";
+        echo "          if (evt.target.responseText != '') {\n";
+        echo "              alert(evt.target.responseText);\n";
+        echo "              document.getElementById('uploadProgress').value = \"Upload\";\n";
+        echo "              document.getElementById('fileToUpload').value = \"\";\n";
+        echo "              document.getElementById('fileName').innerHTML = \"\";\n";
+        echo "              document.getElementById('fileSize').innerHTML = \"\";\n";
+        echo "              document.getElementById('fileType').innerHTML = \"\";\n";
+        echo "              return;\n";
+        echo "          }\n";
+        echo "          alert('Upload Complete');\n";
+        echo "          document.getElementById('fileToUpload').style.display = 'none';\n";
+        echo "          document.getElementById('uploadProgress').style.display = 'none';\n";
+        echo "          document.getElementById('saveNewFilmDetailsButton').disabled = false;\n";
+        echo "          if (!document.getElementById('watermark').checked) {\n";
+        echo "              document.getElementById('uploadedVideo').src = '//efilms.assets.ushmm.org/_media/movies/'+document.getElementById('fileName').innerHTML;\n";
+        echo "              document.getElementById('tempContainerForVideoUpload').style.display = 'block';\n";
+        echo "          }\n";
+        echo "      }\n";
+        echo "      function uploadFailed(evt) {\n";
+        echo "          alert(\"There was an error attempting to upload the file.\");\n";
+        echo "      }\n";
+        echo "      function uploadCanceled(evt) {\n";
+        echo "          alert(\"The upload has been canceled by the user or the browser dropped the connection.\");\n";
+        echo "      }\n";
+        echo "  </script>\n";
+    echo "  </td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Archival Number : </td><td><input id='newMovieArchivalNumber' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Film Gauge : </td><td><input id='newMovieFilmGauge' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>FPS : </td><td><input id='newMovieFPS' style='width: 90%;'></td>";
+	echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Minutes : </td><td><input id='newMovieMinutes' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Seconds : </td><td><input id='newMovieSeconds' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Frames : </td><td><input id='newMovieFrames' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Year : </td><td><input id='newMovieYear' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>EF-NS # : </td><td><input id='newMovieEFNS' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Source : </td><td><input id='newMovieSource' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Reel : </td><td><input id='newMovieReel' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Series : </td><td><input id='newMovieSeries' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Digital Format : </td><td><input id='newMovieFormat' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Copy Date : </td><td><input id='newMovieCopyDate' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Producer : </td><td><input id='newMovieProducer' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Director : </td><td><input id='newMovieDirector' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Cinematographer : </td><td><input id='newMovieCinematography' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Collection : </td><td><input id='newMovieCollection' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Provenance : </td><td><input id='newMovieProvenance' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Description : </td><td><input id='newMovieDescription' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Praktikantin : </td><td><input id='newMoviePraktikantin' style='width: 90%;'></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Show In Editor : </td><td><input id='newMovieEditorV' value='Ja (Yes)' style='width: 90%;' readonly></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Status : </td><td><input id='newMovieStatus' style='width: 90%;' value='Unbearbeitet (Unfinished)' readonly></td>"; //0 ... unbearbeitet (unfinished), 1 ... Praktikant$
+    echo "</tr>";
+    echo "<tr>";
+    echo "  <td style='text-align: right;'>Publish Online : </td><td><input id='newMoviePOnline' value='Nein (No)' style='width: 90%;' readonly></td>";
+    echo "</tr>";
+    echo "</table>";
+    echo "<script type = \"text/javascript\">\n";
     echo "  function saveFilmDetails() {\n";
-    echo "      if (document.getElementById('fileName').value == \"\" || document.getElementById('M4VfileName').value == \"\" || document.getElementById('OGGfileName').value == \"\" || document.getElementById('ThumbnailBuilder').value != 'Done! :)') {\n";
-    echo "          return;\n";
-    echo "      }\n";
     echo "      var xhr = new XMLHttpRequest();\n";
     echo "      xhr.addEventListener(\"load\", saveComplete, false);\n";
     echo "      xhr.open(\"POST\", \"_ajax/saveNewFilm.php\");\n";
@@ -686,7 +898,6 @@ if ($eFContentKat != 'Movies') {
             . "\"&newMovieGenreDe=\"+document.getElementById('newMovieGenreDe').value+"
             . "\"&newMovieDisplayTitle=\"+document.getElementById('newMovieDisplayTitle').value+"
             . "\"&newMovieArchivalNumber=\"+document.getElementById('newMovieArchivalNumber').value+"
-            . "\"&newMovieFilmNumber=\"+document.getElementById('newMovieFilmNumber').value+"
             . "\"&newMovieFilmGauge=\"+document.getElementById('newMovieFilmGauge').value+"
             . "\"&newMovieFPS=\"+document.getElementById('newMovieFPS').value+"
             . "\"&newMovieMinutes=\"+document.getElementById('newMovieMinutes').value+"
@@ -699,7 +910,7 @@ if ($eFContentKat != 'Movies') {
             . "\"&newMovieSeries=\"+document.getElementById('newMovieSeries').value+"
             . "\"&newMovieFormat=\"+document.getElementById('newMovieFormat').value+"
             . "\"&newMovieCopyDate=\"+document.getElementById('newMovieCopyDate').value+"
-            . "\"&newMovieProducer=\"+document.getElementById('newMovieProducer').value+"
+           . "\"&newMovieProducer=\"+document.getElementById('newMovieProducer').value+"
             . "\"&newMovieDirector=\"+document.getElementById('newMovieDirector').value+"
             . "\"&newMovieCinematography=\"+document.getElementById('newMovieCinematography').value+"
             . "\"&newMovieCollection=\"+document.getElementById('newMovieCollection').value+"
@@ -709,246 +920,15 @@ if ($eFContentKat != 'Movies') {
             . "\"&newMovieEditorV=\"+document.getElementById('newMovieEditorV').value+"
             . "\"&newMovieStatus=\"+document.getElementById('newMovieStatus').value+"
             . "\"&newMoviePOnline=\"+document.getElementById('newMoviePOnline').value+"
-            . "\"&iconicImage=\"+document.getElementById('fileName').value+"
-            . "\"&m4vFilename=\"+document.getElementById('M4VfileName').value+"
-            . "\"&oggFilename=\"+document.getElementById('OGGfileName').value"
+            . "\"&iconicImage=\"+document.getElementById('fileName').value"
             . ");\n";
     echo "  }\n";
     echo "      function saveComplete(evt) {\n";
     echo "          // This event is raised when the server sends back a response\n";
     echo "          console.log(evt.target.responseText);";
-    echo "          document.getElementById('saveNewFilmDetailsButton').disabled = true;\n";
     echo "          alert(evt.target.responseText);\n";
     echo "      }\n";
     echo "</script>\n";
-    
-    echo "<div style='margin: 10px 0px 0px 20px; width: 300px; float: left;'>";
-    echo "  <div name=\"files_div\" id=\"files_div\"><br clear='both'>";
-    echo "  Upload Image File: <br clear='both'><br clear='both'><input type=\"file\" name=\"fileToUpload\" id=\"fileToUpload\" size=\"30\" style=\"width: 200px;\" onChange=\"fileSelected();\"><br clear='both'>\n";
-    echo "  <div style=\"display:block;\" id=\"fileName\"></div> <div style=\"display:block;\" id=\"fileSize\"></div> <div style=\"display:block;\" id=\"fileType\"></div><br>\n";
-    echo "  <input id=\"uploadProgress\" type=\"button\" value=\"Upload\" onclick=\"uploadFile();\">\n";
-    echo "  </div>\n";
+    echo "<input id=\"saveNewFilmDetailsButton\" type=\"button\" value=\"Save Film Details\" onclick=\"saveFilmDetails();\" style=\"clear: both; float: right; margin: 25px 20px 0px 0px;\">\n";
     echo "</div>";
-    echo "  <script type=\"text/javascript\">\n";
-    echo "      function fileSelected() {\n";
-    echo "          var file = document.getElementById('fileToUpload').files[0];\n";
-    echo "          if (file) {\n";
-    echo "              var fileSize = 0;\n";
-    echo "              if (file.size > 1024 * 1024) fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString()+'MB';\n";
-    echo "              else fileSize = (Math.round(file.size * 100 / 1024) / 100).toString()+'KB';\n";
-    echo "              document.getElementById('fileName').innerHTML = file.name;\n";
-    echo "              document.getElementById('fileSize').innerHTML = fileSize;\n";
-    echo "              document.getElementById('fileType').innerHTML = file.type;\n";
-    echo "          }\n";
-    echo "      }\n";
-    echo "      function uploadFile() {\n";
-    echo "          var fd = new FormData();\n";
-    echo "          fd.append(\"fileToUpload\", document.getElementById('fileToUpload').files[0]);\n";
-    echo "          var xhr = new XMLHttpRequest();\n";
-    echo "          xhr.upload.addEventListener(\"progress\", uploadProgress, false);\n";
-    echo "          xhr.addEventListener(\"load\", uploadComplete, false);\n";
-    echo "          xhr.addEventListener(\"error\", uploadFailed, false);\n";
-    echo "          xhr.addEventListener(\"abort\", uploadCanceled, false);\n";
-    echo "          xhr.open(\"POST\", \"_ajax/iconicImageUploader.php\");\n";
-    echo "          xhr.send(fd);\n";
-    echo "      }\n";
-    echo "      function uploadProgress(evt) {\n";
-    echo "          if (evt.lengthComputable) {\n";
-    echo "              var percentComplete = Math.round(evt.loaded * 100 / evt.total);\n";
-    echo "              document.getElementById('uploadProgress').value = percentComplete.toString()+'%';\n";
-    echo "          }\n";
-    echo "      }\n";
-    echo "      function uploadComplete(evt) {\n";
-    echo "          // This event is raised when the server sends back a response\n";
-    echo "          console.log(evt.target.responseText);";
-    echo "          if (evt.target.responseText != '') {\n";
-    echo "              alert(evt.target.responseText);\n";
-    echo "              document.getElementById('uploadProgress').value = \"Upload\";\n";
-    echo "              document.getElementById('fileToUpload').value = \"\";\n";
-    echo "              document.getElementById('fileName').innerHTML = \"\";\n";
-    echo "              document.getElementById('fileSize').innerHTML = \"\";\n";
-    echo "              document.getElementById('fileType').innerHTML = \"\";\n";
-    echo "              return;\n";
-    echo "          }\n";
-    echo "          alert('Image Upload Complete');\n";
-    echo "          enableSaveButton();\n";
-    echo "          document.getElementById('fileToUpload').disabled = true;\n";
-    echo "          document.getElementById('uploadProgress').disabled = true;\n";
-    echo "      }\n";
-    echo "      function uploadFailed(evt) {\n";
-    echo "          alert(\"There was an error attempting to upload the file.\");\n";
-    echo "      }\n";
-    echo "      function uploadCanceled(evt) {\n";
-    echo "          alert(\"The upload has been canceled by the user or the browser dropped the connection.\");\n";
-    echo "      }\n";
-    echo "  </script>\n";
-
-    echo "<div style='margin: 10px 0px 0px 20px; width: 300px; float: left;'>";
-    echo "  <div name=\"files_div\" id=\"files_div\"><br clear='both'>";
-    echo "  Upload M4V Video File: <br clear='both'><br clear='both'><input type=\"file\" name=\"M4VfileToUpload\" id=\"M4VfileToUpload\" size=\"30\" style=\"width: 200px;\" onChange=\"M4VfileSelected();\"><br clear='both'>\n";
-    echo "  <div style=\"display:block;\" id=\"M4VfileName\"></div> <div style=\"display:block;\" id=\"M4VfileSize\"></div> <div style=\"display:block;\" id=\"M4VfileType\"></div><br>\n";
-    echo "  <input id=\"M4VuploadProgress\" type=\"button\" value=\"Upload\" onclick=\"uploadM4VFile();\">\n";
-    echo "  </div>\n";
-    echo "</div>";
-    echo "  <script type=\"text/javascript\">\n";
-    echo "      function M4VfileSelected() {\n";
-    echo "          var file = document.getElementById('M4VfileToUpload').files[0];\n";
-    echo "          if (file) {\n";
-    echo "              var fileSize = 0;\n";
-    echo "              if (file.size > 1024 * 1024) fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString()+'MB';\n";
-    echo "              else fileSize = (Math.round(file.size * 100 / 1024) / 100).toString()+'KB';\n";
-    echo "              document.getElementById('M4VfileName').innerHTML = file.name;\n";
-    echo "              document.getElementById('M4VfileSize').innerHTML = fileSize;\n";
-    echo "              document.getElementById('M4VfileType').innerHTML = file.type;\n";
-    echo "          }\n";
-    echo "      }\n";
-    echo "      function uploadM4VFile() {\n";
-    echo "          var fd = new FormData();\n";
-    echo "          fd.append(\"M4VfileToUpload\", document.getElementById('M4VfileToUpload').files[0]);\n";
-    echo "          var xhr = new XMLHttpRequest();\n";
-    echo "          xhr.upload.addEventListener(\"progress\", M4VuploadProgress, false);\n";
-    echo "          xhr.addEventListener(\"load\", M4VuploadComplete, false);\n";
-    echo "          xhr.addEventListener(\"error\", M4VuploadFailed, false);\n";
-    echo "          xhr.addEventListener(\"abort\", M4VuploadCanceled, false);\n";
-    echo "          xhr.open(\"POST\", \"_ajax/M4VUploader.php\");\n";
-    echo "          xhr.send(fd);\n";
-    echo "      }\n";
-    echo "      function M4VuploadProgress(evt) {\n";
-    echo "          if (evt.lengthComputable) {\n";
-    echo "              var percentComplete = Math.round(evt.loaded * 100 / evt.total);\n";
-    echo "              document.getElementById('M4VuploadProgress').value = percentComplete.toString()+'%';\n";
-    echo "          }\n";
-    echo "      }\n";
-    echo "      function M4VuploadComplete(evt) {\n";
-    echo "          // This event is raised when the server sends back a response\n";
-    echo "          console.log(evt.target.responseText);";
-    echo "          if (evt.target.responseText != '') {\n";
-    echo "              alert(evt.target.responseText);\n";
-    echo "              document.getElementById('M4VuploadProgress').value = \"Upload\";\n";
-    echo "              document.getElementById('M4VfileToUpload').value = \"\";\n";
-    echo "              document.getElementById('M4VfileName').innerHTML = \"\";\n";
-    echo "              document.getElementById('M4VfileSize').innerHTML = \"\";\n";
-    echo "              document.getElementById('M4VfileType').innerHTML = \"\";\n";
-    echo "              return;\n";
-    echo "          }\n";
-    echo "          alert('M4V Upload Complete');\n";
-    echo "          enableSaveButton();\n";
-    echo "          document.getElementById('M4VfileToUpload').disabled = true;\n";
-    echo "          document.getElementById('M4VuploadProgress').disabled = true;\n";
-    echo "          document.getElementById('ThumbnailBuilder').disabled = false;\n";
-    echo "      }\n";
-    echo "      function M4VuploadFailed(evt) {\n";
-    echo "          alert(\"There was an error attempting to upload the file.\");\n";
-    echo "      }\n";
-    echo "      function M4VuploadCanceled(evt) {\n";
-    echo "          alert(\"The upload has been canceled by the user or the browser dropped the connection.\");\n";
-    echo "      }\n";
-    echo "  </script>\n";
-
-    echo "<div style='margin: 10px 0px 0px 20px; width: 300px; float: left;'>";
-    echo "  <div name=\"files_div\" id=\"files_div\"><br clear='both'>";
-    echo "  Upload OGG Video File: <br clear='both'><br clear='both'><input type=\"file\" name=\"OGGfileToUpload\" id=\"OGGfileToUpload\" size=\"30\" style=\"width: 200px;\" onChange=\"OGGfileSelected();\"><br clear='both'>\n";
-    echo "  <div style=\"display:block;\" id=\"OGGfileName\"></div> <div style=\"display:block;\" id=\"OGGfileSize\"></div> <div style=\"display:block;\" id=\"OGGfileType\"></div><br>\n";
-    echo "  <input id=\"OGGuploadProgress\" type=\"button\" value=\"Upload\" onclick=\"uploadOGGFile();\">\n";
-    echo "  </div>\n";
-    echo "</div>";
-    echo "  <script type=\"text/javascript\">\n";
-    echo "      function OGGfileSelected() {\n";
-    echo "          var file = document.getElementById('OGGfileToUpload').files[0];\n";
-    echo "          if (file) {\n";
-    echo "              var fileSize = 0;\n";
-    echo "              if (file.size > 1024 * 1024) fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString()+'MB';\n";
-    echo "              else fileSize = (Math.round(file.size * 100 / 1024) / 100).toString()+'KB';\n";
-    echo "              document.getElementById('OGGfileName').innerHTML = file.name;\n";
-    echo "              document.getElementById('OGGfileSize').innerHTML = fileSize;\n";
-    echo "              document.getElementById('OGGfileType').innerHTML = file.type;\n";
-    echo "          }\n";
-    echo "      }\n";
-    echo "      function uploadOGGFile() {\n";
-    echo "          var fd = new FormData();\n";
-    echo "          fd.append(\"fileToUpload\", document.getElementById('OGGfileToUpload').files[0]);\n";
-    echo "          var xhr = new XMLHttpRequest();\n";
-    echo "          xhr.upload.addEventListener(\"progress\", OGGuploadProgress, false);\n";
-    echo "          xhr.addEventListener(\"load\", OGGuploadComplete, false);\n";
-    echo "          xhr.addEventListener(\"error\", OGGuploadFailed, false);\n";
-    echo "          xhr.addEventListener(\"abort\", OGGuploadCanceled, false);\n";
-    echo "          xhr.open(\"POST\", \"_ajax/OGGUploader.php\");\n";
-    echo "          xhr.send(fd);\n";
-    echo "      }\n";
-    echo "      function OGGuploadProgress(evt) {\n";
-    echo "          if (evt.lengthComputable) {\n";
-    echo "              var percentComplete = Math.round(evt.loaded * 100 / evt.total);\n";
-    echo "              document.getElementById('OGGuploadProgress').value = percentComplete.toString()+'%';\n";
-    echo "          }\n";
-    echo "      }\n";
-    echo "      function OGGuploadComplete(evt) {\n";
-    echo "          // This event is raised when the server sends back a response\n";
-    echo "          console.log(evt.target.responseText);";
-    echo "          if (evt.target.responseText != '') {\n";
-    echo "              alert(evt.target.responseText);\n";
-    echo "              document.getElementById('OGGuploadProgress').value = \"Upload\";\n";
-    echo "              document.getElementById('OGGfileToUpload').value = \"\";\n";
-    echo "              document.getElementById('OGGfileName').innerHTML = \"\";\n";
-    echo "              document.getElementById('OGGfileSize').innerHTML = \"\";\n";
-    echo "              document.getElementById('OGGfileType').innerHTML = \"\";\n";
-    echo "              return;\n";
-    echo "          }\n";
-    echo "          alert('OGG Upload Complete');\n";
-    echo "          enableSaveButton();\n";
-    echo "          document.getElementById('OGGfileToUpload').disabled = true;\n";
-    echo "          document.getElementById('OGGuploadProgress').disabled = true;\n";
-    echo "      }\n";
-    echo "      function OGGuploadFailed(evt) {\n";
-    echo "          alert(\"There was an error attempting to upload the file.\");\n";
-    echo "      }\n";
-    echo "      function OGGuploadCanceled(evt) {\n";
-    echo "          alert(\"The upload has been canceled by the user or the browser dropped the connection.\");\n";
-    echo "      }\n";
-    echo "  </script>\n";
-    
-    echo "<div style='margin: 10px 0px 0px 20px; width: 300px; clear: both; float: left;'>";
-    echo "  <div name=\"files_div\" id=\"files_div\"><br clear='both'>";
-    echo "  Generate Thumbnails: <br clear='both'><br clear='both'><input id=\"ThumbnailBuilder\" type=\"button\" value=\"Start\" onclick=\"makeThumbnails();\" style=\"width: 80px;\" disabled>\n";
-    echo "  </div>\n";
-    echo "</div>";
-    echo "  <script type=\"text/javascript\">\n";
-    echo "      function makeThumbnails() {\n";
-    echo "          var xhr = new XMLHttpRequest();\n";
-    echo "          xhr.addEventListener(\"load\", thumbnailsComplete, false);\n";
-    echo "          xhr.open(\"POST\", \"_ajax/thumbnailGenerator.php\");\n";
-    echo "          xhr.setRequestHeader(\"Content-type\",\"application/x-www-form-urlencoded\");\n";
-    echo "          xhr.send(\"location=\"+document.getElementById('M4VfileName').innerText+\"&fps=\"+document.getElementById('newMovieFPS').value);\n";
-    echo "          document.getElementById('ThumbnailBuilder').value = '...';\n";
-    echo "          document.getElementById('ThumbnailBuilder').disabled = true;\n";
-    echo "          showThumbnailActivity();\n";
-    echo "      }\n";
-    echo "      function showThumbnailActivity() {\n";
-    echo "          var thumbnailTimer = setInterval(function() {\n";
-    echo "                  if (document.getElementById('ThumbnailBuilder').value == '...') {\n";
-    echo "                      document.getElementById('ThumbnailBuilder').value = '.';\n";
-    echo "                  } else if (document.getElementById('ThumbnailBuilder').value == '..') {\n";
-    echo "                      document.getElementById('ThumbnailBuilder').value = '...';\n";
-    echo "                  } else if (document.getElementById('ThumbnailBuilder').value == '.') {\n";
-    echo "                      document.getElementById('ThumbnailBuilder').value = '..';\n";
-    echo "                  } else {\n";
-    echo "                      clearInterval(thumbnailTimer);\n";
-    echo "                  }\n";
-    echo "              }, 600);\n";
-    echo "      }\n";
-    echo "      function thumbnailsComplete(evt) {\n";
-    echo "          // This event is raised when the server sends back a response\n";
-    echo "          console.log(evt.target.responseText);";
-    echo "          if (evt.target.responseText == 'fail') {\n";
-    echo "              alert(evt.target.responseText);\n";
-    echo "              document.getElementById('ThumbnailBuilder').value = 'Start';\n";
-    echo "              document.getElementById('ThumbnailBuilder').disabled = false;\n";
-    echo "              return;\n";
-    echo "          }\n";
-    echo "          alert(evt.target.responseText);\n";
-    echo "          document.getElementById('ThumbnailBuilder').value = 'Done! :)';\n";
-    echo "          enableSaveButton();\n";
-    echo "      }\n";
-    echo "  </script>\n";
-    
-    echo "<input id=\"saveNewFilmDetailsButton\" type=\"button\" value=\"Save Film Details\" onclick=\"saveFilmDetails();\" style=\"clear: both; float: right; margin: 25px 20px 0px 0px;\" disabled>\n";
 }
