@@ -1,76 +1,160 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+ini_set('memory_limit','10000M');
+set_time_limit(12*3600); // set time limit of 12 hour(s)
+//error_reporting(E_ALL);
+//ini_set('display_errors', '1');
 
 if (!isset($_SESSION)) {
     session_start();
 }
 if ($_SESSION["login"] != "true") {
-    header("Location:login.php");
+    header("Location:../login.php");
     $_SESSION["error"] = "<h1 style='color:red;'>You don't have privileges to see this page.</h1>";
     exit;
 }
 
-require 'settings.php';
-require 'includes/functions.php';
-include '/usr/local/aws-php-sdk/aws-autoloader.php';
+if ((include_once '/usr/local/aws-php-sdk/aws-autoloader.php') == TRUE) {
+  use App\Http\Controllers\Controller;
+  use Aws\Common\Aws;
+  use Aws\S3\S3Client;
+  use \File;
 
-use App\Http\Controllers\Controller;
-use Aws\Common\Aws;
-use Aws\S3\S3Client;
-use \File;
-
-$amazonServices = Aws::factory('/data/sites/ee-efilms/s3-credentials/aws-efilms-credentials.php');
-$s3 = $amazonServices->get('s3');
-$parsePath = parse_url($storeURL);
-$awsBucket = $parsePath['host'];
+  $amazonServices = Aws::factory($_SERVER['DOCUMENT_ROOT'].'/aws-efilms-credentials.php');
+  $s3 = $amazonServices->get('s3');
+  $awsBucket = '';  // Add your bucket name here
+}
 
 //Array für Ergebnis der Operation und JSON Ausgabe für jQuery
 $result = array();
+//echo "mp4 uploader...\n";
+//var_dump($_FILES);
 //$_FILES Array auslesen
 $content = "";
 foreach ($_FILES as $file) {
     // Make sure all of our folders are in place
-    $uploadFolder = "/_uploads";
+    $uploadFolder = "../uploads";
     if (!file_exists($uploadFolder)) {
         mkdir($uploadFolder);
         chmod($uploadFolder, 0777);
     }
-    if (!file_exists($uploadFolder . "/imagesLarge")) {
-        mkdir($uploadFolder . "/imagesLarge");
-        chmod($uploadFolder . "/imagesLarge", 0777);
+    if (!file_exists($uploadFolder . "/video")) {
+        mkdir($uploadFolder . "/video");
+        chmod($uploadFolder . "/video", 0777);
     }
-    if (!file_exists($uploadFolder . "/imagesSmall")) {
-        mkdir($uploadFolder . "/imagesSmall");
-        chmod($uploadFolder . "/imagesSmall", 0777);
+    if (!file_exists($uploadFolder . "/videoFrames")) {
+        mkdir($uploadFolder . "/videoFrames");
+        chmod($uploadFolder . "/videoFrames", 0777);
     }
+    $baseWritePath = "../uploads/video/";
 
     $n = $file['name'];
     $s = $file['size'];
     if (!$n)
-        continue;        
+	continue;
 
     if (substr($file['name'], -4) != '.m4v') {
-        $content .=  'fail - bad mime';
+        $content .=  'Please upload a video in m4v format.';
         continue;
     }
 
-    $target_path = $uploadFolder.'/'.$file['name']; //$target_path = $target_path . basename( $_FILES['hugotest']['name']);
+    $isWatermarked = (isset($_POST['watermarked']) && $_POST['watermarked'] == 'true') ? true : false;
+    
+    $target_path = $baseWritePath.$file['name'];
 
-    if (move_uploaded_file($file['tmp_name'], $target_path)) {  //if(move_uploaded_file($_FILES['hugotest']['tmp_name'], $target_path)) {
+    if (move_uploaded_file($file['tmp_name'], $target_path)) {
+      if (isset($s3)) {
         // Upload large resize to Amazon
-        $awsLocation = '/_media/movies_wm/'.$file['name'];
+        if ($isWatermarked) {
+            $awsLocation = '/_media/movies_wm/'.$file['name'];
+        } else {
+            $awsLocation = '/_media/movies/'.$file['name'];
+        }
         try {
             $resource = fopen($target_path, 'r');
             $s3->upload($awsBucket, $awsLocation, $resource, 'public-read');
 //            $result['path'] = "http://".$awsBucket.$awsLocation;
         } catch (S3Exception $e) {
-            $content .=  'amazon fail: '.$e;
+            $content .=  'Transfer to Amazon failed: '.$e;
+            exit();
         }
+      }
     } else {
-        $content .=  'fail - no copy';
+	$content .=  'There was an error uploading the file, please try again.';
+      exit();
     }
-    unlink($target_path);
+    
+    $filmFileName = substr($file['name'], 0, strlen($file['name'])-4);  // remove file extension
+    
+    // make OGG File
+    exec("ffmpeg -i ".$target_path." -acodec libvorbis -ac 2 -ab 96k -ar 44100 -b 5130k -s 960x720 ".$baseWritePath.$filmFileName.".ogv");
+    
+    if (isset($s3)) {
+      if ($isWatermarked) {
+        $awsLocation = '/_media/movies_wm/'.$filmFileName.".ogg";
+      } else {
+        $awsLocation = '/_media/movies/'.$filmFileName.".ogg";
+      }
+      try {
+      $resource = fopen($baseWritePath.$filmFileName.".ogv", 'r');
+          $s3->upload($awsBucket, $awsLocation, $resource, 'public-read');
+  //            $result['path'] = "http://".$awsBucket.$awsLocation;
+      } catch (S3Exception $e) {
+          $content .=  'OGG Transfer to Amazon failed: '.$e;
+          exit();
+      }
+      unlink($baseWritePath.$filmFileName.".ogv");  // Done with the ogg file
+    }
+    
+    if ($isWatermarked) {
+        // We are done with the watermarked copies
+        exit();
+    }
+    
+    $fps = 24;
+    $width = 80;
+    $height = 60;
+
+    $baseWritePath = "../uploads/videoFrames/";
+    // the video file exists so we will make thumbnails out of the film at the specified frames per second and store them locally
+    exec("ffmpeg -i ".$target_path." -r ".$fps." -s ".$width."x".$height." -f image2 ".$baseWritePath."%06d.jpg");
+
+    // next we upload our generated thumbnails to the S3 store
+    $list = scandir($baseWritePath);
+    unset($list[array_search(".", $list)]);
+    unset($list[array_search("..", $list)]);
+    unset($list[array_search(".DS_Store", $list)]);
+    sort($list);
+    $uploadedImages = 0;
+
+    if (isset($s3)) {
+      // Make the new folder on Amazon S3
+      $s3->upload($awsBucket, "/_media/shots/".$filmFileName."/", '', 'public-read');
+      // Copy the images over
+      foreach ($list as $tempImage) {
+        $i = 0;
+        $time = date('s');
+        while ($i > 2 && $time == date('s')) {
+            // do nothing, we only want to send 3/sec
+        }
+        if (!file_exists($baseWritePath.$tempImage)) {
+            continue;
+        }
+    // upload image to Amazon
+        $awsLocation = "/_media/shots/".$filmFileName."/".str_pad($uploadedImages, 6,"0",STR_PAD_LEFT).".jpg";
+        try {
+            $resource = fopen($baseWritePath.$tempImage, 'r');
+            $s3->upload($awsBucket, $awsLocation, $resource, 'public-read');
+            $uploadedImages++;
+        } catch (S3Exception $e) {
+            echo "fail: ".$e;
+            exit();
+        }
+    // Unlink the temp image
+        unlink($baseWritePath.$tempImage);
+        $i++;
+      }
+      unlink($target_path);   // Done with the m4v file
+    }
 }
 header('Content-Type: application/json');
-echo $content;
+exit();
