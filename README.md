@@ -59,9 +59,10 @@ Comments explaining each field are included in the SQL Dump.
 
 ##Installation
 
-Download and copy the project into a folder on your web server. Then in your web browser open the index.php file and follow the instructions.
-
-You will need to make sure that PHP has write premissions to the server for install.  You can unset this afterward.
+Download and copy the project into a folder on your web server.
+Create a database and use the included DatabaseStructure.txt file to generate the tables needed.
+Create a .htpasswd file with your first password and place it just outside of your web root.
+Create a db_con.php file with your databse connection details and place it just outside of your web root.
 
 ##Known Issues
 
