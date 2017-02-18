@@ -1,0 +1,248 @@
+--
+-- Database: `DATABASE_NAME`
+--
+CREATE DATABASE IF NOT EXISTS `efilms` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci; USE `DATABASE_NAME`;
+-- -------------------------------------------------------- --
+-- Table structure for table `eFilm_ActiveFilms` --
+CREATE TABLE IF NOT EXISTS `eFilm_ActiveFilms` (
+`filmNumber` int(3) NOT NULL DEFAULT '0' COMMENT 'Table ID',
+`EF-NS` int(3) DEFAULT NULL COMMENT 'Film Number',
+`reel` varchar(3) DEFAULT NULL COMMENT 'R## for number in a set of reels',
+`source` varchar(5) DEFAULT NULL COMMENT 'Abbreviation for source providing film',
+`germanTitle` varchar(105) DEFAULT NULL COMMENT 'Title in German',
+`englishTitle` varchar(107) DEFAULT NULL COMMENT 'Title in English',
+`year` varchar(9) DEFAULT NULL COMMENT 'Year film was created',
+`series` varchar(48) DEFAULT NULL COMMENT 'Film Series Title',
+`archivalNumber` varchar(12) DEFAULT NULL COMMENT 'Film Archive Record ID',
+`germanGeneration` varchar(20) DEFAULT NULL COMMENT 'Film Generation (German)',
+`englishGeneration` varchar(255) DEFAULT NULL COMMENT 'Film Generation (English)',
+`germanPosNeg` varchar(16) DEFAULT NULL COMMENT 'Positive or Negative Type (German)',
+`englishPosNeg` varchar(255) DEFAULT NULL COMMENT 'Positive or Negative Type (English)',
+`germanFilmBase` varchar(18) DEFAULT NULL COMMENT 'Film Base (German)',
+`englishFilmBase` varchar(255) DEFAULT NULL COMMENT 'Film Base (English)',
+`germanPreviousGenerations` varchar(37) DEFAULT NULL COMMENT 'Pervious Generation if Copy (German)',
+`englishPreviousGenerations` varchar(31) DEFAULT NULL COMMENT 'Pervious Generation if Copy (English)',
+`originalFilmGauge` varchar(4) DEFAULT NULL COMMENT 'Original Film Gauge',
+`farbe` varchar(5) DEFAULT NULL COMMENT 'Color / BW (German)',
+`color` varchar(5) DEFAULT NULL COMMENT 'Color / BW (English)',
+`ton` varchar(5) DEFAULT NULL COMMENT 'Sound / Mute (German)',
+`sound` varchar(5) DEFAULT NULL COMMENT 'Sound / Mute (English)',
+`tonverfahren` varchar(18) DEFAULT NULL COMMENT 'Sound Process (German)',
+`soundProcess` varchar(10) DEFAULT NULL COMMENT 'Sound Process (English)',
+`frames` varchar(6) DEFAULT NULL COMMENT 'Total Frames',
+`fps` int(2) DEFAULT NULL COMMENT 'Frames Per Second',
+`minutes` varchar(2) DEFAULT NULL COMMENT 'Total Minutes',
+`seconds` varchar(2) DEFAULT NULL COMMENT 'Seconds',
+`sprache` varchar(7) DEFAULT NULL COMMENT 'Language (German)',
+`language` varchar(6) DEFAULT NULL COMMENT 'Language (English)',
+`digitalFormat` varchar(3) DEFAULT NULL COMMENT 'Digital Format',
+`germanDigitalLab` varchar(25) DEFAULT NULL COMMENT 'Digital Lab (German)',
+`englishDigitalLab` varchar(25) DEFAULT NULL COMMENT 'Digital Lab (English)',
+`digitalCopyDate` varchar(4) DEFAULT NULL COMMENT 'Date Digital Copy was made',
+`germanGenre` varchar(24) DEFAULT NULL COMMENT 'Genre (German)',
+`englishGenre` varchar(21) DEFAULT NULL COMMENT 'Genre (English)',
+`producer` varchar(12) DEFAULT NULL COMMENT 'Producer Name',
+`director` varchar(12) DEFAULT NULL COMMENT 'Director Name',
+`cinematography` varchar(21) DEFAULT NULL COMMENT 'Cinematographer',
+`collection` varchar(20) DEFAULT NULL COMMENT 'Collection Title',
+`provenance` varchar(80) DEFAULT NULL COMMENT 'How film was obtained',
+`description` varchar(10) DEFAULT NULL COMMENT 'Description of film',
+`isLive` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Is this shown on the website',
+`researchLog` longtext COMMENT 'Researcher''s Notes',
+PRIMARY KEY (`filmNumber`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- -------------------------------------------------------- --
+-- Table structure for table `eFilm_Config_Naming` --
+CREATE TABLE IF NOT EXISTS `eFilm_Config_Naming` (
+`ID_C_Naming` int(11) NOT NULL COMMENT 'table id',
+`_FM_CREATE` varchar(255) NOT NULL COMMENT 'who created the entry',
+`_FM_CHANGE` varchar(255) NOT NULL COMMENT 'who edited the entry',
+`_FM_DATETIME_CREATE` datetime NOT NULL COMMENT 'when the entry was created',
+`_FM_DATETIME_CHANGE` datetime NOT NULL COMMENT 'when the entry was changed',
+`eFFormTip` varchar(255) NOT NULL COMMENT 'Type of data entry form',
+`List_Entry` varchar(255) NOT NULL COMMENT 'Phrase in German',
+`List_Entry_GID` varchar(255) NOT NULL,
+`List_Entry_GName` varchar(255) NOT NULL COMMENT 'unused',
+`visibility` varchar(255) NOT NULL COMMENT 'unused',
+`List_Entry_EN` varchar(255) NOT NULL COMMENT 'Phrase in English',
+PRIMARY KEY (`ID_C_Naming`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+-- -------------------------------------------------------- --
+-- Table structure for table `eFilm_Config_Users` --
+CREATE TABLE IF NOT EXISTS `eFilm_Config_Users` (
+`ID_C_Users` int(11) NOT NULL AUTO_INCREMENT COMMENT 'table id',
+`_FM_CREATE` varchar(255) NOT NULL COMMENT 'who created this record',
+`_FM_CHANGE` varchar(255) NOT NULL COMMENT 'who edited this record',
+`_FM_DATETIME_CREATE` datetime NOT NULL COMMENT 'when was the record created',
+`_FM_DATETIME_CHANGE` datetime NOT NULL COMMENT 'when was the record changed',
+`USER_Name` varchar(255) NOT NULL COMMENT 'user''s name',
+`USER_Nik` varchar(255) NOT NULL COMMENT 'user''s nickname',
+`USER_Rights` varchar(255) NOT NULL COMMENT 'not used',
+`USER_Pass` varchar(255) NOT NULL COMMENT 'Unused, handled by server',
+`RIGHTS_Config` enum('NONE','VIEW','SELFEDIT','EDIT') NOT NULL DEFAULT 'NONE' COMMENT 'can edit config options (''NONE'',''VIEW'',''SELFEDIT'',''EDIT'')',
+`RIGHTS_Resources` enum('NONE','VIEW','SELFEDIT','EDIT') NOT NULL DEFAULT 'NONE' COMMENT 'can edit resources options (''NONE'',''VIEW'',''SELFEDIT'',''EDIT'')',
+`RIGHTS_Publish` enum('NONE','VIEW','SELFEDIT','EDIT') NOT NULL DEFAULT 'NONE' COMMENT 'can edit publish options (''NONE'',''VIEW'',''SELFEDIT'',''EDIT'')',
+`email` varchar(255) NOT NULL COMMENT 'user''s email for password resets', PRIMARY KEY (`ID_C_Users`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
+-- -------------------------------------------------------- --
+-- Table structure for table `eFilm_Config_Users_MovieRights` --
+CREATE TABLE IF NOT EXISTS `eFilm_Config_Users_MovieRights` (
+`ID_C_Users_MovieRights` int(11) NOT NULL AUTO_INCREMENT COMMENT 'table id',
+`_FM_CREATE` varchar(255) NOT NULL COMMENT 'who created the record',
+`_FM_CHANGE` varchar(255) NOT NULL COMMENT 'who edited the record',
+`_FM_DATETIME_CREATE` datetime NOT NULL COMMENT 'when the record was created',
+`_FM_DATETIME_CHANGE` datetime NOT NULL COMMENT 'when the record was changed',
+`ID_C_Users` int(11) NOT NULL COMMENT 'user table id value',
+`ID_Movies` int(11) NOT NULL COMMENT 'movie table id value',
+`RIGHTS_Movies` enum('NONE','VIEW','SELFEDIT','EDIT') NOT NULL DEFAULT 'NONE' COMMENT 'rights to edit annotations
+(''NONE'',''VIEW'',''SELFEDIT'',''EDIT'')',
+PRIMARY KEY (`ID_C_Users_MovieRights`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
+-- -------------------------------------------------------- --
+-- Table structure for table `eFilm_Content_Movies` --
+CREATE TABLE IF NOT EXISTS `eFilm_Content_Movies` (
+`ID_Movies` int(11) NOT NULL AUTO_INCREMENT COMMENT 'table id',
+`FILM_ID` varchar(255) NOT NULL COMMENT 'complete film id',
+`STAMMDATEN_Archivsignatur` varchar(255) NOT NULL COMMENT 'archival number',
+`STAMMDATEN_Format` varchar(255) DEFAULT NULL COMMENT 'original film format',
+`STAMMDATEN_Displaytitel` text COMMENT 'display title',
+`_eFWEB_Praktikantin` int(1) NOT NULL COMMENT 'unused',
+`_eFWEB_EditorV` int(1) NOT NULL COMMENT 'display in the editor',
+`_eFWEB_FPS` int(2) NOT NULL COMMENT 'frames per second default for the editor',
+`_eFWEB_Status` int(1) DEFAULT '0' COMMENT '0 ... unbearbeitet, 1 ... PraktikantIn arbeitet, 2 ... PraktikantIn abgeschlossen', `_eFWEB_Speed` int(2) DEFAULT NULL COMMENT 'frames per second default for the editor',
+`_eFWEB_POnline` int(1) DEFAULT '0' COMMENT 'unused',
+`DESCRIPTION_DE` text COMMENT 'unused',
+`DESCRIPTION_EN` text COMMENT 'unused',
+`TITLE_EN` text COMMENT 'unused',
+PRIMARY KEY (`ID_Movies`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0;
+-- -------------------------------------------------------- --
+-- Table structure for table `eFilm_Content_Movies_Annotations` --
+CREATE TABLE IF NOT EXISTS `eFilm_Content_Movies_Annotations` (
+`ID_Movies` int(11) NOT NULL COMMENT 'movie table id',
+`ID_Annotations` int(11) NOT NULL AUTO_INCREMENT COMMENT 'table id',
+`_FM_CREATE` varchar(255) NOT NULL COMMENT 'who created the record',
+`_FM_CHANGE` varchar(255) NOT NULL COMMENT 'who edited the recored',
+`_FM_DATETIME_CREATE` datetime NOT NULL COMMENT 'when was the record created',
+`_FM_DATETIME_CHANGE` datetime NOT NULL COMMENT 'when was the record modified',
+`eF_FILM_ID` varchar(255) NOT NULL COMMENT 'full film id',
+`FormID` varchar(255) NOT NULL COMMENT 'editor form id that was used to create this value',
+`AnnotationType_L1` varchar(255) NOT NULL,
+`AnnotationType_L2` varchar(255) NOT NULL,
+`AnnotationType_L3` varchar(255) NOT NULL,
+`startTime` int(11) NOT NULL COMMENT 'start frame',
+`endTime` int(11) NOT NULL COMMENT 'end frame',
+`timeAnnotation` varchar(255) NOT NULL COMMENT 'unused',
+`source` varchar(255) NOT NULL COMMENT 'unused',
+`source_from` varchar(255) NOT NULL COMMENT 'unused',
+`source_to` varchar(255) NOT NULL COMMENT 'unused',
+`ref` varchar(255) NOT NULL COMMENT 'unused',
+`version` varchar(255) NOT NULL COMMENT 'unused',
+`annotation` varchar(255) NOT NULL COMMENT 'text value',
+`coverage` varchar(255) NOT NULL COMMENT 'location value',
+`coverageType` varchar(255) NOT NULL COMMENT 'unused',
+`coverage_S_Longitude` varchar(255) NOT NULL COMMENT 'longitude',
+`coverage_S_Latitude` varchar(255) NOT NULL COMMENT 'latitude',
+`coverage_S_Geoname` varchar(255) NOT NULL COMMENT 'location name',
+`coverage_S_LandmarkID` varchar(255) NOT NULL COMMENT 'resource id value for landmark',
+`coverage_T_From` varchar(255) NOT NULL COMMENT 'year-month',
+`coverage_T_To` varchar(255) NOT NULL COMMENT 'year-month',
+`subject` varchar(255) NOT NULL COMMENT 'unused',
+`subjectType` varchar(255) NOT NULL COMMENT 'unused',
+`subject_P_PersonName` varchar(255) NOT NULL COMMENT 'identified person''s name',
+`subject_P_PersonID` varchar(255) NOT NULL COMMENT 'resource id of person',
+`subject_O_OrganizationType` varchar(255) NOT NULL COMMENT 'type of identified organization',
+`subject_O_OrganizationName` varchar(255) NOT NULL COMMENT 'name of identified organization',
+`subject_O_OrganizationID` varchar(255) NOT NULL COMMENT 'resource id for organization',
+`subject_HE_Title` varchar(255) NOT NULL COMMENT 'historic event title',
+`subject_HE_Date` varchar(255) NOT NULL COMMENT 'historic event date',
+`subject_HE_Type` varchar(255) NOT NULL COMMENT 'historic event type',
+`subject_HE_ID` varchar(255) NOT NULL COMMENT 'resource id for historic event',
+`language` varchar(255) NOT NULL COMMENT 'unused',
+`relation` varchar(255) NOT NULL COMMENT 'image file, movie',
+`relation_relationType` varchar(255) NOT NULL,
+`relation_relationIdentifier` varchar(255) NOT NULL COMMENT 'L1 object key',
+`relation_relationIdentifier_from` varchar(255) NOT NULL COMMENT 'frame number',
+`relation_relationIdentifier_to` varchar(255) NOT NULL COMMENT 'frame number',
+`relation_relationIdentifier_source` varchar(255) NOT NULL COMMENT 'unused',
+`relation_relationIdentifier_ref` varchar(255) NOT NULL COMMENT 'unused',
+`relation_relationIdentifier_version` varchar(255) NOT NULL COMMENT 'unused',
+`relation_relationIdentifier_annotation` varchar(255) NOT NULL COMMENT 'unused',
+`description` text NOT NULL COMMENT 'text content',
+`description_descriptionType` varchar(255) NOT NULL COMMENT 'unused',
+`description_descriptionTypeSource` varchar(255) NOT NULL COMMENT 'unused',
+`description_descriptionTypeRef` varchar(255) NOT NULL COMMENT 'unused',
+`description_descriptionTypeVersion` varchar(255) NOT NULL COMMENT 'unused',
+`description_descriptionTypeAnnotation` varchar(255) NOT NULL COMMENT 'unused',
+`description_segmentType` varchar(255) NOT NULL COMMENT 'unused',
+`description_segmentTypeSource` varchar(255) NOT NULL COMMENT 'unused',
+`description_segmentTypeRef` varchar(255) NOT NULL COMMENT 'unused',
+`description_segmentTypeVersion` varchar(255) NOT NULL COMMENT 'unused',
+`description_segmentTypeAnnotation` varchar(255) NOT NULL COMMENT 'unused',
+`_empty` varchar(255) NOT NULL COMMENT 'unused',
+`_f_sorter` varchar(255) NOT NULL COMMENT 'sort priority',
+`_USER_INPUT` varchar(255) NOT NULL DEFAULT 'source_from' COMMENT 'user nickname',
+`researchLog` longtext NOT NULL COMMENT 'research notes',
+PRIMARY KEY (`ID_Annotations`),
+FULLTEXT KEY `description` (`description`),
+FULLTEXT KEY `coverage` (`coverage`),
+FULLTEXT KEY `subject_O_OrganizationName` (`subject_O_OrganizationName`),
+FULLTEXT KEY `coverage_S_Geoname` (`coverage_S_Geoname`),
+FULLTEXT KEY `subject_P_PersonName` (`subject_P_PersonName`),
+FULLTEXT KEY `coverage_T_From` (`coverage_T_From`),
+FULLTEXT KEY `coverage_T_To` (`coverage_T_To`),
+FULLTEXT KEY `subject_HE_Title` (`subject_HE_Title`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
+-- -------------------------------------------------------- --
+-- Table structure for table `eFilm_ReSources_HistoricEvents` --
+CREATE TABLE IF NOT EXISTS `eFilm_ReSources_HistoricEvents` (
+`ID_HistoricEvents` int(11) NOT NULL AUTO_INCREMENT COMMENT 'table id',
+`ST_Title` varchar(255) DEFAULT NULL COMMENT 'title',
+`ST_Description` varchar(255) DEFAULT NULL COMMENT 'description',
+`ST_StartDate` date DEFAULT NULL COMMENT 'date',
+`ST_EndDate` date DEFAULT NULL COMMENT 'date',
+PRIMARY KEY (`ID_HistoricEvents`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
+-- -------------------------------------------------------- --
+-- Table structure for table `eFilm_ReSources_L1` --
+CREATE TABLE IF NOT EXISTS `eFilm_ReSources_L1` (
+`ID_R_L1` int(11) NOT NULL AUTO_INCREMENT COMMENT 'table id',
+`Type` varchar(255) DEFAULT NULL COMMENT 'Type of Content: Publication, Photo, Event, etc.',
+`Object_Key` varchar(255) DEFAULT NULL COMMENT 'The key value for this resource: RES_PUB_#, COV_LMK_#, etc.',
+`Category` varchar(255) DEFAULT NULL COMMENT 'Category Name: Resource, Subject, Coverage, etc.',
+`Group` varchar(255) DEFAULT NULL COMMENT 'Title of the Group for this resource',
+PRIMARY KEY (`ID_R_L1`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
+-- -------------------------------------------------------- --
+-- Table structure for table `eFilm_ReSources_L2` --
+CREATE TABLE IF NOT EXISTS `eFilm_ReSources_L2` (
+`ID_R_L2` int(11) NOT NULL AUTO_INCREMENT COMMENT 'table id',
+`ID_R_L1` int(11) DEFAULT NULL COMMENT 'table index from eFilm_ReSources_L1',
+`Fieldname` varchar(255) DEFAULT NULL COMMENT 'Title, Publisher, Date(s), etc.',
+`Fieldtype` varchar(255) DEFAULT NULL COMMENT 'text, pdf, image',
+`Fieldcontent` text COMMENT 'text content or file name if this is an image or PDF',
+`originalName` text COMMENT 'For PDF and Images only, original file name',
+PRIMARY KEY (`ID_R_L2`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
+-- -------------------------------------------------------- --
+-- Table structure for table `eFilm_ReSources_RelationIndex` --
+CREATE TABLE IF NOT EXISTS `eFilm_ReSources_RelationIndex` (
+`ID_R_RelationIndex` int(11) NOT NULL AUTO_INCREMENT COMMENT 'table id',
+`RelationType` varchar(255) DEFAULT NULL COMMENT 'type',
+`RelationRemark` text COMMENT 'comment',
+`ID_R_L1_A` int(11) DEFAULT NULL COMMENT 'first L1 id',
+`ID_R_L1_B` int(11) DEFAULT NULL COMMENT 'second L1 id',
+`ID_Annotations` int(11) DEFAULT NULL COMMENT 'annotation id',
+PRIMARY KEY (`ID_R_RelationIndex`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
+-- -------------------------------------------------------- --
+-- Table structure for table `eFilm_ReSources_Templates` --
+CREATE TABLE IF NOT EXISTS `eFilm_ReSources_Templates` (
+`ID_R_Templates` int(11) NOT NULL AUTO_INCREMENT COMMENT 'table id',
+`Resource_Type` varchar(255) DEFAULT NULL COMMENT 'resource type',
+`Resource_Field` varchar(255) DEFAULT NULL COMMENT 'form field name',
+`Resource_Fieldtype` varchar(255) DEFAULT NULL COMMENT 'form field type',
+`Resource_Index` int(11) DEFAULT NULL COMMENT 'field sort order',
+PRIMARY KEY (`ID_R_Templates`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
+

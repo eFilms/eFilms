@@ -11,6 +11,9 @@ if ($_SESSION["login"] != "true") {
     exit;
 }
 
+// Disabling this on the demo server
+exit();
+
 $valid_characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_";
 
 function get_random_string($valid_chars, $length)

@@ -1,7 +1,6 @@
 <?php
-if(!isset($_SESSION)) 
-{ 
-session_start(); 
+if(!isset($_SESSION)) { 
+  session_start(); 
 } 
 if ($_SESSION["login"] != "true"){
   header("Location:login.php");
@@ -9,8 +8,8 @@ if ($_SESSION["login"] != "true"){
   exit;
 }
 
-require_once('settings.php');
-require_once('includes/functions.php');
+require_once('../settings.php');
+require_once('../includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
 # test.php
@@ -421,11 +420,15 @@ echo "
 	
 $i = 0;
 while ($row2 = mysqli_fetch_array($ergebnis_ML)) {
+  
+    $fetchRequest = "SELECT `originalFileName` FROM `eFilm_Content_Movies` WHERE `FILM_ID` = '".$row2['eF_FILM_ID']."';";
+    $fetchQuery = mysqli_query($localDatabase, $fetchRequest);
+    $fetchResult = mysqli_fetch_array($fetchQuery);
 
     $eFTableStart = "<tr class='".$row2['FormID']."Class' name='".$row2['ID_Annotations']."' data-recordid='".$row2['ID_Annotations']."' data-formid='".$row2['FormID']."'>
         <td id='annotation".$i."startTime' class='".$row2['FormID']."Class eFTabCellIN'>".$row2['startTime']."</td>
         <td id='annotation".$i."endTime' class='".$row2['FormID']."Class eFTabCellOUT'>".$row2['endTime']."</td>
-        <td class='".$row2['FormID']."Class eFTabCellStill'><img src='".$storeURL."/_media/shots/".$row2['eF_FILM_ID']."/".sprintf ("%06d", $row2['startTime']).".jpg' width='48' height='36' alt='Frame Number ".sprintf ("%06d", $row2['startTime'])."' /></td>
+        <td class='".$row2['FormID']."Class eFTabCellStill'><img src='".$storeURL."videoFrames/".$fetchResult['originalFileName']."/".sprintf ("%06d", $row2['startTime']).".jpg' width='48' height='36' alt='Frame Number ".sprintf ("%06d", $row2['startTime'])."' /></td>
         <td id='annotation".$i."L1' class='".$row2['FormID']."Class eFTabCellL1'>".$row2['AnnotationType_L1']."</td>
         <td id='annotation".$i."L2' class='".$row2['FormID']."Class eFTabCellL2'>".$row2['AnnotationType_L2']."</td>
         <td id='annotation".$i."L3' class='".$row2['FormID']."Class eFTabCellL3'>".$row2['AnnotationType_L3']."</td>";

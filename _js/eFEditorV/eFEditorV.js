@@ -2146,7 +2146,7 @@ function showNewUserForm() {
         var divForm = document.createElement("DIV");
         divForm.setAttribute("id", "newUserForm");
         divForm.style.cssText = 'position: absolute; height: 300px; width: 400px; margin: 0px 20px; background-color: #ffffff; border: 1px solid #000000;';
-        divForm.innerHTML = "<center><br>Add a New User<br>&nbsp;</center><input type='text' id='newUserName' value='' placeholder='Name' style='height: 20px; width: 375px; margin-left: 10px; margin-top: 5px;'><br><input type='text' id='newUserNickname' value='' placeholder='Nick Name' style='height: 20px; width: 375px; margin-left: 10px; margin-top: 5px;'><br><input type='text' id='newUserEmail' value='' placeholder='Email' style='height: 20px; width: 375px; margin-left: 10px; margin-top: 5px;'><br><center><br>Rights Config &nbsp; <input type='radio' id='newUserRightsNone' value='NONE'> NONE &nbsp; <input type='radio' id='newUserRightsEdit' value='EDIT'> EDIT</center><center><br>Rights Resources &nbsp; <input type='radio' id='newUserResourceRightsNone' value='NONE'> NONE &nbsp; <input type='radio' id='newUserResourceRightsEdit' value='EDIT'> EDIT</center><p style='padding: 10px;'>When a new user is added to the system a random password will be created for their account and they will be sent a password reset email.</p><center><input type='submit' name='cancel' value='Cancel' onclick='closeNewUserForm();'> &nbsp; <input type='submit' name='submit' value='Submit' onclick='processNewUserForm(self);'></center>";
+        divForm.innerHTML = "<center><br>Add a New User<br>&nbsp;</center><input type='text' id='newUserName' value='' placeholder='Name' style='height: 20px; width: 375px; margin-left: 10px; margin-top: 5px;'><br><input type='text' id='newUserNickname' value='' placeholder='Nick Name' style='height: 20px; width: 375px; margin-left: 10px; margin-top: 5px;'><br><input type='text' id='newUserEmail' value='' placeholder='Email' style='height: 20px; width: 375px; margin-left: 10px; margin-top: 5px;'><br><center><br>Rights Config &nbsp; <input type='radio' name='newUserRights' id='newUserRightsNone' value='NONE'> NONE &nbsp; <input type='radio' name='newUserRights' id='newUserRightsEdit' value='EDIT'> EDIT</center><center><br>Rights Resources &nbsp; <input type='radio' name='newUserResourceRights' id='newUserResourceRightsNone' value='NONE'> NONE &nbsp; <input type='radio' name='newUserResourceRights' id='newUserResourceRightsEdit' value='EDIT'> EDIT</center><p style='padding: 10px;'>When a new user is added to the system a random password will be created for their account and they will be sent a password reset email.</p><center><input type='submit' name='cancel' value='Cancel' onclick='closeNewUserForm();'> &nbsp; <input type='submit' name='submit' value='Submit' onclick='processNewUserForm(self);'></center>";
         document.getElementById('eFConfigAccessUsersList').appendChild(divForm);
     }
 }
@@ -2161,7 +2161,7 @@ function processNewUserForm(id) {
     var email = document.getElementById('newUserEmail').value;
     var configRightsNone = document.getElementById('newUserRightsNone');
     var configRightsEdit = document.getElementById('newUserRightsEdit');
-    var configRights;
+    var configRights = document.getElementById('newUserRights');
     if (configRightsNone.checked) {
         configRights = 'NONE';
     } else {

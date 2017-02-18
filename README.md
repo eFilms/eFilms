@@ -85,3 +85,8 @@ The actions for the player are created in the eFPIBasic.js file which uses the P
 - Film to film relations so that films could relate to frames in other films
 - Export of annotation data in XML format
 - Group relations should allow multiple groups to be selected
+
+##To use this project on your own server you will need to do two things
+
+- Create a .htpasswd file with the first login and place it just above your web root folder
+- Create a database with the structure described by the DatabaseStructure.txt file

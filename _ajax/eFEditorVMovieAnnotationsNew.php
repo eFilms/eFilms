@@ -12,8 +12,8 @@ if ($_SESSION["login"] != "true"){
 //error_reporting(E_ERROR | E_WARNING | E_PARSE);
 //ini_set('display_errors','On');
 
-require_once('settings.php');
-require_once('includes/functions.php');
+require_once('../settings.php');
+require_once('../includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
 //Variablen

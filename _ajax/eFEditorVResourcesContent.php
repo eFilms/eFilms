@@ -766,7 +766,7 @@ if ($eFContentKat != 'Movies') {
         echo "      }\n";
         echo "      function posterFrameComplete(evt) {\n";
         echo "          alert('Poster Frame Created');\n";
-        echo "          document.getElementById('tempContainerForVideoUpload').innerHTML = '<img src=\"http://efilms.assets.ushmm.org/_media/movies_wm/_img/PosterFrames/'+evt.target.responseText+'\" style=\"max-width: 50%;\">';\n";
+        echo "          document.getElementById('tempContainerForVideoUpload').innerHTML = '<img src=\"/_img/PosterFrames/'+evt.target.responseText+'\" style=\"max-width: 50%;\">';\n";
         echo "      }\n";
         echo "      function uploadComplete(evt) {\n";
         echo "          // This event is raised when the server sends back a response\n";
@@ -785,7 +785,7 @@ if ($eFContentKat != 'Movies') {
         echo "          document.getElementById('uploadProgress').style.display = 'none';\n";
         echo "          document.getElementById('saveNewFilmDetailsButton').disabled = false;\n";
         echo "          if (!document.getElementById('watermark').checked) {\n";
-        echo "              document.getElementById('uploadedVideo').src = '//efilms.assets.ushmm.org/_media/movies/'+document.getElementById('fileName').innerHTML;\n";
+        echo "              document.getElementById('uploadedVideo').src = '/uploads/video/'+document.getElementById('fileName').innerHTML;\n";
         echo "              document.getElementById('tempContainerForVideoUpload').style.display = 'block';\n";
         echo "          }\n";
         echo "      }\n";
@@ -910,7 +910,7 @@ if ($eFContentKat != 'Movies') {
             . "\"&newMovieSeries=\"+document.getElementById('newMovieSeries').value+"
             . "\"&newMovieFormat=\"+document.getElementById('newMovieFormat').value+"
             . "\"&newMovieCopyDate=\"+document.getElementById('newMovieCopyDate').value+"
-           . "\"&newMovieProducer=\"+document.getElementById('newMovieProducer').value+"
+            . "\"&newMovieProducer=\"+document.getElementById('newMovieProducer').value+"
             . "\"&newMovieDirector=\"+document.getElementById('newMovieDirector').value+"
             . "\"&newMovieCinematography=\"+document.getElementById('newMovieCinematography').value+"
             . "\"&newMovieCollection=\"+document.getElementById('newMovieCollection').value+"

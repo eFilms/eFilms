@@ -9,8 +9,8 @@ if ($_SESSION["login"] != "true"){
   exit;
 }
 
-require_once('settings.php');
-require_once('includes/functions.php');
+require_once('../settings.php');
+require_once('../includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
 $idcusers = (isset($_GET['idcusers']) ? $_GET['idcusers'] : "");

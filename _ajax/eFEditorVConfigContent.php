@@ -9,8 +9,8 @@ if ($_SESSION["login"] != "true") {
     exit();
 }
 
-require_once('settings.php');
-require_once('includes/functions.php');
+require_once('../settings.php');
+require_once('../includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
 $eFContentSelected = (isset($_GET['eFContentSelected']) ? $_GET['eFContentSelected'] : "");
@@ -36,7 +36,7 @@ switch ($eFContentSelected) {
                       echo "<span style='float:right; padding-right: 10px; color: #ffffff; cursor: pointer;' onclick='deleteUser(".$row_UL['ID_C_Users'].");'>x</span>";
                     }
                     if ($row_UL['USER_Nik'] == $_SESSION["unik"] || ($_SESSION["unik"] == "IZ" && $_SESSION["efuid"] == 1)) { // You can only edit yourself.  User Zero can edit everyone
-                      echo "<span style='float:right; padding-right: 10px; color: #ffffff; cursor: pointer;' onclick='showEditUserForm(\"".$row_UL['ID_C_Users']."\",\"".$row_UL['USER_Name']."\",\"".$row_UL['USER_Nik']."\",\"".$row_UL['email']."\");'><img src='/images/edit.png' height='12px' width='12px' style='padding-top: 3px;'></span>";
+                      echo "<span style='float:right; padding-right: 10px; color: #ffffff; cursor: pointer;' onclick='showEditUserForm(\"".$row_UL['ID_C_Users']."\",\"".$row_UL['USER_Name']."\",\"".$row_UL['USER_Nik']."\",\"".$row_UL['email']."\");'><img src='/_img/edit.png' height='12px' width='12px' style='padding-top: 3px;'></span>";
                     }
                     echo "</div>";
                 }

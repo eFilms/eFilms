@@ -14,8 +14,8 @@ if ($_SESSION["login"] != "true") {
  * in order to populate the field suggestions in the editor.
  */
 
-require_once('settings.php');
-require_once('includes/functions.php');
+require_once('../settings.php');
+require_once('../includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
 error_reporting(0);

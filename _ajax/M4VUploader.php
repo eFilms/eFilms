@@ -13,21 +13,58 @@ if ($_SESSION["login"] != "true") {
     exit;
 }
 
-if ((include_once '/usr/local/aws-php-sdk/aws-autoloader.php') == TRUE) {
-  use App\Http\Controllers\Controller;
-  use Aws\Common\Aws;
-  use Aws\S3\S3Client;
-  use \File;
-
-  $amazonServices = Aws::factory($_SERVER['DOCUMENT_ROOT'].'/aws-efilms-credentials.php');
-  $s3 = $amazonServices->get('s3');
-  $awsBucket = '';  // Add your bucket name here
+$uploadFolder = "../uploads";
+if (!file_exists($uploadFolder)) {
+  mkdir($uploadFolder);
+  chmod($uploadFolder, 0755);
 }
+if (!file_exists($uploadFolder . "/video")) {
+  mkdir($uploadFolder . "/video");
+  chmod($uploadFolder . "/video", 0755);
+}
+if (!file_exists($uploadFolder . "/videoFrames")) {
+  mkdir($uploadFolder . "/videoFrames");
+  chmod($uploadFolder . "/videoFrames", 0755);
+}
+$baseWritePath = "../uploads/video/";
+$baseThumbnailPath = "../uploads/videoFrames/";
 
+//Get the temp file path, file name and extension
+$tmpFilePath = $_FILES['fileToUpload']['tmp_name'];
+$name = $_FILES['fileToUpload']['name'];
+$nameParts = explode('.',$name);
+$extension = end($nameParts);
+$ext = strtolower($extension);
+$acceptedExtensions = array("m4v","mp4","mov");
+if ($tmpFilePath != "" && in_array($ext,$acceptedExtensions)) {
+  $newFileName = array_shift($nameParts);
+  $newFilePath = $baseWritePath.$newFileName.".".$ext;
+  move_uploaded_file($tmpFilePath, $newFilePath);
+
+  // make OGG File
+  exec("ffmpeg -i ".$newFilePath." -acodec libvorbis -ac 2 -ab 96k -ar 44100 -b 5130k -s 960x720 ".$baseWritePath.$newFileName.".ogv");
+
+  // Generate Thumbnails Here
+  $fps = 24;
+  $width = 80;
+  $height = 60;
+  if (!file_exists($baseThumbnailPath.$newFileName)) {
+    mkdir($baseThumbnailPath.$newFileName);
+    chmod($baseThumbnailPath.$newFileName, 0755);
+  }
+  exec("ffmpeg -i ".$newFilePath." -r ".$fps." -s ".$width."x".$height." -f image2 ".$baseThumbnailPath.$newFileName."/%06d.jpg");
+}
+unset($_FILES['fileToUpload']['name']);
+
+header('Content-Type: application/json');
+exit();
+
+/*
 //Array für Ergebnis der Operation und JSON Ausgabe für jQuery
 $result = array();
 //echo "mp4 uploader...\n";
 //var_dump($_FILES);
+
 //$_FILES Array auslesen
 $content = "";
 foreach ($_FILES as $file) {
@@ -49,8 +86,7 @@ foreach ($_FILES as $file) {
 
     $n = $file['name'];
     $s = $file['size'];
-    if (!$n)
-	continue;
+    if (!$n) continue;
 
     if (substr($file['name'], -4) != '.m4v') {
         $content .=  'Please upload a video in m4v format.';
@@ -79,7 +115,7 @@ foreach ($_FILES as $file) {
         }
       }
     } else {
-	$content .=  'There was an error uploading the file, please try again.';
+	    $content .=  'There was an error uploading the file, please try again.';
       exit();
     }
     

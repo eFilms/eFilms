@@ -9,8 +9,8 @@ if ($_SESSION["login"] != "true"){
   exit;
 }
 
-require_once('settings.php');
-require_once('includes/functions.php');
+require_once('../settings.php');
+require_once('../includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
 $eFContentSelected = (isset($_GET['eFContentSelected']) ? $_GET['eFContentSelected'] : "");
@@ -29,7 +29,7 @@ $eFResourceSearchExtension = "";
 ///////////////TOPCONTAINER
 echo $topcontent;
 ///////////////SUBCONTAINER
-echo "<div class='".$resourcecontentclass."'>";
+		echo "<div class='".$resourcecontentclass."'>";
 		echo "<div id='eFResourcesSubContentRelations'>";
 		
 

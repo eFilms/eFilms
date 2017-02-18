@@ -9,8 +9,8 @@ if ($_SESSION["login"] != "true") {
     exit;
 }
 
-require_once('settings.php');
-require_once('includes/functions.php');
+require_once('../settings.php');
+require_once('../includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
 $idcusers = (isset($_GET['idcusers']) ? $_GET['idcusers'] : "");
@@ -114,14 +114,10 @@ echo "<div id='eFConfigUserDetailMovieListHeader'><table><tr><td>E-ID</td><td>A-
 
 echo "<div id='eFConfigUserDetailMovieList'><table>";
 
-require_once('db_con.php');
-
 $anfrage = "SELECT eFilm_Content_Movies.*, eFilm_Config_Users_MovieRights.RIGHTS_Movies FROM eFilm_Content_Movies LEFT JOIN eFilm_Config_Users_MovieRights ON eFilm_Content_Movies.ID_Movies = eFilm_Config_Users_MovieRights.ID_Movies AND eFilm_Config_Users_MovieRights.ID_C_Users = " . $row_ULD['ID_C_Users'] . " WHERE eFilm_Content_Movies._eFWEB_EditorV='1' ORDER BY eFilm_Content_Movies.FILM_ID ASC;";
-
 
 $ergebnis = mysqli_query($localDatabase, $anfrage);
 $trefferzahl = mysqli_num_rows($ergebnis);
-
 
 while ($row = mysqli_fetch_array($ergebnis)) {
 //if ($row['_eFWEB_Praktikantin'] == 1) { $PraktikantInnenfarbe = " style=\"color:#FF0000\"";} else {$PraktikantInnenfarbe = "";}

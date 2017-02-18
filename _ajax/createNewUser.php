@@ -41,15 +41,15 @@ function get_random_string($valid_chars, $length)
     return $random_string;
 }
 
-require_once('settings.php');
-require_once('includes/functions.php');
+require_once('../settings.php');
+require_once('../includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
 $name = preg_replace("/[^\w\s\.\-\,_]/","",$_POST["name"]);
 $nickname = preg_replace("/[^\w\s\.\-\,_]/","",$_POST["nickname"]);
-if (isemail($_POST["email"])) {
+//if (isemail($_POST["email"])) {
     $email = $_POST["email"];
-}
+//}
 if (in_array($_POST["configRights"],array("EDIT","NONE"))) {
     $configRights = $_POST["configRights"];
 }
@@ -58,7 +58,12 @@ if (in_array($_POST["resourceRights"],array("EDIT","NONE"))) {
 }
 
 if (empty($name) || empty($nickname) || empty($email) || empty($configRights) || empty($resourceRights)) {
-    echo "bad data";
+    echo "bad data\n";
+    echo "name: ".$name."\n";
+    echo "nick: ".$nickname."\n";
+    echo "email: ".$email."\n";
+    echo "config: ".$configRights."\n";
+    echo "resource: ".$resourceRights."\n";
     exit();
 }
 
@@ -74,7 +79,7 @@ if ($row = mysqli_fetch_array($userList)) {
 $insert = "INSERT INTO `eFilm_Config_Users` (`_FM_CREATE`,`_FM_CHANGE`,`_FM_DATETIME_CREATE`,`_FM_DATETIME_CHANGE`,`USER_Name`,`USER_Nik`,`USER_Rights`,`USER_Pass`,`RIGHTS_Config`,`RIGHTS_Resources`,`RIGHTS_Publish`,`email`) VALUES ('Admin','Admin','".date("Y-m-d H:i:s")."','".date("Y-m-d H:i:s")."','".$name."','".$nickname."','','','".$configRights."','".$resourceRights."','NONE','".$email."')";
 mysqli_query($localDatabase, $insert);
 echo mysqli_insert_id($localDatabase);
-$newPassword = get_random_string($valid_characters, 16);
+$newPassword = "password";  //get_random_string($valid_characters, 16);
 $fp = fopen(directoryAboveWebRoot()."/.htpasswd", "a");
 fwrite($fp, $name.":".crypt($newPassword, base64_encode($newPassword))."\n");
 fclose($fp);

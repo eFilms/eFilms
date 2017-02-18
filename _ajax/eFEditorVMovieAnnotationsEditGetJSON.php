@@ -1,7 +1,6 @@
 <?php
-if(!isset($_SESSION)) 
-{ 
-session_start(); 
+if(!isset($_SESSION)) {
+  session_start(); 
 } 
 if ($_SESSION["login"] != "true"){
   header("Location:login.php");
@@ -9,8 +8,8 @@ if ($_SESSION["login"] != "true"){
   exit;
 }
 
-require_once('settings.php');
-require_once('includes/functions.php');
+require_once('../settings.php');
+require_once('../includes/functions.php');
 require_once(directoryAboveWebRoot().'/db_con.php');
 
 $Editid = (isset($_GET['Editid']) ? $_GET['Editid'] : "");
