@@ -60,9 +60,26 @@ Comments explaining each field are included in the SQL Dump.
 ##Installation
 
 Download and copy the project into a folder on your web server.
+Create a .htpasswd file with your first login and place it just outside of your web root.
 Create a database and use the included DatabaseStructure.txt file to generate the tables needed.
-Create a .htpasswd file with your first password and place it just outside of your web root.
-Create a db_con.php file with your databse connection details and place it just outside of your web root.
+Create a db_con.php file with your databse connection details and place it just outside of your web root.  The file should contain the following:
+
+<?php
+$includes = get_included_files();
+if (count($includes) < 1) {
+  exit();
+}
+$localDatabase = mysqli_connect('HOST_NAME','USER_NAME','PASSWORD','DATABASE_NAME');
+if (!$localDatabase) {
+  echo "<h2>Service not currently available</h2>";
+  header("Service Unavailable", 503);
+  exit();
+}
+ini_set('default_charset','UTF-8');
+mysqli_set_charset($localDatabase, "utf8");
+
+
+
 
 ##Known Issues
 
