@@ -64,19 +64,19 @@ Create a .htpasswd file with your first login and place it just outside of your 
 Create a database and use the included DatabaseStructure.txt file to generate the tables needed.
 Create a db_con.php file with your databse connection details and place it just outside of your web root.  The file should contain the following:
 
-<?php
-$includes = get_included_files();
-if (count($includes) < 1) {
-  exit();
-}
-$localDatabase = mysqli_connect('HOST_NAME','USER_NAME','PASSWORD','DATABASE_NAME');
-if (!$localDatabase) {
-  echo '<h2>Service not currently available</h2>';
-  header('Service Unavailable', 503);
-  exit();
-}
-ini_set('default_charset','UTF-8');
-mysqli_set_charset($localDatabase, 'utf8');
+- &lt;?php
+- $includes = get_included_files();
+- if (count($includes) < 1) {
+-   exit();
+- }
+- $localDatabase = mysqli_connect('HOST_NAME','USER_NAME','PASSWORD','DATABASE_NAME');
+- if (!$localDatabase) {
+-   echo '&lt;h2&gt;Service not currently available&lt;/h2&gt;';
+-   header('Service Unavailable', 503);
+-   exit();
+- }
+- ini_set('default_charset','UTF-8');
+- mysqli_set_charset($localDatabase, 'utf8');
 
 
 
