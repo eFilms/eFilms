@@ -71,12 +71,12 @@ if (count($includes) < 1) {
 }
 $localDatabase = mysqli_connect('HOST_NAME','USER_NAME','PASSWORD','DATABASE_NAME');
 if (!$localDatabase) {
-  echo "<h2>Service not currently available</h2>";
-  header("Service Unavailable", 503);
+  echo '<h2>Service not currently available</h2>';
+  header('Service Unavailable', 503);
   exit();
 }
 ini_set('default_charset','UTF-8');
-mysqli_set_charset($localDatabase, "utf8");
+mysqli_set_charset($localDatabase, 'utf8');
 
 
 
